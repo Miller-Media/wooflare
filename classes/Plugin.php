@@ -89,11 +89,11 @@ class WOOCF_Main
          * DB and a site load.
          */
         // Cache Clear on store notice being toggled on or off
-        add_action('add_option_woocommerce_demo_store', array ($this, 'clearCacheStoreNoticeUpdated'), 40, 2);
+        add_action('add_option_woocommerce_demo_store', array ($this, 'clearCacheStoreNoticeAdded'), 40, 2);
         add_action('update_option_woocommerce_demo_store', array ($this, 'clearCacheStoreNoticeUpdated'), 40, 3);
 
         // Cache Clear on store notice text update.
-        add_action('add_option_woocommerce_demo_store_notice', array ($this, 'clearCacheStoreNoticeUpdated'), 40, 2);
+        add_action('add_option_woocommerce_demo_store_notice', array ($this, 'clearCacheStoreNoticeAdded'), 40, 2);
         add_action('update_option_woocommerce_demo_store_notice', array ($this, 'clearCacheStoreNoticeUpdated'), 40, 3);
 
         // Add 'Settings' link to plugin page
@@ -174,6 +174,27 @@ class WOOCF_Main
     }
 
     /**
+     * Purge cache every time when the option is added for the first time.
+     *
+     * In cases where the first time this option is saved, the checkbox is toggled on
+     * AND the text is changed, it fires two API calls. Need to fix. @todo
+     *
+     * @param $option | string
+     * @return string
+     */
+    public function clearCacheStoreNoticeAdded ($new_option, $option)
+    {
+        /**
+         * If the option in WooFlare is disabled, bail.
+         */
+        if (!($this->getSetting('when_store_notice_updated') == 'on'))
+            return $new_option;
+
+        $this->API->purgeCache();
+        return $new_option;
+    }
+
+    /**
      * Function that triggers a cache-clear for all product and
      * category endpoints when the sitewide store notice is updated (text or enabled/disabled).
      *
@@ -213,6 +234,8 @@ class WOOCF_Main
                 $this->API->purgeCache();
                 update_option('woocf_notice_toggled', 'yes');
             }
+
+            return $new_option;
         }
 
         /**
@@ -233,6 +256,7 @@ class WOOCF_Main
                 $this->API->purgeCache();
         }
 
+        update_option('woocf_notice_toggled', 'no');
         return $new_option;
     }
 
