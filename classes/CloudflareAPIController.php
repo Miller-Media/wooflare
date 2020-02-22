@@ -114,46 +114,90 @@ class WOOCF_CloudflareAPIController
 		return $result;
 	}
 
-	/**
-	 * Blacklist IP in CloudFlare via API call.
-	 *
-	 * @see      https://api.cloudflare.com/#firewall-access-rule-for-a-zone-create-access-rule
-	 *
-	 * @param $zone_id, $ip
-	 * @return array|mixed|object
-	 */
-	public function blacklistIP( $zone_id, $ip )
-	{
-        $url = $this->url . "zones/$zone_id/firewall/access_rules/rules";
+    /**
+     * Purge all caches.
+     *
+     * @return array|bool
+     */
+    public function purgeCache()
+    {
+        // Get zone ID for this site.
+        $zone_id = $this->getZoneId(get_site_url());
+
+        if( !$zone_id )
+            return false;
+
+        // Configure endpoint url with zone id.
+        $url = $this->url . "zones/$zone_id/purge_cache/";
+
+        // Make request
         $body = json_encode(array(
-            'mode' => 'block',
-            'configuration' => array(
-                'target' => 'ip',
-                'value' => $ip
-            ),
-            'notes' => 'Blocked for attempting to login using a banned username.'
+            "purge_everything" => true
         ));
+        $result = $this->request("DELETE", $url, $body);
 
-        $result = $this->request("POST", $url, $body);
         return $result;
-	}
+    }
 
-	/**
-	 * Utility function to delete a blacklisted IP rule in Cloudflare.
-	 * (Perhaps a text input and button in settings page to accomplish this?)
-	 *
-	 * @see      https://api.cloudflare.com/#firewall-access-rule-for-a-zone-delete-access-rule
-	 *
-	 * @param $zone_id
-	 * @param $rule_id
-	 * @return array|mixed|object
-	 */
-	public function deleteBlacklistedIP( $zone_id, $rule_id )
-	{
-		$url = $this->url . "zones/$zone_id/firewall/access_rules/rules/$rule_id";
-		$result = $this->request("DELETE", $url);
-		return $result;
-	}
+    /**
+     * Clear product and category caches.
+     *
+     * @param $files array URLs to clear cache for
+     * @return array|bool
+     */
+    public function clearCacheByFiles($files)
+    {
+        // Get zone ID for this site.
+        $zone_id = $this->getZoneId(get_site_url());
+
+        if( !$zone_id )
+            return false;
+
+        // Configure endpoint url with zone id.
+        $url = $this->url . "zones/$zone_id/purge_cache/";
+
+        // Results array
+        $results = array();
+
+        $count = 0;
+        $urls = array();
+
+        foreach( $files as $file ){
+
+            if( count($files) == $count+1 ){
+                // If this is the last file, add it and make the request.
+                $urls[] = $file;
+
+                // Add $urls array to body argument.
+                $body = json_encode(array(
+                    "files" => $urls
+                ));
+
+                // Make request.
+                $result = $this->request("DELETE", $url, $body);
+                $results[] = $result;
+            } else if( $count == 0 || $count%30 != 0 ) {
+                // Limit body to 30 URLs per request.
+                $urls[] = $file;
+                $count++;
+            } else {
+                // Maximum payload, add $urls array to body argument and make request.
+                $body = json_encode(array(
+                    "files" => $urls
+                ));
+
+                // Make request.
+                $result = $this->request("DELETE", $url, $body);
+                $results[] = $result;
+
+                // Empty $urls array.
+                $urls = array();
+                $count++;
+            }
+        }
+
+        return $results;
+    }
 
 	/**
 	 * Get all Cloudflare zones.

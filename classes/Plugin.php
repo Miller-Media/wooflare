@@ -55,8 +55,8 @@ class WOOCF_Main
         $this->API = new WOOCF_CloudflareAPIController();
         $this->settings = get_site_option('woocf_settings');
 
-        $this->adminStyle = plugins_url('ip-blacklist-for-cloudflare/assets/css/admin.css', 'ip-blacklist-for-cloudflare.php');
-        $this->adminScript = plugins_url('ip-blacklist-for-cloudflare/assets/js/admin.js', 'ip-blacklist-for-cloudflare.php');
+        $this->adminStyle = plugins_url('woocommerce-cloudflare/assets/css/admin.css', 'woocommerce-cloudflare.php');
+        $this->adminScript = plugins_url('woocommerce-cloudflare/assets/js/admin.js', 'woocommerce-cloudflare.php');
 
         // Hooks
         add_action('admin_enqueue_scripts', array ($this, 'adminEnqueueScripts'), 40, 1);
@@ -65,7 +65,6 @@ class WOOCF_Main
         add_action('wp_authenticate', array ($this, 'checkUserLoginName'), 10, 1);
 
         // AJAX requests
-        add_action('wp_ajax_woocf_unblacklist_ip', array ($this, 'ajaxUnblacklistIP'));
         add_action('wp_ajax_woocf_clearlog', array ($this, 'ajaxClearLog'));
 	    add_action('wp_ajax_woocf_loadlog', array ($this, 'ajaxLoadLog'));
 
