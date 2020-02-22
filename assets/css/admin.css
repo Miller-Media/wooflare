@@ -1,0 +1,68 @@
+
+
+select,
+input[type="text"]{
+    width: 200px;
+}
+.woocf_ajax_btn {
+    margin-left: 10px;
+}
+#woocf_ajax_res_unblacklist{
+    position: relative;
+    top: 20px;
+}
+#log_screen {
+    padding: 20px;
+    background: #dedede;
+    width: 800px;
+    height: 600px;
+    overflow: scroll;
+    margin-top: 10px;
+}
+#clear_log_button {
+    display: block;
+    margin-top: 20px;
+}
+
+/* Tabs */
+.tabs.clearfix {
+    margin-bottom: 0;
+}
+.tabs li {
+    float: left;
+    width: 20%;
+}
+.tabs a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #888;
+    padding: 20px 0;
+    border-bottom: 2px solid #888;
+    background: #f7f7f7;
+}
+.tabs a:hover,
+.tabs a.active {
+    background: #ddd;
+}
+.tabs a:focus {
+    box-shadow: none;
+}
+#first-tab-group {
+    width: 95%;
+}
+.tabgroup div.tab-panel {
+    padding: 30px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+.tab-panel {
+    display: none;
+}
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
