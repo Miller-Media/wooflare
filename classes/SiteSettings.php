@@ -175,7 +175,7 @@ class WOOCF_SiteSettings
             // Cache Clearing settings
             $settings['after_scheduled_sale'] = isset($_POST['after_scheduled_sale']) ? sanitize_text_field($_POST['after_scheduled_sale']) : '';
             $settings['when_product_out_of_stock'] = isset($_POST['when_product_out_of_stock']) ? sanitize_text_field($_POST['when_product_out_of_stock']) : '';
-            $settings['when_sitewide_notice_updated'] = isset($_POST['when_sitewide_notice_updated']) ? sanitize_text_field($_POST['when_sitewide_notice_updated']) : '';
+            $settings['when_store_notice_updated'] = isset($_POST['when_store_notice_updated']) ? sanitize_text_field($_POST['when_store_notice_updated']) : '';
             $settings['enable_logging'] = isset($_POST['enable_logging']) ? sanitize_text_field($_POST['enable_logging']) : '';
 
 			if( update_option('woocf_settings', $settings) )

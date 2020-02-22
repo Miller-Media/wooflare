@@ -38,10 +38,10 @@ $settings = array(
                 'description' => ''
             ),
             array(
-                'name' => 'when_sitewide_notice_updated',
+                'name' => 'when_store_notice_updated',
                 'type' => 'checkbox',
-                'title' => 'When Sitewide Store Notice is Updated?',
-                'description' => ''
+                'title' => 'When Store Notice is Updated?',
+                'description' => 'Store notice is found in the <a href="'.site_url('/wp-admin/customize.php?return=%2Fwp-admin%2Fadmin.php%3Fpage%3Dwoocf-menu').'" target="_blank">Customize menu</a> at WooCommerce -> Store Notice'
             ),
             array(
                 'name' => 'enable_logging',
