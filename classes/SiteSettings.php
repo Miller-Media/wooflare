@@ -103,7 +103,7 @@ class WOOCF_SiteSettings
     }
 
     public function isLoggingEnabled(){
-        return $this->settings['enable_logging']=='on';
+        return array_key_exists('enable_logging', $this->settings) && $this->settings['enable_logging']=='on';
     }
 
 	/**
