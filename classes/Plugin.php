@@ -72,8 +72,14 @@ class WOOCF_Main
         // Cache Clear on scheduled sale end.
         add_action('wc_after_products_ending_sales', array ($this, 'clearCacheScheduledSaleEnd'), 90, 1);
 
-        // Cache Clear on product out-of-stock.
+        /**
+         * Cache Clear on product out-of-stock. Both when the product goes out of stock through
+         * product sales or when someone changes the stock status to 'Out of Stock' and saves
+         * the product.
+         */
         add_action('woocommerce_no_stock_notification', array ($this, 'clearCacheProductOutOfStock'), 40, 1);
+        add_action('woocommerce_variation_set_stock_status', array($this, 'checkOutOfStock'), 10, 3);
+        add_action( 'woocommerce_product_set_stock_status', array($this, 'checkOutOfStock'), 10, 3);
 
         /**
          * Store Notice
@@ -142,6 +148,19 @@ class WOOCF_Main
     }
 
     /**
+     * Checks if product is out of stock after being updated from the admin dashboard
+     * If so, clears cache of the product page
+     * @param $product_id
+     * @param $product_stock_status
+     * @param $product
+     */
+    public function checkOutOfStock($product_id, $product_stock_status, $product){
+        if( $product_stock_status=='outofstock'){
+            $this->clearCacheProductOutOfStock($product);
+        }
+    }
+
+    /**
      * Function that triggers a cache-clear for all product and
      * category endpoints when a scheduled sale ends.
      *
@@ -169,7 +188,8 @@ class WOOCF_Main
         if (!($this->getSetting('when_product_out_of_stock') == 'on'))
             return;
 
-        $files = $this->getProductAndCategoryURLs($product);
+        $product_id = $product->get_id();
+        $files = $this->getProductAndCategoryURLs($product_id);
         $this->API->clearCacheByFiles($files);
     }
 
@@ -266,14 +286,13 @@ class WOOCF_Main
      * @param $product WC_Product
      * @return array
      */
-    public function getProductAndCategoryURLs ($product)
+    public function getProductAndCategoryURLs ($product_id)
     {
         // Array to hold all product and category URLs
         $files = array ();
 
         // Add product and category permalinks to $files array, skipping dupes.
-        $prod_id = $product->get_id();
-        $terms = get_the_terms($prod_id, 'product_cat');
+        $terms = get_the_terms($product_id, 'product_cat');
         if ($terms) {
             foreach ($terms as $term) {
                 $product_cat_id = $term->term_id;
@@ -283,7 +302,7 @@ class WOOCF_Main
             }
         }
 
-        $product_url = get_permalink($prod_id);
+        $product_url = get_permalink($product_id);
         if ($product_url && !in_array($product_url, $files))
             $files[] = $product_url;
 
