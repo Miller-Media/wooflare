@@ -19,9 +19,9 @@
  * @param string $version
  * @return bool
  */
-function version_check( $version = '3.3.0' ) {
+function version_check( $min_version = '3.3.0' ) {
     $woo_version = get_option('woocommerce_version');
-    if ( $woo_version && version_compare( $woo_version, $version, ">=" ) ) {
+    if ( $woo_version && version_compare( $woo_version, $min_version, ">=" ) ) {
         return true;
     }
 

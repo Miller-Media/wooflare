@@ -28,7 +28,7 @@ $settings = array(
             array(
                 'name' => 'after_scheduled_sale',
                 'type' => 'checkbox',
-                'title' => 'After Scheduled Sale (requires Woo 3.3.0+)?',
+                'title' => 'After Scheduled Sale?',
                 'description' => ''
             ),
             array(

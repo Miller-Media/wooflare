@@ -70,16 +70,22 @@ class WOOCF_Main
         add_action('admin_menu', array($this->siteSettings, 'verifyNonce'));
 
         // Cache Clear on scheduled sale end.
-        add_action('wc_after_products_ending_sales', array ($this, 'clearCacheScheduledSaleEnd'), 90, 1);
+        // If the option is disabled, bail.
+        if ($this->getSetting('after_scheduled_sale') == 'on') {
+            add_action('wc_after_products_ending_sales', array($this, 'clearCacheScheduledSaleEnd'), 90, 1);
+        }
 
         /**
          * Cache Clear on product out-of-stock. Both when the product goes out of stock through
          * product sales or when someone changes the stock status to 'Out of Stock' and saves
          * the product.
          */
-        add_action('woocommerce_no_stock_notification', array ($this, 'clearCacheProductOutOfStock'), 40, 1);
-        add_action('woocommerce_variation_set_stock_status', array($this, 'checkOutOfStock'), 10, 3);
-        add_action( 'woocommerce_product_set_stock_status', array($this, 'checkOutOfStock'), 10, 3);
+        // If the option is disabled, bail.
+        if ($this->getSetting('when_product_out_of_stock') == 'on') {
+            add_action('woocommerce_no_stock_notification', array($this, 'clearCacheProductOutOfStock'), 40, 1);
+            add_action('woocommerce_variation_set_stock_status', array($this, 'checkOutOfStock'), 10, 3);
+            add_action('woocommerce_product_set_stock_status', array($this, 'checkOutOfStock'), 10, 3);
+        }
 
         /**
          * Store Notice
@@ -168,10 +174,6 @@ class WOOCF_Main
      */
     public function clearCacheScheduledSaleEnd ($product_ids)
     {
-        // If the option is disabled, bail.
-        if (!($this->getSetting('after_scheduled_sale') == 'on'))
-            return;
-
         $this->API->purgeCache();
     }
 
@@ -184,10 +186,6 @@ class WOOCF_Main
      */
     public function clearCacheProductOutOfStock ($product)
     {
-        // If the option is disabled, bail.
-        if (!($this->getSetting('when_product_out_of_stock') == 'on'))
-            return;
-
         $product_id = $product->get_id();
         $files = $this->getProductAndCategoryURLs($product_id);
         $this->API->clearCacheByFiles($files);
