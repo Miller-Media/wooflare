@@ -55,8 +55,8 @@ class WOOCF_Main
         $this->API = new WOOCF_CloudflareAPIController();
         $this->settings = get_site_option('woocf_settings');
 
-        $this->adminStyle = plugins_url('woocommerce-cloudflare/assets/css/admin.css', 'woocommerce-cloudflare.php');
-        $this->adminScript = plugins_url('woocommerce-cloudflare/assets/js/admin.js', 'woocommerce-cloudflare.php');
+        $this->adminStyle = plugins_url('wooflare/assets/css/admin.css', 'wooflare.php');
+        $this->adminScript = plugins_url('wooflare/assets/js/admin.js', 'wooflare.php');
 
         // Hooks
         add_action('admin_enqueue_scripts', array ($this, 'adminEnqueueScripts'), 40, 1);
