@@ -49,7 +49,7 @@ class WOOCF_Main
      * Initialize plugin properties/hooks.
      *
      */
-    public function __construct ()
+    public function __construct()
     {
         $this->siteSettings = new WOOCF_SiteSettings();
         $this->API = new WOOCF_CloudflareAPIController();
@@ -59,11 +59,11 @@ class WOOCF_Main
         $this->adminScript = plugins_url('wooflare/assets/js/admin.js', 'wooflare.php');
 
         // Hooks
-        add_action('admin_enqueue_scripts', array ($this, 'adminEnqueueScripts'), 40, 1);
+        add_action('admin_enqueue_scripts', array($this, 'adminEnqueueScripts'), 40, 1);
 
         // AJAX requests
-        add_action('wp_ajax_woocf_clearlog', array ($this, 'ajaxClearLog'));
-	    add_action('wp_ajax_woocf_loadlog', array ($this, 'ajaxLoadLog'));
+        add_action('wp_ajax_woocf_clearlog', array($this, 'ajaxClearLog'));
+        add_action('wp_ajax_woocf_loadlog', array($this, 'ajaxLoadLog'));
 
         // Single Site Settings Screen
         add_action('admin_menu', array($this->siteSettings, 'addSiteMenu'));
@@ -82,7 +82,7 @@ class WOOCF_Main
          */
         // If the option is disabled, bail.
         if ($this->getSetting('when_product_out_of_stock') == 'on') {
-            add_action('woocommerce_no_stock_notification', array($this, 'clearCacheProductOutOfStock'), 40, 1);
+            add_action('woocommerce_no_stock_notification', array($this, 'clearCacheProduct'), 40, 1);
             add_action('woocommerce_variation_set_stock_status', array($this, 'checkOutOfStock'), 10, 3);
             add_action('woocommerce_product_set_stock_status', array($this, 'checkOutOfStock'), 10, 3);
         }
@@ -101,12 +101,12 @@ class WOOCF_Main
          * DB and a site load.
          */
         // Cache Clear on store notice being toggled on or off
-        add_action('add_option_woocommerce_demo_store', array ($this, 'clearCacheStoreNoticeAdded'), 40, 2);
-        add_action('update_option_woocommerce_demo_store', array ($this, 'clearCacheStoreNoticeUpdated'), 40, 3);
+        add_action('add_option_woocommerce_demo_store', array($this, 'clearCacheStoreNoticeAdded'), 40, 2);
+        add_action('update_option_woocommerce_demo_store', array($this, 'clearCacheStoreNoticeUpdated'), 40, 3);
 
         // Cache Clear on store notice text update.
-        add_action('add_option_woocommerce_demo_store_notice', array ($this, 'clearCacheStoreNoticeAdded'), 40, 2);
-        add_action('update_option_woocommerce_demo_store_notice', array ($this, 'clearCacheStoreNoticeUpdated'), 40, 3);
+        add_action('add_option_woocommerce_demo_store_notice', array($this, 'clearCacheStoreNoticeAdded'), 40, 2);
+        add_action('update_option_woocommerce_demo_store_notice', array($this, 'clearCacheStoreNoticeUpdated'), 40, 3);
 
         // Add 'Settings' link to plugin page
         //add_filter( 'plugin_action_links_'.plugin_basename( __FILE__ ), array ($this, 'woocf_add_action_links'), 10, 5);
@@ -117,20 +117,20 @@ class WOOCF_Main
      *
      * @param $hook string
      */
-    public function adminEnqueueScripts ($hook)
+    public function adminEnqueueScripts($hook)
     {
         // Only enqueue on appropriate admin screen.
         if ($hook !== 'toplevel_page_woocf-menu')
             return;
 
-        wp_enqueue_style('woocf_admin_style', $this->adminStyle, array(),WOOCF_PLUGIN_VERSION);
-        wp_enqueue_script('woocf_admin_script', $this->adminScript, array ('jquery'),WOOCF_PLUGIN_VERSION);
+        wp_enqueue_style('woocf_admin_style', $this->adminStyle, array(), WOOCF_PLUGIN_VERSION);
+        wp_enqueue_script('woocf_admin_script', $this->adminScript, array('jquery'), WOOCF_PLUGIN_VERSION);
 
         // If Cloudflare plugin is active, inherit styles from their plugin for consistent styles
-        if($this->isCloudflarePluginActive()) {
-            wp_enqueue_style('cf-corecss', WOOCF_MAIN_CLOUDFLARE_PLUGIN_DIR.'/stylesheets/cf.core.css');
-            wp_enqueue_style('cf-componentscss', WOOCF_MAIN_CLOUDFLARE_PLUGIN_DIR.'/stylesheets/components.css');
-            wp_enqueue_style('cf-hackscss', WOOCF_MAIN_CLOUDFLARE_PLUGIN_DIR.'/stylesheets/hacks.css');
+        if ($this->isCloudflarePluginActive()) {
+            wp_enqueue_style('cf-corecss', WOOCF_MAIN_CLOUDFLARE_PLUGIN_DIR . '/stylesheets/cf.core.css');
+            wp_enqueue_style('cf-componentscss', WOOCF_MAIN_CLOUDFLARE_PLUGIN_DIR . '/stylesheets/components.css');
+            wp_enqueue_style('cf-hackscss', WOOCF_MAIN_CLOUDFLARE_PLUGIN_DIR . '/stylesheets/hacks.css');
         }
     }
 
@@ -149,32 +149,47 @@ class WOOCF_Main
     /**
      * Check if official Cloudflare Plugin is installed and active
      */
-    public function isCloudflarePluginActive(){
-        return is_plugin_active( 'cloudflare/cloudflare.php' );
+    public function isCloudflarePluginActive()
+    {
+        return is_plugin_active('cloudflare/cloudflare.php');
     }
 
     /**
      * Checks if product is out of stock after being updated from the admin dashboard
      * If so, clears cache of the product page
+     *
      * @param $product_id
      * @param $product_stock_status
      * @param $product
      */
-    public function checkOutOfStock($product_id, $product_stock_status, $product){
-        if( $product_stock_status=='outofstock'){
-            $this->clearCacheProductOutOfStock($product);
+    public function checkOutOfStock($product_id, $product_stock_status, $product)
+    {
+        if ($product_stock_status == 'outofstock') {
+            $this->clearCacheProduct($product);
         }
     }
 
     /**
      * Function that triggers a cache-clear for all product and
-     * category endpoints when a scheduled sale ends.
+     * category endpoints for products that were on sale, when a scheduled sale ends.
      *
      * @param $product_ids
      */
-    public function clearCacheScheduledSaleEnd ($product_ids)
+    public function clearCacheScheduledSaleEnd($product_ids)
     {
-        $this->API->purgeCache();
+        $files = array();
+
+        foreach ($product_ids as $product_id) {
+            $product = new WC_Product($product_id);
+
+            if($urls = $this->getProductAndCategoryURLs($product)){
+                foreach($urls as $url){
+                    $files[] = $url;
+                }
+            }
+        }
+
+        $this->API->clearCacheByFiles($files);
     }
 
     /**
@@ -184,10 +199,9 @@ class WOOCF_Main
      *
      * @param $product WC_Product
      */
-    public function clearCacheProductOutOfStock ($product)
+    public function clearCacheProduct($product)
     {
-        $product_id = $product->get_id();
-        $files = $this->getProductAndCategoryURLs($product_id);
+        $files = $this->getProductAndCategoryURLs($product);
         $this->API->clearCacheByFiles($files);
     }
 
@@ -195,12 +209,12 @@ class WOOCF_Main
      * Purge cache every time when the option is added for the first time.
      *
      * In cases where the first time this option is saved, the checkbox is toggled on
-     * AND the text is changed, it fires two API calls. Need to fix. @todo
-     *
-     * @param $option | string
+     * AND the text is changed, it fires two API calls. Need to fix. @param $option | string
      * @return string
+     * @todo
+     *
      */
-    public function clearCacheStoreNoticeAdded ($new_option, $option)
+    public function clearCacheStoreNoticeAdded($new_option, $option)
     {
         /**
          * If the option in WooFlare is disabled, bail.
@@ -219,7 +233,7 @@ class WOOCF_Main
      * @param $option | string
      * @return string
      */
-    public function clearCacheStoreNoticeUpdated ($old_option, $new_option, $option)
+    public function clearCacheStoreNoticeUpdated($old_option, $new_option, $option)
     {
         /**
          * If the option in WooFlare is disabled, bail.
@@ -230,7 +244,7 @@ class WOOCF_Main
         /**
          * Purge cache every time when the option is added for the first time
          */
-        if(strpos(current_filter(),'add_option_')!==false){
+        if (strpos(current_filter(), 'add_option_') !== false) {
             $this->API->purgeCache();
             return $new_option;
         }
@@ -244,11 +258,11 @@ class WOOCF_Main
         $option_changed = ($old_option != $new_option);
         $notice_toggled = get_option('woocf_notice_toggled');
 
-        if($option=='woocommerce_demo_store') {
+        if ($option == 'woocommerce_demo_store') {
             // Clean option in case text changed hasn't run since the last time (two toggles back to back)
             update_option('woocf_notice_toggled', 'no');
 
-            if($option_changed) {
+            if ($option_changed) {
                 $this->API->purgeCache();
                 update_option('woocf_notice_toggled', 'yes');
             }
@@ -259,7 +273,7 @@ class WOOCF_Main
         /**
          * In the event of a text change.
          */
-        if($option=='woocommerce_demo_store_notice') {
+        if ($option == 'woocommerce_demo_store_notice') {
             // Get the current disabled/enabled value
             $enabled = (get_option('woocommerce_demo_store') == 'yes');
 
@@ -270,7 +284,7 @@ class WOOCF_Main
              * checkbox just recently changed its value. If it did, we don't want
              * to clear the cache twice.
              */
-            if($enabled && $option_changed && !$notice_toggled)
+            if ($enabled && $option_changed && !$notice_toggled)
                 $this->API->purgeCache();
         }
 
@@ -284,15 +298,20 @@ class WOOCF_Main
      * @param $product WC_Product
      * @return array
      */
-    public function getProductAndCategoryURLs ($product_id)
+    public function getProductAndCategoryURLs($product)
     {
+        $product_id = $product->get_id();
+
         // Array to hold all product and category URLs
-        $files = array ();
+        $files = array();
 
         // Add product and category permalinks to $files array, skipping dupes.
         $terms = get_the_terms($product_id, 'product_cat');
         if ($terms) {
             foreach ($terms as $term) {
+                if(!is_object($term))
+                    continue;
+
                 $product_cat_id = $term->term_id;
                 $cat_url = get_term_link((int)$product_cat_id, 'product_cat');
                 if ($cat_url && !in_array($cat_url, $files))
@@ -312,13 +331,13 @@ class WOOCF_Main
      *
      * @return array
      */
-    public function getAllProductAndCategoryURLs ()
+    public function getAllProductAndCategoryURLs()
     {
         // Array to hold all product and category URLs
-        $files = array ();
+        $files = array();
 
         // Get all published products.
-        $args = array (
+        $args = array(
             "status" => "publish",
             "limit" => -1
         );
@@ -353,7 +372,7 @@ class WOOCF_Main
      *
      * @return array
      */
-    public function getAllURLs ()
+    public function getAllURLs()
     {
         $urls = $this->getAllProductAndCategoryURLs();
 
@@ -386,40 +405,40 @@ class WOOCF_Main
         return $urls;
     }
 
-	/**
-	 * Load/refresh log via AJAX when log tab is opened.
-	 *
-	 */
-    public function ajaxLoadLog ()
+    /**
+     * Load/refresh log via AJAX when log tab is opened.
+     *
+     */
+    public function ajaxLoadLog()
     {
-    	$response = array('log' => array());
-	    $woocf_log = get_site_option('woocf_log')?:array();
-	    if( $woocf_log ){
-		    foreach( $woocf_log as $entry ){
-		    	ob_start();
-			    print_r(PHP_EOL);
-		    	print_r($entry);
-		    	$response['log'][] = ob_get_clean();
-		    }
-	    }
+        $response = array('log' => array());
+        $woocf_log = get_site_option('woocf_log') ?: array();
+        if ($woocf_log) {
+            foreach ($woocf_log as $entry) {
+                ob_start();
+                print_r(PHP_EOL);
+                print_r($entry);
+                $response['log'][] = ob_get_clean();
+            }
+        }
 
-	    wp_die(json_encode($response));
+        wp_die(json_encode($response));
     }
 
-	/**
-	 * Clear log via AJAX.
-	 *
-	 */
-    public function ajaxClearLog ()
+    /**
+     * Clear log via AJAX.
+     *
+     */
+    public function ajaxClearLog()
     {
-        $response = array ();
+        $response = array();
         if (!isset($_POST['clear_log']) || !$_POST['clear_log']) {
             $response['error'] = 'An error occurred.';
             wp_die(json_encode($response));
         }
 
-        if (!update_site_option('woocf_log', array ())) {
-            $response['error'] = array ('error' => 'Failed to clear log.');
+        if (!update_site_option('woocf_log', array())) {
+            $response['error'] = array('error' => 'Failed to clear log.');
             wp_die(json_encode($response));
         }
 
@@ -432,9 +451,9 @@ class WOOCF_Main
      *
      * @param $message
      */
-    public function log ($message)
+    public function log($message)
     {
-        if ($this->siteSettings->isLoggingEnabled()){
+        if ($this->siteSettings->isLoggingEnabled()) {
             $log = get_site_option('woocf_log') ?: array();
             $log[] = $message;
             update_site_option('woocf_log', $log);
@@ -447,7 +466,7 @@ class WOOCF_Main
      * @param $setting
      * @return string|array|null
      */
-    public function getSetting ($setting)
+    public function getSetting($setting)
     {
         return $this->settings[$setting];
     }

@@ -29,13 +29,13 @@ $settings = array(
                 'name' => 'after_scheduled_sale',
                 'type' => 'checkbox',
                 'title' => 'After Scheduled Sale?',
-                'description' => ''
+                'description' => 'Set scheduled sales on product edit pages by clicking \'Schedule\' next to the \'Sale price\' field.'
             ),
             array(
                 'name' => 'when_product_out_of_stock',
                 'type' => 'checkbox',
                 'title' => 'When Product Goes Out of Stock?',
-                'description' => ''
+                'description' => 'Triggered when a product sells out or when the stock status is toggled to \'Out of Stock\' by an admin.'
             ),
             array(
                 'name' => 'when_store_notice_updated',
@@ -139,7 +139,7 @@ $settings = array(
                                 } else if ($data['type'] == 'checkbox') {
                                     ?>
                                     <tr>
-                                        <td><h3 class="cf-card__title"><label
+                                        <td><?php if($data['name']=='enable_logging'){echo '<hr />';} ?><h3 class="cf-card__title"><label
                                                     for="<?php echo $data['name']; ?>"><?php echo $data['title']; ?>
                                                 </label></h3>
                                             <?php
