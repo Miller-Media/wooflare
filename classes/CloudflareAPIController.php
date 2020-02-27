@@ -147,6 +147,10 @@ class WOOCF_CloudflareAPIController
      */
     public function clearCacheByFiles($files)
     {
+        /**
+         * @todo add filter to be able to add additional URLs to the list at this point
+         */
+
         // Get zone ID for this site.
         $zone_id = $this->getZoneId(get_site_url());
 
