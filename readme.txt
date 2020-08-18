@@ -11,9 +11,13 @@ WooFlare provides automated Cloudflare cache control for WooCommerce stores.
 
 == Description ==
 
+**Did you find this plugin helpful?** Please consider [leaving a 5-star review](https://wordpress.org/support/view/plugin-reviews/wooflare/).
+
 Cloudflare provides caching, security and optimization services for websites all around the internet. WooFlare integrates Cloudflare directly with WooCommerce stores to allow store owners to automate these optimizations in a variety of ways (when a product goes out of stock, when a sale ends, etc.).
 
 Automate your WooCommerce store's caching optimization and free up more time to sell your products!
+
+Please help by contributing to the GitHub repository [WooFlare](https://github.com/Miller-Media/wooflare/)
 
 ** This plugin relies on the use of Cloudflare, a third-party service that increases security and performance for web sites and services across the internet. For more information, visit the [Cloudflare website](https://www.cloudflare.com/) and their [privacy policy](https://www.cloudflare.com/privacypolicy/). This plugin is not officially endorsed, built or maintained by the Cloudflare team; rather, we are a development company that uses their services every day! **
 
@@ -30,4 +34,3 @@ If you find that a part of this plugin isn't working, please don't simply click 
 == Changelog ==
 = 1.0 =
 * Initial public release
-
