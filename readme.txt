@@ -3,7 +3,7 @@ Contributors: MillerMediaNow, mikemm01
 Tags: cache, speed, cloudflare, woocommerce, sales, product, category
 Requires PHP: 5.6
 Requires at least: 3.0
-Tested up to: 5.3.2
+Tested up to: 5.5
 Stable tag: 1.0.0
 License: GPLv2
 

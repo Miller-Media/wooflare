@@ -10,7 +10,7 @@
  * Version: 1.0.0
  *
  * WC requires at least: 3.3.0
- * WC tested up to: 3.9.2
+ * WC tested up to: 4.4.0
  */
 
 /**
