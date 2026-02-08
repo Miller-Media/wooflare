@@ -1,9 +1,9 @@
 === WooFlare ===
 Contributors: MillerMediaNow, mikemm01
 Tags: cache, speed, cloudflare, woocommerce, sales, product, category
-Requires PHP: 5.6
+Requires PHP: 8.1
 Requires at least: 3.0
-Tested up to: 5.8
+Tested up to: 6.9
 Stable tag: 1.0.0
 License: GPLv2
 
