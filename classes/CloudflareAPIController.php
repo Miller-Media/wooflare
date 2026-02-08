@@ -292,6 +292,6 @@ class WOOCF_CloudflareAPIController
 	 */
 	public function getSetting($setting)
 	{
-		return $this->settings[$setting];
+		return $this->settings[$setting] ?? null;
 	}
 }

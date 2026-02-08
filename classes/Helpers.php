@@ -32,6 +32,9 @@ class WOOCF_Helpers
                 $d['domain'] = $tmp[($n-2)].".".$tmp[($n-1)];
                 $d['domainX'] = $tmp[($n-2)];
             }
+        } else {
+            $d['domain'] = $d['host'];
+            $d['domainX'] = $d['host'];
         }
         return $d;
     }
