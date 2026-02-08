@@ -13,6 +13,8 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 class WOOCF_SiteSettings
 {
+	public $siteBaseDomain;
+	public $settings;
 
 	/**
 	 * WOOCF_SiteSettings constructor.

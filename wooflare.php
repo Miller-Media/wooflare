@@ -8,9 +8,11 @@
  * Depends:
  * Text Domain: wooflare
  * Version: 1.0.0
+ * Requires PHP: 8.1
+ * Tested up to: 6.9
  *
  * WC requires at least: 3.3.0
- * WC tested up to: 4.4.0
+ * WC tested up to: 9.6
  */
 
 /**

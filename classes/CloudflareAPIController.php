@@ -10,6 +10,8 @@ class WOOCF_CloudflareAPIController
 {
 
 	public $settings;
+	public $siteSettings;
+	public $helperFunctions;
 
 	/**
 	 * The base URL for this API version.
