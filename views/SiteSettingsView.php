@@ -5,69 +5,69 @@ $credentials = $siteSettings->areCredentialsSet();
 
 // The plugin settings. Add new sections/fields accordingly.
 $settings = array(
-	'Cloudflare Credentials' => array(
+	__('Cloudflare Credentials', 'wooflare') => array(
         'fields' => array(
             array(
                 'name' => 'cf_auth_type',
                 'type' => 'radio',
-                'title' => 'Authentication Method',
+                'title' => __('Authentication Method', 'wooflare'),
                 'description' => '',
                 'options' => array(
-                    'global_key' => 'Global API Key',
-                    'api_token'  => 'API Token (Recommended)',
+                    'global_key' => __('Global API Key', 'wooflare'),
+                    'api_token'  => __('API Token (Recommended)', 'wooflare'),
                 ),
                 'value' => isset($woocf_settings['cf_auth_type']) ? $woocf_settings['cf_auth_type'] : 'global_key'
             ),
             array(
                 'name' => 'cf_email',
                 'type' => 'text',
-                'title' => 'Email Address',
-                'description' => 'Your Cloudflare account email address.',
+                'title' => __('Email Address', 'wooflare'),
+                'description' => __('Your Cloudflare account email address.', 'wooflare'),
                 'value' => ($credentials && array_key_exists('cf_email', $credentials))? $credentials['cf_email'] : '',
                 'auth_group' => 'global_key'
             ),
             array(
                 'name' => 'cf_key',
                 'type' => 'text',
-                'title' => 'Global API Key',
-                'description' => 'Your <a href="https://dash.cloudflare.com/profile/api-tokens" target="_blank">Global API Key</a>.<br />Found under My Profile &rarr; API Tokens &rarr; Global API Key &rarr; View.',
+                'title' => __('Global API Key', 'wooflare'),
+                'description' => __('Your <a href="https://dash.cloudflare.com/profile/api-tokens" target="_blank">Global API Key</a>.<br />Found under My Profile &rarr; API Tokens &rarr; Global API Key &rarr; View.', 'wooflare'),
                 'value' => ($credentials && array_key_exists('cf_key', $credentials)) ? $credentials['cf_key'] : '',
                 'auth_group' => 'global_key'
             ),
             array(
                 'name' => 'cf_token',
                 'type' => 'text',
-                'title' => 'API Token',
-                'description' => 'A <a href="https://dash.cloudflare.com/profile/api-tokens" target="_blank">scoped API token</a>.<br />Create one under My Profile &rarr; API Tokens &rarr; Create Token.',
+                'title' => __('API Token', 'wooflare'),
+                'description' => __('A <a href="https://dash.cloudflare.com/profile/api-tokens" target="_blank">scoped API token</a>.<br />Create one under My Profile &rarr; API Tokens &rarr; Create Token.', 'wooflare'),
                 'value' => isset($woocf_settings['cf_token']) ? $woocf_settings['cf_token'] : '',
                 'auth_group' => 'api_token'
             ),
         )
 	),
-    'Clear Cache' => array(
+    __('Clear Cache', 'wooflare') => array(
         'fields' => array(
             array(
                 'name' => 'after_scheduled_sale',
                 'type' => 'checkbox',
-                'title' => 'After Scheduled Sale?',
-                'description' => 'Set scheduled sales on product edit pages by clicking \'Schedule\' next to the \'Sale price\' field.'
+                'title' => __('After Scheduled Sale?', 'wooflare'),
+                'description' => __('Set scheduled sales on product edit pages by clicking \'Schedule\' next to the \'Sale price\' field.', 'wooflare')
             ),
             array(
                 'name' => 'when_product_out_of_stock',
                 'type' => 'checkbox',
-                'title' => 'When Product Goes Out of Stock?',
-                'description' => 'Triggered when a product sells out or when the stock status is toggled to \'Out of Stock\' by an admin.'
+                'title' => __('When Product Goes Out of Stock?', 'wooflare'),
+                'description' => __('Triggered when a product sells out or when the stock status is toggled to \'Out of Stock\' by an admin.', 'wooflare')
             ),
             array(
                 'name' => 'when_store_notice_updated',
                 'type' => 'checkbox',
-                'title' => 'When Store Notice is Updated?',
-                'description' => 'Found in <a href="'.site_url('/wp-admin/customize.php?autofocus[section]=woocommerce_store_notice&return=%2Fwp-admin%2Fadmin.php%3Fpage%3Dwoocf-menu').'" target="_blank">Customize &rarr; WooCommerce &rarr; Store Notice</a>.'
+                'title' => __('When Store Notice is Updated?', 'wooflare'),
+                'description' => sprintf(__('Found in <a href="%s" target="_blank">Customize &rarr; WooCommerce &rarr; Store Notice</a>.', 'wooflare'), site_url('/wp-admin/customize.php?autofocus[section]=woocommerce_store_notice&return=%2Fwp-admin%2Fadmin.php%3Fpage%3Dwoocf-menu'))
             ),
             array(
                 'name' => 'enable_logging',
                 'type' => 'checkbox',
-                'title' => 'Enable Logging?',
+                'title' => __('Enable Logging?', 'wooflare'),
                 'description' => ''
             )
         )
@@ -76,8 +76,8 @@ $settings = array(
 
 ?>
 <ul class="tabs clearfix" data-tabgroup="first-tab-group">
-    <li><a href="#tab1" class="active">Settings</a></li>
-    <li><a href="#tab2" class="log_tab">Log</a></li>
+    <li><a href="#tab1" class="active"><?php esc_html_e('Settings', 'wooflare'); ?></a></li>
+    <li><a href="#tab2" class="log_tab"><?php esc_html_e('Log', 'wooflare'); ?></a></li>
 </ul>
 <section id="first-tab-group" class="tabgroup">
     <div class="tab-panel" id="tab1">
@@ -85,28 +85,29 @@ $settings = array(
             <table>
                 <tbody>
                     <?php
+                    $cf_credentials_label = __('Cloudflare Credentials', 'wooflare');
                     foreach( $settings as $section=>$fields ){
                         /**
                         * Only display full form if credentials are set
                         */
-                        if($section=='Cloudflare Credentials' || ($section!=='Cloudflare Credentials' && $credentials)) {
+                        if($section==$cf_credentials_label || ($section!==$cf_credentials_label && $credentials)) {
                             ?>
                             <tr class="tr-section-title">
                                 <td><h2 class="cf-heading cf-heading--2"><?php echo esc_html($section); ?></h2></td>
                                 <?php
-                                if($section=='Cloudflare Credentials' && !$credentials){
-                                    echo '<span class="cf-card__footer_message">Please manually set credentials below or install and configure the <a href="http://wordpress.org/plugins/cloudflare/" target="_blank">official Cloudflare plugin</a> to continue.</span>';
+                                if($section==$cf_credentials_label && !$credentials){
+                                    echo '<span class="cf-card__footer_message">' . __('Please manually set credentials below or install and configure the <a href="http://wordpress.org/plugins/cloudflare/" target="_blank">official Cloudflare plugin</a> to continue.', 'wooflare') . '</span>';
                                 }
                                 ?>
                             </tr>
 
                             <?php
                             // If Cloudflare credentials are filled out from Cloudflare plugin
-                            if($section=='Cloudflare Credentials' && $this->isCloudflarePluginActive() && ($credentials && $credentials['source']=='cf_plugin')) {
+                            if($section==$cf_credentials_label && $this->isCloudflarePluginActive() && ($credentials && $credentials['source']=='cf_plugin')) {
                                 $cloudflare_admin_url = admin_url()."options-general.php?page=cloudflare";
                                 ?>
                                 <tr>
-                                    <td>Credentials imported from <a href="<?php echo esc_url($cloudflare_admin_url); ?>">Cloudflare</a> plugin.</td>
+                                    <td><?php printf(__('Credentials imported from %sCloudflare%s plugin.', 'wooflare'), '<a href="' . esc_url($cloudflare_admin_url) . '">', '</a>'); ?></td>
                                 </tr>
                                 <?php continue;
                             }
@@ -220,22 +221,22 @@ $settings = array(
                 </tbody>
             </table>
             <?php wp_nonce_field('woocf_settings_nonce', 'woocf_settings_nonce'); ?>
-            <?php submit_button('Save Changes', 'cf-btn cf-btn--primary'); ?>
+            <?php submit_button(esc_html__('Save Changes', 'wooflare'), 'cf-btn cf-btn--primary'); ?>
         </form>
     </div>
     <div class="tab-panel" id="tab2">
-        <h1 class="cf-heading cf-heading--1"><span>Log</span></h1>
+        <h1 class="cf-heading cf-heading--1"><span><?php esc_html_e('Log', 'wooflare'); ?></span></h1>
         <?php
         if(!$siteSettings->isLoggingEnabled()) {
             ?>
-        <span class="cf-card__footer_message">Logging is currently disabled. To start logging, enable checkbox on settings tab.</span>
+        <span class="cf-card__footer_message"><?php esc_html_e('Logging is currently disabled. To start logging, enable checkbox on settings tab.', 'wooflare'); ?></span>
             <?php
         }
             ?>
         <div id="log_screen">
             <pre></pre>
         </div>
-        <button id="clear_log_button" class="button button-primary cf-btn cf-btn--primary">Clear Log</button>
+        <button id="clear_log_button" class="button button-primary cf-btn cf-btn--primary"><?php esc_html_e('Clear Log', 'wooflare'); ?></button>
         <div id="woocf_ajax_res_clearlog"></div>
     </div>
 </section>

@@ -125,6 +125,12 @@ class WOOCF_Main
 
         wp_enqueue_style('woocf_admin_style', $this->adminStyle, array(), WOOCF_PLUGIN_VERSION);
         wp_enqueue_script('woocf_admin_script', $this->adminScript, array('jquery'), WOOCF_PLUGIN_VERSION);
+        wp_localize_script('woocf_admin_script', 'woocf_i18n', array(
+            'error'        => __('There was an error.', 'wooflare'),
+            'clearing_log' => __('Clearing log...', 'wooflare'),
+            'log_cleared'  => __('Log cleared.', 'wooflare'),
+            'loading_log'  => __('Loading log...', 'wooflare'),
+        ));
 
         // If Cloudflare plugin is active, inherit styles from their plugin for consistent styles
         if ($this->isCloudflarePluginActive()) {
