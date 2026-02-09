@@ -1,0 +1,190 @@
+# Copyright (C) 2026 Miller Media
+# This file is distributed under the same license as the Wooflare plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Wooflare 1.0.5\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wooflare\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: German <de@li.org>\n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-02-09T19:13:18+00:00\n"
+"PO-Revision-Date: 2026-02-09 12:00+0000\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: wooflare\n"
+
+#. Plugin Name of the plugin
+#: wooflare.php
+msgid "Wooflare"
+msgstr "Wooflare"
+
+#. Description of the plugin
+#: wooflare.php
+msgid "WooCommerce integration with Cloudflare."
+msgstr "WooCommerce-Integration mit Cloudflare."
+
+#. Author of the plugin
+#: wooflare.php
+msgid "Miller Media"
+msgstr "Miller Media"
+
+#. Author URI of the plugin
+#: wooflare.php
+msgid "www.millermedia.io"
+msgstr "www.millermedia.io"
+
+#: classes/Plugin.php:129
+msgid "There was an error."
+msgstr "Es ist ein Fehler aufgetreten."
+
+#: classes/Plugin.php:130
+msgid "Clearing log..."
+msgstr "Protokoll wird gelöscht..."
+
+#: classes/Plugin.php:131
+msgid "Log cleared."
+msgstr "Protokoll gelöscht."
+
+#: classes/Plugin.php:132
+msgid "Loading log..."
+msgstr "Protokoll wird geladen..."
+
+#: classes/Plugin.php:133
+#: views/SiteSettingsView.php:248
+msgid "Change Credentials"
+msgstr "Zugangsdaten ändern"
+
+#: classes/Plugin.php:134
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#: classes/Plugin.php:135
+#: views/SiteSettingsView.php:250
+msgid "Disconnect"
+msgstr "Verbindung trennen"
+
+#: classes/Plugin.php:136
+msgid "Are you sure you want to disconnect? Your Cloudflare credentials will be removed."
+msgstr "Möchten Sie die Verbindung wirklich trennen? Ihre Cloudflare-Zugangsdaten werden entfernt."
+
+#: views/SiteSettingsView.php:8
+#: views/SiteSettingsView.php:194
+msgid "Cloudflare Credentials"
+msgstr "Cloudflare-Zugangsdaten"
+
+#: views/SiteSettingsView.php:13
+msgid "Authentication Method"
+msgstr "Authentifizierungsmethode"
+
+#: views/SiteSettingsView.php:16
+msgid "API Token (Recommended)"
+msgstr "API-Token (empfohlen)"
+
+#: views/SiteSettingsView.php:17
+#: views/SiteSettingsView.php:233
+msgid "Global API Key (Legacy)"
+msgstr "Globaler API-Schlüssel (veraltet)"
+
+#: views/SiteSettingsView.php:24
+msgid "Email Address"
+msgstr "E-Mail-Adresse"
+
+#: views/SiteSettingsView.php:25
+msgid "Your Cloudflare account email address."
+msgstr "Ihre Cloudflare-Konto-E-Mail-Adresse."
+
+#: views/SiteSettingsView.php:32
+msgid "Global API Key"
+msgstr "Globaler API-Schlüssel"
+
+#: views/SiteSettingsView.php:33
+msgid "Your <a href=\"https://dash.cloudflare.com/profile/api-tokens\" target=\"_blank\">Global API Key</a>.<br />Found under My Profile &rarr; API Tokens &rarr; Global API Key &rarr; View."
+msgstr "Ihr <a href=\"https://dash.cloudflare.com/profile/api-tokens\" target=\"_blank\">Globaler API-Schlüssel</a>.<br />Zu finden unter Mein Profil &rarr; API-Tokens &rarr; Globaler API-Schlüssel &rarr; Anzeigen."
+
+#: views/SiteSettingsView.php:40
+#: views/SiteSettingsView.php:227
+msgid "API Token"
+msgstr "API-Token"
+
+#: views/SiteSettingsView.php:41
+msgid "A <a href=\"https://dash.cloudflare.com/profile/api-tokens\" target=\"_blank\">scoped API token</a>.<br />Create one under My Profile &rarr; API Tokens &rarr; Create Token.<br />Required permissions: <strong>Zone &rarr; Zone &rarr; Read</strong>, <strong>Zone &rarr; Cache Purge &rarr; Purge</strong>."
+msgstr "Ein <a href=\"https://dash.cloudflare.com/profile/api-tokens\" target=\"_blank\">bereichsbezogenes API-Token</a>.<br />Erstellen Sie eines unter Mein Profil &rarr; API-Tokens &rarr; Token erstellen.<br />Erforderliche Berechtigungen: <strong>Zone &rarr; Zone &rarr; Lesen</strong>, <strong>Zone &rarr; Cache Purge &rarr; Purge</strong>."
+
+#: views/SiteSettingsView.php:47
+msgid "Clear Cache"
+msgstr "Cache leeren"
+
+#: views/SiteSettingsView.php:52
+msgid "After Scheduled Sale?"
+msgstr "Nach geplanter Aktion?"
+
+#: views/SiteSettingsView.php:53
+msgid "Set scheduled sales on product edit pages by clicking 'Schedule' next to the 'Sale price' field."
+msgstr "Legen Sie geplante Aktionen auf den Produktbearbeitungsseiten fest, indem Sie neben dem Feld 'Aktionspreis' auf 'Planen' klicken."
+
+#: views/SiteSettingsView.php:58
+msgid "When Product Goes Out of Stock?"
+msgstr "Wenn Produkt nicht mehr vorrätig ist?"
+
+#: views/SiteSettingsView.php:59
+msgid "Triggered when a product sells out or when the stock status is toggled to 'Out of Stock' by an admin."
+msgstr "Wird ausgelöst, wenn ein Produkt ausverkauft ist oder wenn der Lagerstatus von einem Administrator auf 'Nicht vorrätig' gesetzt wird."
+
+#: views/SiteSettingsView.php:64
+msgid "When Store Notice is Updated?"
+msgstr "Wenn Shop-Hinweis aktualisiert wird?"
+
+#: views/SiteSettingsView.php:65
+#, php-format
+msgid "Found in <a href=\"%s\" target=\"_blank\">Customize &rarr; WooCommerce &rarr; Store Notice</a>."
+msgstr "Zu finden unter <a href=\"%s\" target=\"_blank\">Anpassen &rarr; WooCommerce &rarr; Shop-Hinweis</a>."
+
+#: views/SiteSettingsView.php:70
+msgid "Enable Logging?"
+msgstr "Protokollierung aktivieren?"
+
+#: views/SiteSettingsView.php:185
+msgid "Settings"
+msgstr "Einstellungen"
+
+#: views/SiteSettingsView.php:186
+#: views/SiteSettingsView.php:309
+msgid "Log"
+msgstr "Protokoll"
+
+#: views/SiteSettingsView.php:212
+#, php-format
+msgid "Connected via %sCloudflare plugin%s."
+msgstr "Verbunden über %sCloudflare-Plugin%s."
+
+#: views/SiteSettingsView.php:243
+#, php-format
+msgid "Connected via %s"
+msgstr "Verbunden über %s"
+
+#: views/SiteSettingsView.php:270
+msgid "Please set your Cloudflare credentials below or install and configure the <a href=\"http://wordpress.org/plugins/cloudflare/\" target=\"_blank\">official Cloudflare plugin</a> to continue."
+msgstr "Bitte geben Sie unten Ihre Cloudflare-Zugangsdaten ein oder installieren und konfigurieren Sie das <a href=\"http://wordpress.org/plugins/cloudflare/\" target=\"_blank\">offizielle Cloudflare-Plugin</a>, um fortzufahren."
+
+#: views/SiteSettingsView.php:305
+msgid "Save Changes"
+msgstr "Änderungen speichern"
+
+#: views/SiteSettingsView.php:313
+msgid "Logging is currently disabled. To start logging, enable checkbox on settings tab."
+msgstr "Die Protokollierung ist derzeit deaktiviert. Um die Protokollierung zu starten, aktivieren Sie das Kontrollkästchen auf der Registerkarte Einstellungen."
+
+#: views/SiteSettingsView.php:320
+msgid "Clear Log"
+msgstr "Protokoll löschen"
+
+#: wooflare.php:46
+msgid "Wooflare requires <a href=\"http://wordpress.org/plugins/woocommerce\" target=\"_blank\">WooCommerce</a> to be installed and activated."
+msgstr "Wooflare erfordert, dass <a href=\"http://wordpress.org/plugins/woocommerce\" target=\"_blank\">WooCommerce</a> installiert und aktiviert ist."
+
+#: wooflare.php:50
+msgid "Wooflare requires a <a href=\"http://wordpress.org/plugins/woocommerce\" target=\"_blank\">WooCommerce</a> version of at least 3.3.0 to function correctly. Please update."
+msgstr "Wooflare erfordert eine <a href=\"http://wordpress.org/plugins/woocommerce\" target=\"_blank\">WooCommerce</a>-Version von mindestens 3.3.0, um korrekt zu funktionieren. Bitte aktualisieren Sie."
