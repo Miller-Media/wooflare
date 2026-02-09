@@ -11,14 +11,14 @@ $settings = array(
                 'name' => 'cf_email',
                 'type' => 'text',
                 'title' => 'Email Address',
-                'description' => '',
+                'description' => 'The email address associated with your Cloudflare account.',
                 'value' => ($credentials && array_key_exists('cf_email', $credentials))? $credentials['cf_email'] : ''
             ),
             array(
                 'name' => 'cf_key',
                 'type' => 'text',
-                'title' => 'API Key',
-                'description' => '',
+                'title' => 'Global API Key',
+                'description' => 'Find this in your <a href="https://dash.cloudflare.com/profile/api-tokens" target="_blank">Cloudflare dashboard</a> under My Profile &rarr; API Tokens &rarr; Global API Key &rarr; View. This plugin requires the Global API Key (not a scoped API token).',
                 'value' => ($credentials && array_key_exists('cf_key', $credentials)) ? $credentials['cf_key'] : ''
             )
         )
