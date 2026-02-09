@@ -38,7 +38,7 @@ $settings = array(
                 'name' => 'cf_token',
                 'type' => 'text',
                 'title' => __('API Token', 'wooflare'),
-                'description' => __('A <a href="https://dash.cloudflare.com/profile/api-tokens" target="_blank">scoped API token</a>.<br />Create one under My Profile &rarr; API Tokens &rarr; Create Token.', 'wooflare'),
+                'description' => __('A <a href="https://dash.cloudflare.com/profile/api-tokens" target="_blank">scoped API token</a>.<br />Create one under My Profile &rarr; API Tokens &rarr; Create Token.<br />Required permissions: <strong>Zone &rarr; Zone &rarr; Read</strong>, <strong>Zone &rarr; Cache Purge &rarr; Purge</strong>.', 'wooflare'),
                 'value' => isset($woocf_settings['cf_token']) ? $woocf_settings['cf_token'] : '',
                 'auth_group' => 'api_token'
             ),

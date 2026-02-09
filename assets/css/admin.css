@@ -131,9 +131,11 @@ input[type="text"]{
     color: #dc3232;
 }
 .woocf-credentials-form {
-    border-top: 1px solid #ddd;
-    padding-top: 16px;
     margin-top: 12px;
+    padding: 16px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
 }
 .woocf-connect-prompt {
     background: #fff8e5;
