@@ -13,10 +13,10 @@ $settings = array(
                 'title' => __('Authentication Method', 'wooflare'),
                 'description' => '',
                 'options' => array(
-                    'global_key' => __('Global API Key (Legacy)', 'wooflare'),
                     'api_token'  => __('API Token (Recommended)', 'wooflare'),
+                    'global_key' => __('Global API Key (Legacy)', 'wooflare'),
                 ),
-                'value' => isset($woocf_settings['cf_auth_type']) ? $woocf_settings['cf_auth_type'] : 'global_key'
+                'value' => isset($woocf_settings['cf_auth_type']) ? $woocf_settings['cf_auth_type'] : ($credentials ? 'global_key' : 'api_token')
             ),
             array(
                 'name' => 'cf_email',
