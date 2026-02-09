@@ -4,6 +4,13 @@ select,
 input[type="text"]{
     width: 200px;
 }
+.cf-card__footer_message {
+    display: block;
+    margin-top: 4px;
+    margin-bottom: 8px;
+    color: #666;
+    font-style: italic;
+}
 .woocf_ajax_btn {
     margin-left: 10px;
 }
@@ -42,9 +49,14 @@ input[type="text"]{
     border-bottom: 2px solid #888;
     background: #f7f7f7;
 }
-.tabs a:hover,
+.tabs a:hover {
+    background: #eee;
+}
 .tabs a.active {
-    background: #ddd;
+    background: #fff;
+    color: #0073aa;
+    border-bottom: 3px solid #0073aa;
+    font-weight: 600;
 }
 .tabs a:focus {
     box-shadow: none;

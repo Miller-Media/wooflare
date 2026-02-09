@@ -11,14 +11,14 @@ $settings = array(
                 'name' => 'cf_email',
                 'type' => 'text',
                 'title' => 'Email Address',
-                'description' => 'The email address associated with your Cloudflare account.',
+                'description' => 'Your Cloudflare account email address.',
                 'value' => ($credentials && array_key_exists('cf_email', $credentials))? $credentials['cf_email'] : ''
             ),
             array(
                 'name' => 'cf_key',
                 'type' => 'text',
                 'title' => 'Global API Key',
-                'description' => 'Find this in your <a href="https://dash.cloudflare.com/profile/api-tokens" target="_blank">Cloudflare dashboard</a> under My Profile &rarr; API Tokens &rarr; Global API Key &rarr; View. This plugin requires the Global API Key (not a scoped API token).',
+                'description' => 'Your <a href="https://dash.cloudflare.com/profile/api-tokens" target="_blank">Global API Key</a> (not a scoped API token).<br />Found under My Profile &rarr; API Tokens &rarr; Global API Key &rarr; View.',
                 'value' => ($credentials && array_key_exists('cf_key', $credentials)) ? $credentials['cf_key'] : ''
             )
         )
@@ -60,7 +60,6 @@ $settings = array(
 </ul>
 <section id="first-tab-group" class="tabgroup">
     <div class="tab-panel" id="tab1">
-        <h1 class="cf-heading cf-heading--1"><span>Settings</span> (<?php echo $siteSettings->siteBaseDomain; ?>)</h1>
         <form name="woocf_settings" method="post" action="">
             <table>
                 <tbody>
@@ -179,7 +178,7 @@ $settings = array(
                                 } else {
                                     ?>
                                     <tr>
-                                        <td><h3 class="cf-card__title"><label
+                                        <td colspan="2"><h3 class="cf-card__title"><label
                                                     for="<?php echo $data['name']; ?>"><?php echo $data['title']; ?>
                                                 </label></h3>
                                             <?php
@@ -190,10 +189,11 @@ $settings = array(
                                                 <?php
                                             }
                                             ?>
-                                        </td>
-                                        <td><input id="<?php echo $data['name']; ?>" type="<?php echo $data['type']; ?>"
+                                            <br />
+                                            <input id="<?php echo $data['name']; ?>" type="<?php echo $data['type']; ?>"
                                                    name="<?php echo $data['name']; ?>"
-                                                   value="<?php echo(array_key_exists($data['name'], $woocf_settings) && $woocf_settings[$data['name']] ? $woocf_settings[$data['name']] : ($data['value'] ?: '')); ?>">
+                                                   value="<?php echo(array_key_exists($data['name'], $woocf_settings) && $woocf_settings[$data['name']] ? $woocf_settings[$data['name']] : ($data['value'] ?: '')); ?>"
+                                                   style="width: 100%; max-width: 400px;">
                                         </td>
                                     </tr>
                                     <?php
