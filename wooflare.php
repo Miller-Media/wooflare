@@ -73,5 +73,13 @@ include_once('classes/Helpers.php');
 include_once('classes/Plugin.php');
 include_once('classes/SiteSettings.php');
 include_once('classes/CloudflareAPIController.php');
+include_once('classes/ReviewNotice.php');
+
+register_activation_hook( __FILE__, function() {
+	if ( ! get_option( 'woocf_activated_on' ) ) {
+		update_option( 'woocf_activated_on', time() );
+	}
+});
 
 $WOOCF_Main = new WOOCF_Main();
+new WOOCF_ReviewNotice( 'Wooflare', 'wooflare', 'woocf_activated_on', 'wooflare', plugin_dir_url( __FILE__ ) . 'assets/icon-128x128.jpg' );
