@@ -7,9 +7,9 @@
  * Author URI: www.millermedia.io
  * Depends:
  * Text Domain: wooflare
- * Version: 1.0.7
+ * Version: 1.0.8
  * Requires PHP: 8.1
- * Tested up to: 6.9
+ * Tested up to: 6.9.1
  *
  * WC requires at least: 3.3.0
  * WC tested up to: 9.6
@@ -62,7 +62,7 @@ function woocf_version_check()
 }
 add_action('admin_notices', 'woocf_version_check');
 
-define('WOOCF_PLUGIN_VERSION', '1.0.7');
+define('WOOCF_PLUGIN_VERSION', '1.0.8');
 define('WOOCF_MAIN_CLOUDFLARE_PLUGIN_DIR', plugins_url('cloudflare'));
 
 add_action('plugins_loaded', function() {
