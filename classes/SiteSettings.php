@@ -174,6 +174,10 @@ class WOOCF_SiteSettings
 
 		if (isset($_POST['woocf_settings_nonce'])) {
 
+            // Cloudflare Credentials
+            $settings['cf_email'] = isset($_POST['cf_email']) ? sanitize_text_field($_POST['cf_email']) : (array_key_exists('cf_email', $settings) ? $settings['cf_email'] : '');
+            $settings['cf_key'] = isset($_POST['cf_key']) ? sanitize_text_field($_POST['cf_key']) : (array_key_exists('cf_key', $settings) ? $settings['cf_key'] : '');
+
             // Cache Clearing settings
             $settings['after_scheduled_sale'] = isset($_POST['after_scheduled_sale']) ? sanitize_text_field($_POST['after_scheduled_sale']) : '';
             $settings['when_product_out_of_stock'] = isset($_POST['when_product_out_of_stock']) ? sanitize_text_field($_POST['when_product_out_of_stock']) : '';
