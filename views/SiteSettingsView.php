@@ -8,19 +8,40 @@ $settings = array(
 	'Cloudflare Credentials' => array(
         'fields' => array(
             array(
+                'name' => 'cf_auth_type',
+                'type' => 'radio',
+                'title' => 'Authentication Method',
+                'description' => '',
+                'options' => array(
+                    'global_key' => 'Global API Key',
+                    'api_token'  => 'API Token (Recommended)',
+                ),
+                'value' => isset($woocf_settings['cf_auth_type']) ? $woocf_settings['cf_auth_type'] : 'global_key'
+            ),
+            array(
                 'name' => 'cf_email',
                 'type' => 'text',
                 'title' => 'Email Address',
                 'description' => 'Your Cloudflare account email address.',
-                'value' => ($credentials && array_key_exists('cf_email', $credentials))? $credentials['cf_email'] : ''
+                'value' => ($credentials && array_key_exists('cf_email', $credentials))? $credentials['cf_email'] : '',
+                'auth_group' => 'global_key'
             ),
             array(
                 'name' => 'cf_key',
                 'type' => 'text',
                 'title' => 'Global API Key',
-                'description' => 'Your <a href="https://dash.cloudflare.com/profile/api-tokens" target="_blank">Global API Key</a> (not a scoped API token).<br />Found under My Profile &rarr; API Tokens &rarr; Global API Key &rarr; View.',
-                'value' => ($credentials && array_key_exists('cf_key', $credentials)) ? $credentials['cf_key'] : ''
-            )
+                'description' => 'Your <a href="https://dash.cloudflare.com/profile/api-tokens" target="_blank">Global API Key</a>.<br />Found under My Profile &rarr; API Tokens &rarr; Global API Key &rarr; View.',
+                'value' => ($credentials && array_key_exists('cf_key', $credentials)) ? $credentials['cf_key'] : '',
+                'auth_group' => 'global_key'
+            ),
+            array(
+                'name' => 'cf_token',
+                'type' => 'text',
+                'title' => 'API Token',
+                'description' => 'A <a href="https://dash.cloudflare.com/profile/api-tokens" target="_blank">scoped API token</a>.<br />Create one under My Profile &rarr; API Tokens &rarr; Create Token.',
+                'value' => isset($woocf_settings['cf_token']) ? $woocf_settings['cf_token'] : '',
+                'auth_group' => 'api_token'
+            ),
         )
 	),
     'Clear Cache' => array(
@@ -153,9 +174,25 @@ $settings = array(
                                         </td>
                                     </tr>
                                     <?php
-                                } else {
+                                } else if ($data['type'] == 'radio') {
                                     ?>
                                     <tr>
+                                        <td colspan="2"><h3 class="cf-card__title"><?php echo esc_html($data['title']); ?></h3>
+                                            <?php foreach ($data['options'] as $val => $label) { ?>
+                                                <label style="margin-right: 20px;">
+                                                    <input type="radio"
+                                                           name="<?php echo esc_attr($data['name']); ?>"
+                                                           value="<?php echo esc_attr($val); ?>"
+                                                           <?php checked($data['value'], $val); ?>>
+                                                    <?php echo esc_html($label); ?>
+                                                </label>
+                                            <?php } ?>
+                                        </td>
+                                    </tr>
+                                    <?php
+                                } else {
+                                    ?>
+                                    <tr<?php if (isset($data['auth_group'])) echo ' class="auth-group-' . esc_attr($data['auth_group']) . '"'; ?>>
                                         <td colspan="2"><h3 class="cf-card__title"><label
                                                     for="<?php echo esc_attr($data['name']); ?>"><?php echo esc_html($data['title']); ?>
                                                 </label></h3>

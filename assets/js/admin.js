@@ -1,4 +1,14 @@
 jQuery(document).ready(function(){
+
+    // Auth method toggle
+    function toggleAuthFields() {
+        var authType = jQuery('input[name="cf_auth_type"]:checked').val() || 'global_key';
+        jQuery('.auth-group-global_key').toggle(authType === 'global_key');
+        jQuery('.auth-group-api_token').toggle(authType === 'api_token');
+    }
+    jQuery('input[name="cf_auth_type"]').on('change', toggleAuthFields);
+    toggleAuthFields();
+
     // Clear log AJAX request.
     jQuery("#clear_log_button").on('click', function(e){
 
