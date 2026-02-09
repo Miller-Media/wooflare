@@ -132,6 +132,8 @@ class WOOCF_Main
             'loading_log'          => __('Loading log...', 'wooflare'),
             'change_credentials'   => __('Change Credentials', 'wooflare'),
             'cancel'               => __('Cancel', 'wooflare'),
+            'disconnect'           => __('Disconnect', 'wooflare'),
+            'disconnect_confirm'   => __('Are you sure you want to disconnect? Your Cloudflare credentials will be removed.', 'wooflare'),
         ));
 
         // If Cloudflare plugin is active, inherit styles from their plugin for consistent styles

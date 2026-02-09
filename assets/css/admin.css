@@ -118,6 +118,18 @@ input[type="text"]{
     white-space: nowrap;
     text-decoration: none;
 }
+.woocf-status-separator {
+    margin: 0 8px;
+    color: #999;
+}
+.woocf-disconnect {
+    white-space: nowrap;
+    text-decoration: none;
+    color: #a00;
+}
+.woocf-disconnect:hover {
+    color: #dc3232;
+}
 .woocf-credentials-form {
     border-top: 1px solid #ddd;
     padding-top: 16px;

@@ -25,6 +25,16 @@ jQuery(document).ready(function(){
         }
     });
 
+    // Disconnect — clear credential fields and submit
+    jQuery('.woocf-disconnect').on('click', function(e) {
+        e.preventDefault();
+        if (!confirm(woocf_i18n.disconnect_confirm)) return;
+        jQuery('#cf_email').val('');
+        jQuery('#cf_key').val('');
+        jQuery('#cf_token').val('');
+        jQuery('form[name="woocf_settings"]').find('#submit').click();
+    });
+
     // Clear log AJAX request.
     jQuery("#clear_log_button").on('click', function(e){
 

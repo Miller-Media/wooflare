@@ -13,7 +13,7 @@ $settings = array(
                 'title' => __('Authentication Method', 'wooflare'),
                 'description' => '',
                 'options' => array(
-                    'global_key' => __('Global API Key', 'wooflare'),
+                    'global_key' => __('Global API Key (Legacy)', 'wooflare'),
                     'api_token'  => __('API Token (Recommended)', 'wooflare'),
                 ),
                 'value' => isset($woocf_settings['cf_auth_type']) ? $woocf_settings['cf_auth_type'] : 'global_key'
@@ -230,7 +230,7 @@ function woocf_render_field($data, $woocf_settings) {
                                     $email = isset($woocf_settings['cf_email']) ? $woocf_settings['cf_email'] : '';
                                     $key = isset($woocf_settings['cf_key']) ? $woocf_settings['cf_key'] : '';
                                     $masked_key = substr($key, 0, 3) . '...' . substr($key, -4);
-                                    $auth_label = __('Global API Key', 'wooflare');
+                                    $auth_label = __('Global API Key (Legacy)', 'wooflare');
                                     $masked_display = esc_html($email) . ' / <code>' . esc_html($masked_key) . '</code>';
                                 }
                                 ?>
@@ -246,6 +246,8 @@ function woocf_render_field($data, $woocf_settings) {
                                                 &mdash; <?php echo $masked_display; ?>
                                             </span>
                                             <a href="#" class="woocf-toggle-credentials"><?php esc_html_e('Change Credentials', 'wooflare'); ?></a>
+                                            <span class="woocf-status-separator">|</span>
+                                            <a href="#" class="woocf-disconnect"><?php esc_html_e('Disconnect', 'wooflare'); ?></a>
                                         </div>
                                         <div class="woocf-credentials-form" style="display: none;">
                                             <table><tbody>
