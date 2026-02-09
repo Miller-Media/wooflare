@@ -148,6 +148,9 @@ class WOOCF_SiteSettings
 	 *
 	 */
 	public function verifyNonce() {
+		if ( !isset($_GET['page']) || $_GET['page'] !== 'woocf-menu' )
+			return false;
+
 		if ( isset($_POST['submit']) ) {
 
 			// Bail if nonce not set.
@@ -155,7 +158,7 @@ class WOOCF_SiteSettings
 				return false;
 
 			// Verify nonce.
-			if ( @!wp_verify_nonce($_POST['woocf_settings_nonce'], 'woocf_settings_nonce') )
+			if ( !wp_verify_nonce($_POST['woocf_settings_nonce'], 'woocf_settings_nonce') )
 				return false;
 
 			return $this->updateSettings();
