@@ -34,6 +34,11 @@ If you find that a part of this plugin isn't working, please don't simply click 
 == Changelog ==
 = 1.0.5 =
 * Added support for scoped API tokens as an alternative to Global API Key
+* Added connected state UI with credential status bar and masked credential preview
+* Added Disconnect action to easily switch authentication methods
+* Added internationalization (i18n) support for all user-facing strings
+* Labeled Global API Key as Legacy, recommending API Token for new installs
+* Added required Cloudflare token permissions in API Token field description
 
 = 1.0.4 =
 * Removed dead code copied from CFIP plugin
