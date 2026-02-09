@@ -93,15 +93,23 @@ class WOOCF_SiteSettings
             $cf_key = $use_cloudflare_plugin_credentials['cf_key'];
             $cf_email = $use_cloudflare_plugin_credentials['cf_email'];
             $cf_source = 'cf_plugin';
-        } else if($use_cloudflare_ip_plugin_credentials = (!empty($this->settings['cf_key']) && !empty($this->settings['cf_email']))){
-            $cf_key = $this->settings['cf_key'];
-            $cf_email = $this->settings['cf_email'];
-            $cf_source = 'manual';
-        } else {
-            return false;
+            return array('cf key' => $cf_key, 'cf_email' => $cf_email, 'source' => $cf_source);
         }
 
-        return array('cf key' => $cf_key, 'cf_email' => $cf_email, 'source' => $cf_source);
+        // Check manual credentials based on auth type
+        $auth_type = isset($this->settings['cf_auth_type']) ? $this->settings['cf_auth_type'] : 'global_key';
+
+        if ($auth_type === 'api_token') {
+            if (!empty($this->settings['cf_token'])) {
+                return array('cf_token' => $this->settings['cf_token'], 'source' => 'manual', 'auth_type' => 'api_token');
+            }
+        } else {
+            if (!empty($this->settings['cf_key']) && !empty($this->settings['cf_email'])) {
+                return array('cf key' => $this->settings['cf_key'], 'cf_email' => $this->settings['cf_email'], 'source' => 'manual');
+            }
+        }
+
+        return false;
     }
 
     public function isLoggingEnabled(){
@@ -180,6 +188,8 @@ class WOOCF_SiteSettings
             // Cloudflare Credentials
             $settings['cf_email'] = isset($_POST['cf_email']) ? sanitize_text_field($_POST['cf_email']) : (array_key_exists('cf_email', $settings) ? $settings['cf_email'] : '');
             $settings['cf_key'] = isset($_POST['cf_key']) ? sanitize_text_field($_POST['cf_key']) : (array_key_exists('cf_key', $settings) ? $settings['cf_key'] : '');
+            $settings['cf_auth_type'] = isset($_POST['cf_auth_type']) ? sanitize_text_field($_POST['cf_auth_type']) : (array_key_exists('cf_auth_type', $settings) ? $settings['cf_auth_type'] : 'global_key');
+            $settings['cf_token'] = isset($_POST['cf_token']) ? sanitize_text_field($_POST['cf_token']) : (array_key_exists('cf_token', $settings) ? $settings['cf_token'] : '');
 
             // Cache Clearing settings
             $settings['after_scheduled_sale'] = isset($_POST['after_scheduled_sale']) ? sanitize_text_field($_POST['after_scheduled_sale']) : '';

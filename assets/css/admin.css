@@ -77,4 +77,71 @@ input[type="text"]{
     clear: both;
 }
 
-
+/* Connection Status Bar */
+.woocf-connection-status {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+}
+.woocf-connection-status--connected {
+    background: #f0f9f0;
+    border: 1px solid #46b450;
+}
+.woocf-connection-status--cf-plugin {
+    background: #f0f6fc;
+    border: 1px solid #0073aa;
+}
+.woocf-status-icon {
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+.woocf-connection-status--connected .woocf-status-icon {
+    color: #46b450;
+}
+.woocf-connection-status--cf-plugin .woocf-status-icon {
+    color: #0073aa;
+}
+.woocf-status-text {
+    flex: 1;
+    font-size: 14px;
+}
+.woocf-status-text code {
+    background: rgba(0, 0, 0, 0.07);
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+.woocf-toggle-credentials {
+    white-space: nowrap;
+    text-decoration: none;
+}
+.woocf-status-separator {
+    margin: 0 8px;
+    color: #999;
+}
+.woocf-disconnect {
+    white-space: nowrap;
+    text-decoration: none;
+    color: #a00;
+}
+.woocf-disconnect:hover {
+    color: #dc3232;
+}
+.woocf-credentials-form {
+    margin-top: 12px;
+    padding: 16px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+.woocf-connect-prompt {
+    background: #fff8e5;
+    border: 1px solid #ffb900;
+    border-radius: 4px;
+    padding: 12px 16px;
+    margin-bottom: 16px;
+    font-size: 14px;
+}

@@ -7,7 +7,7 @@
  * Author URI: www.millermedia.io
  * Depends:
  * Text Domain: wooflare
- * Version: 1.0.4
+ * Version: 1.0.5
  * Requires PHP: 8.1
  * Tested up to: 6.9
  *
@@ -43,11 +43,11 @@ function woocf_version_check()
     $notice_message = false;
 
     if ( !in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
-        $notice_message = 'Wooflare requires <a href="http://wordpress.org/plugins/woocommerce" target="_blank">WooCommerce</a> to be installed and activated.';
+        $notice_message = __('Wooflare requires <a href="http://wordpress.org/plugins/woocommerce" target="_blank">WooCommerce</a> to be installed and activated.', 'wooflare');
     }
 
     if( !version_check('3.3.0') ){
-        $notice_message = 'Wooflare requires a <a href="http://wordpress.org/plugins/woocommerce" target="_blank">WooCommerce</a> version of at least 3.3.0 to function correctly. Please update.';
+        $notice_message = __('Wooflare requires a <a href="http://wordpress.org/plugins/woocommerce" target="_blank">WooCommerce</a> version of at least 3.3.0 to function correctly. Please update.', 'wooflare');
     }
 
     if(!$notice_message){
@@ -56,14 +56,18 @@ function woocf_version_check()
 
     ?>
     <div class="notice notice-warning is-dismissible">
-        <p><?php _e( $notice_message, 'wooflare' ); ?></p>
+        <p><?php echo $notice_message; ?></p>
     </div>
     <?php
 }
 add_action('admin_notices', 'woocf_version_check');
 
-define('WOOCF_PLUGIN_VERSION', '1.0.4');
+define('WOOCF_PLUGIN_VERSION', '1.0.5');
 define('WOOCF_MAIN_CLOUDFLARE_PLUGIN_DIR', plugins_url('cloudflare'));
+
+add_action('plugins_loaded', function() {
+    load_plugin_textdomain('wooflare', false, dirname(plugin_basename(__FILE__)) . '/languages');
+});
 
 include_once('classes/Helpers.php');
 include_once('classes/Plugin.php');

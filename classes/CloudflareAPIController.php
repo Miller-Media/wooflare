@@ -67,19 +67,28 @@ class WOOCF_CloudflareAPIController
             }
         }
 
-		// Get credentials from plugin settings.
-		$key = $this->getSetting('cf_key');
-		$email = $this->getSetting('cf_email');
+		// Get auth type from settings
+		$auth_type = $this->getSetting('cf_auth_type') ?: 'global_key';
 
-		if( !$key || !$email )
-			return false;
-
-		// Set headers.
-		$headers = array(
-			'X-Auth-Email' => $email,
-			'X-Auth-Key' => $key,
-			'Content-type' => 'application/json'
-		);
+		if ($auth_type === 'api_token') {
+			$token = $this->getSetting('cf_token');
+			if (!$token)
+				return false;
+			$headers = array(
+				'Authorization' => 'Bearer ' . $token,
+				'Content-type'  => 'application/json'
+			);
+		} else {
+			$key = $this->getSetting('cf_key');
+			$email = $this->getSetting('cf_email');
+			if (!$key || !$email)
+				return false;
+			$headers = array(
+				'X-Auth-Email' => $email,
+				'X-Auth-Key'   => $key,
+				'Content-type' => 'application/json'
+			);
+		}
 
 		// Set args.
 		$args = array(
