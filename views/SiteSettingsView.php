@@ -74,6 +74,112 @@ $settings = array(
     ),
 );
 
+/**
+ * Render a single field row.
+ */
+function woocf_render_field($data, $woocf_settings) {
+    if ($data['type'] == 'textarea') {
+        ?>
+        <tr>
+            <td><h3 class="cf-card__title"><label
+                        for="<?php echo esc_attr($data['name']); ?>"><?php echo esc_html($data['title']); ?>
+                    </label></h3>
+                <?php
+                if (isset($data['description']) && $data['description']) {
+                    ?>
+                    <span
+                        class="cf-card__footer_message"><?php echo $data['description']; ?></span>
+                    <?php
+                }
+                ?>
+            </td>
+            <td><textarea id="<?php echo esc_attr($data['name']); ?>"
+                          name="<?php echo esc_attr($data['name']); ?>" rows="4"
+                          cols="50"><?php echo esc_textarea(array_key_exists($data['name'], $woocf_settings) ? $woocf_settings[$data['name']] : ''); ?></textarea>
+            </td>
+        </tr>
+        <?php
+    } else if ($data['type'] == 'checkbox') {
+        ?>
+        <tr>
+            <td><?php if($data['name']=='enable_logging'){echo '<hr />';} ?><h3 class="cf-card__title"><label
+                        for="<?php echo esc_attr($data['name']); ?>"><?php echo esc_html($data['title']); ?>
+                    </label></h3>
+                <?php
+                if (isset($data['description']) && $data['description']) {
+                    ?>
+                    <span
+                        class="cf-card__footer_message"><?php echo $data['description']; ?></span>
+                    <?php
+                }
+                ?>
+            </td>
+            <td><input id="<?php echo esc_attr($data['name']); ?>" type="<?php echo esc_attr($data['type']); ?>"
+                       name="<?php echo esc_attr($data['name']); ?>" <?php echo(array_key_exists($data['name'], $woocf_settings) && $woocf_settings[$data['name']] == 'on' ? 'checked' : ''); ?>>
+            </td>
+        </tr>
+        <?php
+    } else if ($data['type'] == 'span') {
+        ?>
+        <tr>
+            <td><h3 class="cf-card__title"><label
+                        for="<?php echo esc_attr($data['name']); ?>"><?php echo esc_html($data['title']); ?>
+                    </label></h3>
+                <?php
+                if (isset($data['description']) && $data['description']) {
+                    ?>
+                    <span
+                        class="cf-card__footer_message"><?php echo $data['description']; ?></span>
+                    <?php
+                }
+                ?>
+            </td>
+            <td><span
+                    id="<?php echo esc_attr($data['name']); ?>"><?php echo esc_html(array_key_exists($data['name'], $woocf_settings) && $woocf_settings[$data['name']] ? $woocf_settings[$data['name']] : ($data['value'] ?: '')); ?></span>
+            </td>
+        </tr>
+        <?php
+    } else if ($data['type'] == 'radio') {
+        ?>
+        <tr>
+            <td colspan="2"><h3 class="cf-card__title"><?php echo esc_html($data['title']); ?></h3>
+                <?php foreach ($data['options'] as $val => $label) { ?>
+                    <label style="margin-right: 20px;">
+                        <input type="radio"
+                               name="<?php echo esc_attr($data['name']); ?>"
+                               value="<?php echo esc_attr($val); ?>"
+                               <?php checked($data['value'], $val); ?>>
+                        <?php echo esc_html($label); ?>
+                    </label>
+                <?php } ?>
+            </td>
+        </tr>
+        <?php
+    } else {
+        ?>
+        <tr<?php if (isset($data['auth_group'])) echo ' class="auth-group-' . esc_attr($data['auth_group']) . '"'; ?>>
+            <td colspan="2"><h3 class="cf-card__title"><label
+                        for="<?php echo esc_attr($data['name']); ?>"><?php echo esc_html($data['title']); ?>
+                    </label></h3>
+                <?php
+                if (isset($data['description']) && $data['description']) {
+                    ?>
+                    <span
+                        class="cf-card__footer_message"><?php echo $data['description']; ?></span>
+                    <?php
+                }
+                ?>
+                <br />
+                <input id="<?php echo esc_attr($data['name']); ?>" type="<?php echo esc_attr($data['type']); ?>"
+                       name="<?php echo esc_attr($data['name']); ?>"
+                       value="<?php echo esc_attr(array_key_exists($data['name'], $woocf_settings) && $woocf_settings[$data['name']] ? $woocf_settings[$data['name']] : ($data['value'] ?: '')); ?>"
+                       style="width: 100%; max-width: 400px;">
+            </td>
+        </tr>
+        <?php
+    }
+}
+
 ?>
 <ul class="tabs clearfix" data-tabgroup="first-tab-group">
     <li><a href="#tab1" class="active"><?php esc_html_e('Settings', 'wooflare'); ?></a></li>
@@ -87,134 +193,107 @@ $settings = array(
                     <?php
                     $cf_credentials_label = __('Cloudflare Credentials', 'wooflare');
                     foreach( $settings as $section=>$fields ){
-                        /**
-                        * Only display full form if credentials are set
-                        */
-                        if($section==$cf_credentials_label || ($section!==$cf_credentials_label && $credentials)) {
-                            ?>
-                            <tr class="tr-section-title">
-                                <td><h2 class="cf-heading cf-heading--2"><?php echo esc_html($section); ?></h2></td>
-                                <?php
-                                if($section==$cf_credentials_label && !$credentials){
-                                    echo '<span class="cf-card__footer_message">' . __('Please manually set credentials below or install and configure the <a href="http://wordpress.org/plugins/cloudflare/" target="_blank">official Cloudflare plugin</a> to continue.', 'wooflare') . '</span>';
-                                }
-                                ?>
-                            </tr>
 
-                            <?php
-                            // If Cloudflare credentials are filled out from Cloudflare plugin
-                            if($section==$cf_credentials_label && $this->isCloudflarePluginActive() && ($credentials && $credentials['source']=='cf_plugin')) {
-                                $cloudflare_admin_url = admin_url()."options-general.php?page=cloudflare";
+                        if ($section === $cf_credentials_label) {
+                            // Determine which connection state we're in
+                            $is_cf_plugin_source = ($credentials && isset($credentials['source']) && $credentials['source'] === 'cf_plugin');
+                            $is_manual_connected = ($credentials && isset($credentials['source']) && $credentials['source'] === 'manual');
+
+                            if ($is_cf_plugin_source) {
+                                // State A: Credentials from official Cloudflare plugin
+                                $cloudflare_admin_url = admin_url('options-general.php?page=cloudflare');
                                 ?>
                                 <tr>
-                                    <td><?php printf(__('Credentials imported from %sCloudflare%s plugin.', 'wooflare'), '<a href="' . esc_url($cloudflare_admin_url) . '">', '</a>'); ?></td>
+                                    <td colspan="2">
+                                        <div class="woocf-connection-status woocf-connection-status--cf-plugin">
+                                            <span class="dashicons dashicons-yes-alt woocf-status-icon"></span>
+                                            <span class="woocf-status-text">
+                                                <?php printf(
+                                                    __('Connected via %sCloudflare plugin%s.', 'wooflare'),
+                                                    '<a href="' . esc_url($cloudflare_admin_url) . '">',
+                                                    '</a>'
+                                                ); ?>
+                                            </span>
+                                        </div>
+                                    </td>
                                 </tr>
-                                <?php continue;
-                            }
-
-
-                            foreach ($fields['fields'] as $field => $data) {
-                                if ($data['type'] == 'textarea') {
-                                    ?>
-                                    <tr>
-                                        <td><h3 class="cf-card__title"><label
-                                                    for="<?php echo esc_attr($data['name']); ?>"><?php echo esc_html($data['title']); ?>
-                                                </label></h3>
-                                            <?php
-                                            if (isset($data['description']) && $data['description']) {
-                                                ?>
-                                                <span
-                                                    class="cf-card__footer_message"><?php echo $data['description']; ?></span>
-                                                <?php
-                                            }
-                                            ?>
-                                        </td>
-                                        <td><textarea id="<?php echo esc_attr($data['name']); ?>"
-                                                      name="<?php echo esc_attr($data['name']); ?>" rows="4"
-                                                      cols="50"><?php echo esc_textarea(array_key_exists($data['name'], $woocf_settings) ? $woocf_settings[$data['name']] : ''); ?></textarea>
-                                        </td>
-                                    </tr>
-                                    <?php
-                                } else if ($data['type'] == 'checkbox') {
-                                    ?>
-                                    <tr>
-                                        <td><?php if($data['name']=='enable_logging'){echo '<hr />';} ?><h3 class="cf-card__title"><label
-                                                    for="<?php echo esc_attr($data['name']); ?>"><?php echo esc_html($data['title']); ?>
-                                                </label></h3>
-                                            <?php
-                                            if (isset($data['description']) && $data['description']) {
-                                                ?>
-                                                <span
-                                                    class="cf-card__footer_message"><?php echo $data['description']; ?></span>
-                                                <?php
-                                            }
-                                            ?>
-                                        </td>
-                                        <td><input id="<?php echo esc_attr($data['name']); ?>" type="<?php echo esc_attr($data['type']); ?>"
-                                                   name="<?php echo esc_attr($data['name']); ?>" <?php echo(array_key_exists($data['name'], $woocf_settings) && $woocf_settings[$data['name']] == 'on' ? 'checked' : ''); ?>>
-                                        </td>
-                                    </tr>
-                                    <?php
-                                } else if ($data['type'] == 'span') {
-                                    ?>
-                                    <tr>
-                                        <td><h3 class="cf-card__title"><label
-                                                    for="<?php echo esc_attr($data['name']); ?>"><?php echo esc_html($data['title']); ?>
-                                                </label></h3>
-                                            <?php
-                                            if (isset($data['description']) && $data['description']) {
-                                                ?>
-                                                <span
-                                                    class="cf-card__footer_message"><?php echo $data['description']; ?></span>
-                                                <?php
-                                            }
-                                            ?>
-                                        </td>
-                                        <td><span
-                                                id="<?php echo esc_attr($data['name']); ?>"><?php echo esc_html(array_key_exists($data['name'], $woocf_settings) && $woocf_settings[$data['name']] ? $woocf_settings[$data['name']] : ($data['value'] ?: '')); ?></span>
-                                        </td>
-                                    </tr>
-                                    <?php
-                                } else if ($data['type'] == 'radio') {
-                                    ?>
-                                    <tr>
-                                        <td colspan="2"><h3 class="cf-card__title"><?php echo esc_html($data['title']); ?></h3>
-                                            <?php foreach ($data['options'] as $val => $label) { ?>
-                                                <label style="margin-right: 20px;">
-                                                    <input type="radio"
-                                                           name="<?php echo esc_attr($data['name']); ?>"
-                                                           value="<?php echo esc_attr($val); ?>"
-                                                           <?php checked($data['value'], $val); ?>>
-                                                    <?php echo esc_html($label); ?>
-                                                </label>
-                                            <?php } ?>
-                                        </td>
-                                    </tr>
-                                    <?php
+                                <?php
+                            } elseif ($is_manual_connected) {
+                                // State B: Manual credentials connected — build masked preview
+                                $auth_type = isset($woocf_settings['cf_auth_type']) ? $woocf_settings['cf_auth_type'] : 'global_key';
+                                if ($auth_type === 'api_token') {
+                                    $token = isset($woocf_settings['cf_token']) ? $woocf_settings['cf_token'] : '';
+                                    $masked = substr($token, 0, 3) . '...' . substr($token, -4);
+                                    $auth_label = __('API Token', 'wooflare');
+                                    $masked_display = '<code>' . esc_html($masked) . '</code>';
                                 } else {
-                                    ?>
-                                    <tr<?php if (isset($data['auth_group'])) echo ' class="auth-group-' . esc_attr($data['auth_group']) . '"'; ?>>
-                                        <td colspan="2"><h3 class="cf-card__title"><label
-                                                    for="<?php echo esc_attr($data['name']); ?>"><?php echo esc_html($data['title']); ?>
-                                                </label></h3>
-                                            <?php
-                                            if (isset($data['description']) && $data['description']) {
-                                                ?>
-                                                <span
-                                                    class="cf-card__footer_message"><?php echo $data['description']; ?></span>
+                                    $email = isset($woocf_settings['cf_email']) ? $woocf_settings['cf_email'] : '';
+                                    $key = isset($woocf_settings['cf_key']) ? $woocf_settings['cf_key'] : '';
+                                    $masked_key = substr($key, 0, 3) . '...' . substr($key, -4);
+                                    $auth_label = __('Global API Key', 'wooflare');
+                                    $masked_display = esc_html($email) . ' / <code>' . esc_html($masked_key) . '</code>';
+                                }
+                                ?>
+                                <tr>
+                                    <td colspan="2">
+                                        <div class="woocf-connection-status woocf-connection-status--connected">
+                                            <span class="dashicons dashicons-yes-alt woocf-status-icon"></span>
+                                            <span class="woocf-status-text">
+                                                <?php printf(
+                                                    __('Connected via %s', 'wooflare'),
+                                                    '<strong>' . esc_html($auth_label) . '</strong>'
+                                                ); ?>
+                                                &mdash; <?php echo $masked_display; ?>
+                                            </span>
+                                            <a href="#" class="woocf-toggle-credentials"><?php esc_html_e('Change Credentials', 'wooflare'); ?></a>
+                                        </div>
+                                        <div class="woocf-credentials-form" style="display: none;">
+                                            <table><tbody>
                                                 <?php
+                                                foreach ($fields['fields'] as $data) {
+                                                    woocf_render_field($data, $woocf_settings);
+                                                }
+                                                ?>
+                                            </tbody></table>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <?php
+                            } else {
+                                // State C: Not connected — show prompt + credential form
+                                ?>
+                                <tr>
+                                    <td colspan="2">
+                                        <div class="woocf-connect-prompt">
+                                            <?php echo __('Please set your Cloudflare credentials below or install and configure the <a href="http://wordpress.org/plugins/cloudflare/" target="_blank">official Cloudflare plugin</a> to continue.', 'wooflare'); ?>
+                                        </div>
+                                        <table><tbody>
+                                            <?php
+                                            foreach ($fields['fields'] as $data) {
+                                                woocf_render_field($data, $woocf_settings);
                                             }
                                             ?>
-                                            <br />
-                                            <input id="<?php echo esc_attr($data['name']); ?>" type="<?php echo esc_attr($data['type']); ?>"
-                                                   name="<?php echo esc_attr($data['name']); ?>"
-                                                   value="<?php echo esc_attr(array_key_exists($data['name'], $woocf_settings) && $woocf_settings[$data['name']] ? $woocf_settings[$data['name']] : ($data['value'] ?: '')); ?>"
-                                                   style="width: 100%; max-width: 400px;">
-                                        </td>
-                                    </tr>
-                                    <?php
-                                }
+                                        </tbody></table>
+                                    </td>
+                                </tr>
+                                <?php
                             }
+                            continue;
+                        }
+
+                        // Plugin-specific sections — only render if credentials are set
+                        if (!$credentials) {
+                            continue;
+                        }
+
+                        ?>
+                        <tr class="tr-section-title">
+                            <td><h2 class="cf-heading cf-heading--2"><?php echo esc_html($section); ?></h2></td>
+                        </tr>
+                        <?php
+
+                        foreach ($fields['fields'] as $data) {
+                            woocf_render_field($data, $woocf_settings);
                         }
                     }
                     ?>

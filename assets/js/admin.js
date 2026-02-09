@@ -9,6 +9,22 @@ jQuery(document).ready(function(){
     jQuery('input[name="cf_auth_type"]').on('change', toggleAuthFields);
     toggleAuthFields();
 
+    // Change Credentials toggle
+    jQuery('.woocf-toggle-credentials').on('click', function(e) {
+        e.preventDefault();
+        var $form = jQuery('.woocf-credentials-form');
+        var $link = jQuery(this);
+        if ($form.is(':visible')) {
+            $form.slideUp(200);
+            $link.text(woocf_i18n.change_credentials);
+        } else {
+            $form.slideDown(200, function() {
+                toggleAuthFields();
+            });
+            $link.text(woocf_i18n.cancel);
+        }
+    });
+
     // Clear log AJAX request.
     jQuery("#clear_log_button").on('click', function(e){
 

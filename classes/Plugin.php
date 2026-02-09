@@ -129,7 +129,9 @@ class WOOCF_Main
             'error'        => __('There was an error.', 'wooflare'),
             'clearing_log' => __('Clearing log...', 'wooflare'),
             'log_cleared'  => __('Log cleared.', 'wooflare'),
-            'loading_log'  => __('Loading log...', 'wooflare'),
+            'loading_log'          => __('Loading log...', 'wooflare'),
+            'change_credentials'   => __('Change Credentials', 'wooflare'),
+            'cancel'               => __('Cancel', 'wooflare'),
         ));
 
         // If Cloudflare plugin is active, inherit styles from their plugin for consistent styles
