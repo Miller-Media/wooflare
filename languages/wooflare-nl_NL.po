@@ -1,0 +1,131 @@
+# Dutch translation for Wooflare
+msgid ""
+msgstr ""
+"Project-Id-Version: Wooflare\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wooflare\n"
+"POT-Creation-Date: 2026-02-10 12:30+0000\n"
+"PO-Revision-Date: 2026-02-10 12:30+0000\n"
+"Last-Translator: Crash Override (AI)\n"
+"Language-Team: Dutch\n"
+"Language: nl_NL\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Wooflare requires <a href=\"http://wordpress.org/plugins/woocommerce\" target=\"_blank\">WooCommerce</a> to be installed and activated."
+msgstr "Wooflare vereist dat <a href=\"http://wordpress.org/plugins/woocommerce\" target=\"_blank\">WooCommerce</a> geïnstalleerd en geactiveerd is."
+
+msgid "Wooflare requires a <a href=\"http://wordpress.org/plugins/woocommerce\" target=\"_blank\">WooCommerce</a> version of at least 3.3.0 to function correctly. Please update."
+msgstr "Wooflare vereist een <a href=\"http://wordpress.org/plugins/woocommerce\" target=\"_blank\">WooCommerce</a>-versie van minimaal 3.3.0 om correct te functioneren. Werk bij."
+
+msgid "Hey! You've been using %1$s for a while now. If you're enjoying it, would you mind %2$sleaving a 5-star review%3$s? It helps us keep improving! 🙏"
+msgstr "Hé! Je gebruikt %1$s nu al een tijdje. Als je er blij mee bent, zou je dan %2$seen 5-sterren review willen achterlaten%3$s? Het helpt ons om te blijven verbeteren! 🙏"
+
+msgid "Leave a Review"
+msgstr "Laat een review achter"
+
+msgid "Maybe Later"
+msgstr "Misschien later"
+
+msgid "There was an error."
+msgstr "Er is een fout opgetreden."
+
+msgid "Clearing log..."
+msgstr "Logboek wordt gewist..."
+
+msgid "Log cleared."
+msgstr "Logboek gewist."
+
+msgid "Loading log..."
+msgstr "Logboek wordt geladen..."
+
+msgid "Change Credentials"
+msgstr "Inloggegevens wijzigen"
+
+msgid "Cancel"
+msgstr "Annuleren"
+
+msgid "Disconnect"
+msgstr "Verbinding verbreken"
+
+msgid "Are you sure you want to disconnect? Your Cloudflare credentials will be removed."
+msgstr "Weet je zeker dat je de verbinding wilt verbreken? Je Cloudflare-inloggegevens worden verwijderd."
+
+msgid "Cloudflare Credentials"
+msgstr "Cloudflare-inloggegevens"
+
+msgid "Authentication Method"
+msgstr "Authenticatiemethode"
+
+msgid "API Token (Recommended)"
+msgstr "API-token (aanbevolen)"
+
+msgid "Global API Key (Legacy)"
+msgstr "Globale API-sleutel (verouderd)"
+
+msgid "Email Address"
+msgstr "E-mailadres"
+
+msgid "Your Cloudflare account email address."
+msgstr "Het e-mailadres van je Cloudflare-account."
+
+msgid "Global API Key"
+msgstr "Globale API-sleutel"
+
+msgid "Your <a href=\"https://dash.cloudflare.com/profile/api-tokens\" target=\"_blank\">Global API Key</a>.<br />Found under My Profile &rarr; API Tokens &rarr; Global API Key &rarr; View."
+msgstr "Je <a href=\"https://dash.cloudflare.com/profile/api-tokens\" target=\"_blank\">globale API-sleutel</a>.<br />Te vinden onder Mijn profiel &rarr; API-tokens &rarr; Globale API-sleutel &rarr; Weergeven."
+
+msgid "API Token"
+msgstr "API-token"
+
+msgid "A <a href=\"https://dash.cloudflare.com/profile/api-tokens\" target=\"_blank\">scoped API token</a>.<br />Create one under My Profile &rarr; API Tokens &rarr; Create Token.<br />Required permissions: <strong>Zone &rarr; Zone &rarr; Read</strong>, <strong>Zone &rarr; Cache Purge &rarr; Purge</strong>."
+msgstr "Een <a href=\"https://dash.cloudflare.com/profile/api-tokens\" target=\"_blank\">bereikt API-token</a>.<br />Maak er een aan onder Mijn profiel &rarr; API-tokens &rarr; Token aanmaken.<br />Vereiste rechten: <strong>Zone &rarr; Zone &rarr; Lezen</strong>, <strong>Zone &rarr; Cache wissen &rarr; Wissen</strong>."
+
+msgid "Clear Cache"
+msgstr "Cache wissen"
+
+msgid "After Scheduled Sale?"
+msgstr "Na geplande uitverkoop?"
+
+msgid "Set scheduled sales on product edit pages by clicking 'Schedule' next to the 'Sale price' field."
+msgstr "Stel geplande uitverkopen in op productbewerkingspagina's door op 'Plannen' te klikken naast het veld 'Uitverkoopprijs'."
+
+msgid "When Product Goes Out of Stock?"
+msgstr "Wanneer product niet op voorraad is?"
+
+msgid "Triggered when a product sells out or when the stock status is toggled to 'Out of Stock' by an admin."
+msgstr "Geactiveerd wanneer een product is uitverkocht of wanneer de voorraadstatus door een beheerder wordt gewijzigd naar 'Niet op voorraad'."
+
+msgid "When Store Notice is Updated?"
+msgstr "Wanneer winkelbericht wordt bijgewerkt?"
+
+msgid "Found in <a href=\"%s\" target=\"_blank\">Customize &rarr; WooCommerce &rarr; Store Notice</a>."
+msgstr "Te vinden in <a href=\"%s\" target=\"_blank\">Aanpassen &rarr; WooCommerce &rarr; Winkelbericht</a>."
+
+msgid "Enable Logging?"
+msgstr "Logboek inschakelen?"
+
+msgid "Settings"
+msgstr "Instellingen"
+
+msgid "Log"
+msgstr "Logboek"
+
+msgid "Connected via %sCloudflare plugin%s."
+msgstr "Verbonden via %sCloudflare-plugin%s."
+
+msgid "Connected via %s"
+msgstr "Verbonden via %s"
+
+msgid "Please set your Cloudflare credentials below or install and configure the <a href=\"http://wordpress.org/plugins/cloudflare/\" target=\"_blank\">official Cloudflare plugin</a> to continue."
+msgstr "Stel hieronder je Cloudflare-inloggegevens in of installeer en configureer de <a href=\"http://wordpress.org/plugins/cloudflare/\" target=\"_blank\">officiële Cloudflare-plugin</a> om door te gaan."
+
+msgid "Save Changes"
+msgstr "Wijzigingen opslaan"
+
+msgid "Logging is currently disabled. To start logging, enable checkbox on settings tab."
+msgstr "Logboek is momenteel uitgeschakeld. Om loggen te starten, schakel het selectievakje in op het tabblad instellingen."
+
+msgid "Clear Log"
+msgstr "Logboek wissen"
