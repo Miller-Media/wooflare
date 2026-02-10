@@ -1,0 +1,134 @@
+# Chinese (Simplified) translation for wooflare.
+# Copyright (C) 2026 Miller Media
+# This file is distributed under the GPLv2.
+msgid ""
+msgstr ""
+"Project-Id-Version: wooflare\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wooflare\n"
+"Last-Translator: Crash Override (AI)\n"
+"Language-Team: Chinese (Simplified)\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-02-10T06:08:47+00:00\n"
+"PO-Revision-Date: 2026-02-10 06:08+0000\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "A <a href="
+msgstr "一个 <a href="
+
+msgid "After Scheduled Sale?"
+msgstr "定时销售后？"
+
+msgid "API Token"
+msgstr "API 令牌"
+
+msgid "API Token (Recommended)"
+msgstr "API 令牌（推荐）"
+
+msgid "Are you sure you want to disconnect? Your Cloudflare credentials will be removed."
+msgstr "您确定要断开连接吗？您的 Cloudflare 凭据将被删除。"
+
+msgid "Authentication Method"
+msgstr "身份验证方法"
+
+msgid " by an admin."
+msgstr " 由管理员。"
+
+msgid "Cancel"
+msgstr "取消"
+
+msgid "Change Credentials"
+msgstr "更改凭据"
+
+msgid "Clear Cache"
+msgstr "清除缓存"
+
+msgid "Clearing log..."
+msgstr "正在清除日志..."
+
+msgid "Clear Log"
+msgstr "清除日志"
+
+msgid "Cloudflare Credentials"
+msgstr "Cloudflare 凭据"
+
+msgid "Connected via %s"
+msgstr "通过 %s 连接"
+
+msgid "Connected via %sCloudflare plugin%s."
+msgstr "通过 %sCloudflare 插件%s 连接。"
+
+msgid "Disconnect"
+msgstr "断开连接"
+
+msgid "Email Address"
+msgstr "电子邮件地址"
+
+msgid "Enable Logging?"
+msgstr "启用日志记录？"
+
+msgid " field."
+msgstr " 字段。"
+
+msgid "Found in <a href="
+msgstr "在 <a href= 中找到"
+
+msgid "Global API Key"
+msgstr "全局 API 密钥"
+
+msgid "Global API Key (Legacy)"
+msgstr "全局 API 密钥（旧版）"
+
+msgid "Leave a Review"
+msgstr "留下评论"
+
+msgid "Loading log..."
+msgstr "正在加载日志..."
+
+msgid "Log"
+msgstr "日志"
+
+msgid "Log cleared."
+msgstr "日志已清除。"
+
+msgid "Logging is currently disabled. To start logging, enable checkbox on settings tab."
+msgstr "日志记录当前已禁用。要开始记录日志，请在设置选项卡上启用复选框。"
+
+msgid "Maybe Later"
+msgstr "稍后再说"
+
+msgid "Please set your Cloudflare credentials below or install and configure the <a href="
+msgstr "请在下方设置您的 Cloudflare 凭据，或安装并配置 <a href="
+
+msgid "re enjoying it, would you mind %2$sleaving a 5-star review%3$s? It helps us keep improving! 🙏"
+msgstr "如果您喜欢它，您是否愿意%2$s留下 5 星评论%3$s？这有助于我们不断改进！🙏"
+
+msgid "Save Changes"
+msgstr "保存更改"
+
+msgid "Settings"
+msgstr "设置"
+
+msgid "There was an error."
+msgstr "出现错误。"
+
+msgid "When Product Goes Out of Stock?"
+msgstr "产品缺货时？"
+
+msgid "When Store Notice is Updated?"
+msgstr "商店通知更新时？"
+
+msgid "Wooflare requires a <a href="
+msgstr "Wooflare 需要 <a href="
+
+msgid "Wooflare requires <a href="
+msgstr "Wooflare 需要 <a href="
+
+msgid "Your <a href="
+msgstr "您的 <a href="
+
+msgid "Your Cloudflare account email address."
+msgstr "您的 Cloudflare 帐户电子邮件地址。"
+
