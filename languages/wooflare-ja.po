@@ -1,0 +1,134 @@
+# Japanese translation for wooflare.
+# Copyright (C) 2026 Miller Media
+# This file is distributed under the GPLv2.
+msgid ""
+msgstr ""
+"Project-Id-Version: wooflare\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wooflare\n"
+"Last-Translator: Crash Override (AI)\n"
+"Language-Team: Japanese\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-02-10T00:48:22+00:00\n"
+"PO-Revision-Date: 2026-02-10 00:48+0000\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "A <a href="
+msgstr "A <a href="
+
+msgid "After Scheduled Sale?"
+msgstr "スケジュールされたセールの後？"
+
+msgid "API Token"
+msgstr "APIトークン"
+
+msgid "API Token (Recommended)"
+msgstr "APIトークン（推奨）"
+
+msgid "Are you sure you want to disconnect? Your Cloudflare credentials will be removed."
+msgstr "切断してもよろしいですか？Cloudflare認証情報は削除されます。"
+
+msgid "Authentication Method"
+msgstr "認証方法"
+
+msgid " by an admin."
+msgstr " 管理者によって。"
+
+msgid "Cancel"
+msgstr "キャンセル"
+
+msgid "Change Credentials"
+msgstr "認証情報を変更"
+
+msgid "Clear Cache"
+msgstr "キャッシュをクリア"
+
+msgid "Clearing log..."
+msgstr "ログをクリア中..."
+
+msgid "Clear Log"
+msgstr "ログをクリア"
+
+msgid "Cloudflare Credentials"
+msgstr "Cloudflare認証情報"
+
+msgid "Connected via %s"
+msgstr "%s経由で接続"
+
+msgid "Connected via %sCloudflare plugin%s."
+msgstr "%sCloudflareプラグイン%s経由で接続。"
+
+msgid "Disconnect"
+msgstr "切断"
+
+msgid "Email Address"
+msgstr "メールアドレス"
+
+msgid "Enable Logging?"
+msgstr "ロギングを有効にしますか？"
+
+msgid " field."
+msgstr " フィールド。"
+
+msgid "Found in <a href="
+msgstr "<a href=にあります"
+
+msgid "Global API Key"
+msgstr "グローバルAPIキー"
+
+msgid "Global API Key (Legacy)"
+msgstr "グローバルAPIキー（レガシー）"
+
+msgid "Leave a Review"
+msgstr "レビューを残す"
+
+msgid "Loading log..."
+msgstr "ログを読み込み中..."
+
+msgid "Log"
+msgstr "ログ"
+
+msgid "Log cleared."
+msgstr "ログがクリアされました。"
+
+msgid "Logging is currently disabled. To start logging, enable checkbox on settings tab."
+msgstr "ロギングは現在無効です。ロギングを開始するには、設定タブでチェックボックスを有効にしてください。"
+
+msgid "Maybe Later"
+msgstr "後で"
+
+msgid "Please set your Cloudflare credentials below or install and configure the <a href="
+msgstr "以下でCloudflare認証情報を設定するか、<a href=をインストールして設定してください"
+
+msgid "re enjoying it, would you mind %2$sleaving a 5-star review%3$s? It helps us keep improving! 🙏"
+msgstr "楽しんでいただけましたら、%2$s5つ星のレビューを残して%3$sいただけますか？改善を続ける励みになります！🙏"
+
+msgid "Save Changes"
+msgstr "変更を保存"
+
+msgid "Settings"
+msgstr "設定"
+
+msgid "There was an error."
+msgstr "エラーが発生しました。"
+
+msgid "When Product Goes Out of Stock?"
+msgstr "商品が在庫切れになったとき？"
+
+msgid "When Store Notice is Updated?"
+msgstr "ストア通知が更新されたとき？"
+
+msgid "Wooflare requires a <a href="
+msgstr "Wooflareには<a href=が必要です"
+
+msgid "Wooflare requires <a href="
+msgstr "Wooflareには<a href=が必要です"
+
+msgid "Your <a href="
+msgstr "あなたの<a href="
+
+msgid "Your Cloudflare account email address."
+msgstr "Cloudflareアカウントのメールアドレス。"
+
