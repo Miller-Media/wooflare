@@ -1,0 +1,131 @@
+# Turkish translation for Wooflare
+msgid ""
+msgstr ""
+"Project-Id-Version: Wooflare\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wooflare\n"
+"POT-Creation-Date: 2026-02-11 21:29+0000\n"
+"PO-Revision-Date: 2026-02-11 21:29+0000\n"
+"Last-Translator: Crash Override (AI)\n"
+"Language-Team: Turkish\n"
+"Language: tr_TR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgid "Wooflare requires <a href=\"http://wordpress.org/plugins/woocommerce\" target=\"_blank\">WooCommerce</a> to be installed and activated."
+msgstr "Wooflare'ın çalışması için <a href=\"http://wordpress.org/plugins/woocommerce\" target=\"_blank\">WooCommerce</a> kurulmuş ve etkinleştirilmiş olmalıdır."
+
+msgid "Wooflare requires a <a href=\"http://wordpress.org/plugins/woocommerce\" target=\"_blank\">WooCommerce</a> version of at least 3.3.0 to function correctly. Please update."
+msgstr "Wooflare'ın düzgün çalışması için en az 3.3.0 sürümünde bir <a href=\"http://wordpress.org/plugins/woocommerce\" target=\"_blank\">WooCommerce</a> gereklidir. Lütfen güncelleyin."
+
+msgid "Hey! You've been using %1$s for a while now. If you're enjoying it, would you mind %2$sleaving a 5-star review%3$s? It helps us keep improving! 🙏"
+msgstr "Merhaba! %1$s eklentisini bir süredir kullanıyorsunuz. Beğendiyseniz, %2$s5 yıldızlı bir değerlendirme bırakır mısınız%3$s? Gelişmemize yardımcı oluyor! 🙏"
+
+msgid "Leave a Review"
+msgstr "Değerlendirme Bırakın"
+
+msgid "Maybe Later"
+msgstr "Belki Daha Sonra"
+
+msgid "There was an error."
+msgstr "Bir hata oluştu."
+
+msgid "Clearing log..."
+msgstr "Günlük temizleniyor..."
+
+msgid "Log cleared."
+msgstr "Günlük temizlendi."
+
+msgid "Loading log..."
+msgstr "Günlük yükleniyor..."
+
+msgid "Change Credentials"
+msgstr "Kimlik Bilgilerini Değiştir"
+
+msgid "Cancel"
+msgstr "İptal"
+
+msgid "Disconnect"
+msgstr "Bağlantıyı Kes"
+
+msgid "Are you sure you want to disconnect? Your Cloudflare credentials will be removed."
+msgstr "Bağlantıyı kesmek istediğinizden emin misiniz? Cloudflare kimlik bilgileriniz kaldırılacaktır."
+
+msgid "Cloudflare Credentials"
+msgstr "Cloudflare Kimlik Bilgileri"
+
+msgid "Authentication Method"
+msgstr "Kimlik Doğrulama Yöntemi"
+
+msgid "API Token (Recommended)"
+msgstr "API Jetonu (Önerilen)"
+
+msgid "Global API Key (Legacy)"
+msgstr "Global API Anahtarı (Eski)"
+
+msgid "Email Address"
+msgstr "E-posta Adresi"
+
+msgid "Your Cloudflare account email address."
+msgstr "Cloudflare hesap e-posta adresiniz."
+
+msgid "Global API Key"
+msgstr "Global API Anahtarı"
+
+msgid "Your <a href=\"https://dash.cloudflare.com/profile/api-tokens\" target=\"_blank\">Global API Key</a>.<br />Found under My Profile &rarr; API Tokens &rarr; Global API Key &rarr; View."
+msgstr "<a href=\"https://dash.cloudflare.com/profile/api-tokens\" target=\"_blank\">Global API Anahtarınız</a>.<br />Profilim &rarr; API Jetonları &rarr; Global API Anahtarı &rarr; Görüntüle altında bulunur."
+
+msgid "API Token"
+msgstr "API Jetonu"
+
+msgid "A <a href=\"https://dash.cloudflare.com/profile/api-tokens\" target=\"_blank\">scoped API token</a>.<br />Create one under My Profile &rarr; API Tokens &rarr; Create Token.<br />Required permissions: <strong>Zone &rarr; Zone &rarr; Read</strong>, <strong>Zone &rarr; Cache Purge &rarr; Purge</strong>."
+msgstr "Bir <a href=\"https://dash.cloudflare.com/profile/api-tokens\" target=\"_blank\">kapsamlı API jetonu</a>.<br />Profilim &rarr; API Jetonları &rarr; Jeton Oluştur altından oluşturun.<br />Gerekli izinler: <strong>Bölge &rarr; Bölge &rarr; Okuma</strong>, <strong>Bölge &rarr; Önbellek Temizleme &rarr; Temizleme</strong>."
+
+msgid "Clear Cache"
+msgstr "Önbelleği Temizle"
+
+msgid "After Scheduled Sale?"
+msgstr "Planlı İndirim Sonrası?"
+
+msgid "Set scheduled sales on product edit pages by clicking 'Schedule' next to the 'Sale price' field."
+msgstr "Ürün düzenleme sayfalarında 'İndirimli fiyat' alanının yanındaki 'Planla' seçeneğine tıklayarak planlı indirimler ayarlayın."
+
+msgid "When Product Goes Out of Stock?"
+msgstr "Ürün Stokta Kalmadığında?"
+
+msgid "Triggered when a product sells out or when the stock status is toggled to 'Out of Stock' by an admin."
+msgstr "Bir ürün tükendiğinde veya stok durumu bir yönetici tarafından 'Stokta Yok' olarak değiştirildiğinde tetiklenir."
+
+msgid "When Store Notice is Updated?"
+msgstr "Mağaza Bildirimi Güncellendiğinde?"
+
+msgid "Found in <a href=\"%s\" target=\"_blank\">Customize &rarr; WooCommerce &rarr; Store Notice</a>."
+msgstr "<a href=\"%s\" target=\"_blank\">Özelleştir &rarr; WooCommerce &rarr; Mağaza Bildirimi</a> bölümünde bulunur."
+
+msgid "Enable Logging?"
+msgstr "Günlük Kaydını Etkinleştir?"
+
+msgid "Settings"
+msgstr "Ayarlar"
+
+msgid "Log"
+msgstr "Günlük"
+
+msgid "Connected via %sCloudflare plugin%s."
+msgstr "%sCloudflare eklentisi%s aracılığıyla bağlandı."
+
+msgid "Connected via %s"
+msgstr "%s aracılığıyla bağlandı"
+
+msgid "Please set your Cloudflare credentials below or install and configure the <a href=\"http://wordpress.org/plugins/cloudflare/\" target=\"_blank\">official Cloudflare plugin</a> to continue."
+msgstr "Devam etmek için lütfen aşağıdan Cloudflare kimlik bilgilerinizi girin veya <a href=\"http://wordpress.org/plugins/cloudflare/\" target=\"_blank\">resmi Cloudflare eklentisini</a> kurup yapılandırın."
+
+msgid "Save Changes"
+msgstr "Değişiklikleri Kaydet"
+
+msgid "Logging is currently disabled. To start logging, enable checkbox on settings tab."
+msgstr "Günlük kaydı şu anda devre dışı. Günlük kaydını başlatmak için ayarlar sekmesindeki onay kutusunu etkinleştirin."
+
+msgid "Clear Log"
+msgstr "Günlüğü Temizle"
