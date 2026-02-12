@@ -1,0 +1,133 @@
+# Swedish translation for Wooflare
+# Copyright (C) 2026 Miller Media
+# This file is distributed under the same license as the plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Wooflare\n"
+"Report-Msgid-Bugs-To: https://github.com/Miller-Media/wooflare/issues\n"
+"POT-Creation-Date: 2026-02-12 13:00+0000\n"
+"PO-Revision-Date: 2026-02-12 13:00+0000\n"
+"Last-Translator: Crash Override (AI)\n"
+"Language-Team: Swedish\n"
+"Language: sv_SE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "A <a href=\"https://dash.cloudflare.com/profile/api-tokens\" target=\"_blank\">scoped API token</a>.<br />Create one under My Profile &rarr; API Tokens &rarr; Create Token.<br />Required permissions: <strong>Zone &rarr; Zone &rarr; Read</strong>, <strong>Zone &rarr; Cache Purge &rarr; Purge</strong>."
+msgstr "En <a href=\"https://dash.cloudflare.com/profile/api-tokens\" target=\"_blank\">begränsad API-nyckel</a>.<br />Skapa en under Min profil &rarr; API-nycklar &rarr; Skapa nyckel.<br />Nödvändiga behörigheter: <strong>Zon &rarr; Zon &rarr; Läs</strong>, <strong>Zon &rarr; Cacherensning &rarr; Rensa</strong>."
+
+msgid "API Token"
+msgstr "API-nyckel"
+
+msgid "API Token (Recommended)"
+msgstr "API-nyckel (rekommenderas)"
+
+msgid "After Scheduled Sale?"
+msgstr "Efter schemalagd rea?"
+
+msgid "Are you sure you want to disconnect? Your Cloudflare credentials will be removed."
+msgstr "Är du säker på att du vill koppla från? Dina Cloudflare-uppgifter kommer att tas bort."
+
+msgid "Authentication Method"
+msgstr "Autentiseringsmetod"
+
+msgid "Cancel"
+msgstr "Avbryt"
+
+msgid "Change Credentials"
+msgstr "Ändra uppgifter"
+
+msgid "Clear Cache"
+msgstr "Rensa cache"
+
+msgid "Clear Log"
+msgstr "Rensa logg"
+
+msgid "Clearing log..."
+msgstr "Rensar logg..."
+
+msgid "Cloudflare Credentials"
+msgstr "Cloudflare-uppgifter"
+
+msgid "Connected via %s"
+msgstr "Ansluten via %s"
+
+msgid "Connected via %sCloudflare plugin%s."
+msgstr "Ansluten via %sCloudflare-tillägget%s."
+
+msgid "Disconnect"
+msgstr "Koppla från"
+
+msgid "Email Address"
+msgstr "E-postadress"
+
+msgid "Enable Logging?"
+msgstr "Aktivera loggning?"
+
+msgid "Found in <a href=\"%s\" target=\"_blank\">Customize &rarr; WooCommerce &rarr; Store Notice</a>."
+msgstr "Finns i <a href=\"%s\" target=\"_blank\">Anpassa &rarr; WooCommerce &rarr; Butiksmeddelande</a>."
+
+msgid "Global API Key"
+msgstr "Global API-nyckel"
+
+msgid "Global API Key (Legacy)"
+msgstr "Global API-nyckel (äldre)"
+
+msgid "Hey! You've been using %1$s for a while now. If you're enjoying it, would you mind %2$sleaving a 5-star review%3$s? It helps us keep improving! 🙏"
+msgstr "Hej! Du har använt %1$s ett tag nu. Om du gillar det, skulle du kunna %2$slämna en 5-stjärnig recension%3$s? Det hjälper oss att fortsätta förbättra! 🙏"
+
+msgid "Leave a Review"
+msgstr "Lämna en recension"
+
+msgid "Loading log..."
+msgstr "Laddar logg..."
+
+msgid "Log"
+msgstr "Logg"
+
+msgid "Log cleared."
+msgstr "Loggen har rensats."
+
+msgid "Logging is currently disabled. To start logging, enable checkbox on settings tab."
+msgstr "Loggning är för närvarande inaktiverad. För att börja logga, aktivera kryssrutan på inställningsfliken."
+
+msgid "Maybe Later"
+msgstr "Kanske senare"
+
+msgid "Please set your Cloudflare credentials below or install and configure the <a href=\"http://wordpress.org/plugins/cloudflare/\" target=\"_blank\">official Cloudflare plugin</a> to continue."
+msgstr "Ange dina Cloudflare-uppgifter nedan eller installera och konfigurera det <a href=\"http://wordpress.org/plugins/cloudflare/\" target=\"_blank\">officiella Cloudflare-tillägget</a> för att fortsätta."
+
+msgid "Save Changes"
+msgstr "Spara ändringar"
+
+msgid "Set scheduled sales on product edit pages by clicking 'Schedule' next to the 'Sale price' field."
+msgstr "Ställ in schemalagda reor på produktredigeringssidor genom att klicka på 'Schema' bredvid fältet 'Reapris'."
+
+msgid "Settings"
+msgstr "Inställningar"
+
+msgid "There was an error."
+msgstr "Ett fel uppstod."
+
+msgid "Triggered when a product sells out or when the stock status is toggled to 'Out of Stock' by an admin."
+msgstr "Utlöses när en produkt tar slut eller när lagerstatus ändras till 'Slut i lager' av en administratör."
+
+msgid "When Product Goes Out of Stock?"
+msgstr "När produkt blir slutsåld?"
+
+msgid "When Store Notice is Updated?"
+msgstr "När butiksmeddelande uppdateras?"
+
+msgid "Wooflare requires <a href=\"http://wordpress.org/plugins/woocommerce\" target=\"_blank\">WooCommerce</a> to be installed and activated."
+msgstr "Wooflare kräver att <a href=\"http://wordpress.org/plugins/woocommerce\" target=\"_blank\">WooCommerce</a> är installerat och aktiverat."
+
+msgid "Wooflare requires a <a href=\"http://wordpress.org/plugins/woocommerce\" target=\"_blank\">WooCommerce</a> version of at least 3.3.0 to function correctly. Please update."
+msgstr "Wooflare kräver en <a href=\"http://wordpress.org/plugins/woocommerce\" target=\"_blank\">WooCommerce</a>-version av minst 3.3.0 för att fungera korrekt. Vänligen uppdatera."
+
+msgid "Your <a href=\"https://dash.cloudflare.com/profile/api-tokens\" target=\"_blank\">Global API Key</a>.<br />Found under My Profile &rarr; API Tokens &rarr; Global API Key &rarr; View."
+msgstr "Din <a href=\"https://dash.cloudflare.com/profile/api-tokens\" target=\"_blank\">globala API-nyckel</a>.<br />Finns under Min profil &rarr; API-nycklar &rarr; Global API-nyckel &rarr; Visa."
+
+msgid "Your Cloudflare account email address."
+msgstr "Din Cloudflare-kontos e-postadress."
