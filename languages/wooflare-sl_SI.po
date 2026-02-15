@@ -1,0 +1,190 @@
+# Copyright (C) 2026 Miller Media
+# This file is distributed under the same license as the Wooflare plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Wooflare 1.0.5\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wooflare\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Slovenian <sl@li.org>\n"
+"Language: sl_SI\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-02-09T19:13:18+00:00\n"
+"PO-Revision-Date: 2026-02-15 15:31+0000\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: wooflare\n"
+
+#. Plugin Name of the plugin
+#: wooflare.php
+msgid "Wooflare"
+msgstr "Wooflare"
+
+#. Description of the plugin
+#: wooflare.php
+msgid "WooCommerce integration with Cloudflare."
+msgstr "WooCommerce integracija s Cloudflare."
+
+#. Author of the plugin
+#: wooflare.php
+msgid "Miller Media"
+msgstr "Miller Media"
+
+#. Author URI of the plugin
+#: wooflare.php
+msgid "www.millermedia.io"
+msgstr "www.millermedia.io"
+
+#: classes/Plugin.php:129
+msgid "There was an error."
+msgstr "Prišlo je do napake."
+
+#: classes/Plugin.php:130
+msgid "Clearing log..."
+msgstr "Brisanje dnevnika..."
+
+#: classes/Plugin.php:131
+msgid "Log cleared."
+msgstr "Dnevnik izbrisan."
+
+#: classes/Plugin.php:132
+msgid "Loading log..."
+msgstr "Nalaganje dnevnika..."
+
+#: classes/Plugin.php:133
+#: views/SiteSettingsView.php:248
+msgid "Change Credentials"
+msgstr "Spremeni poverilnice"
+
+#: classes/Plugin.php:134
+msgid "Cancel"
+msgstr "Prekliči"
+
+#: classes/Plugin.php:135
+#: views/SiteSettingsView.php:250
+msgid "Disconnect"
+msgstr "Prekini povezavo"
+
+#: classes/Plugin.php:136
+msgid "Are you sure you want to disconnect? Your Cloudflare credentials will be removed."
+msgstr "Ali ste prepričani, da želite prekiniti povezavo? Vaše Cloudflare poverilnice bodo odstranjene."
+
+#: views/SiteSettingsView.php:8
+#: views/SiteSettingsView.php:194
+msgid "Cloudflare Credentials"
+msgstr "Cloudflare poverilnice"
+
+#: views/SiteSettingsView.php:13
+msgid "Authentication Method"
+msgstr "Način preverjanja pristnosti"
+
+#: views/SiteSettingsView.php:16
+msgid "API Token (Recommended)"
+msgstr "API žeton (priporočeno)"
+
+#: views/SiteSettingsView.php:17
+#: views/SiteSettingsView.php:233
+msgid "Global API Key (Legacy)"
+msgstr "Globalni API ključ (zastarelo)"
+
+#: views/SiteSettingsView.php:24
+msgid "Email Address"
+msgstr "E-poštni naslov"
+
+#: views/SiteSettingsView.php:25
+msgid "Your Cloudflare account email address."
+msgstr "E-poštni naslov vašega Cloudflare računa."
+
+#: views/SiteSettingsView.php:32
+msgid "Global API Key"
+msgstr "Globalni API ključ"
+
+#: views/SiteSettingsView.php:33
+msgid "Your <a href=\"https://dash.cloudflare.com/profile/api-tokens\" target=\"_blank\">Global API Key</a>.<br />Found under My Profile &rarr; API Tokens &rarr; Global API Key &rarr; View."
+msgstr "Vaš <a href=\"https://dash.cloudflare.com/profile/api-tokens\" target=\"_blank\">globalni API ključ</a>.<br />Najdete ga pod Moj profil &rarr; API žetoni &rarr; Globalni API ključ &rarr; Pogled."
+
+#: views/SiteSettingsView.php:40
+#: views/SiteSettingsView.php:227
+msgid "API Token"
+msgstr "API žeton"
+
+#: views/SiteSettingsView.php:41
+msgid "A <a href=\"https://dash.cloudflare.com/profile/api-tokens\" target=\"_blank\">scoped API token</a>.<br />Create one under My Profile &rarr; API Tokens &rarr; Create Token.<br />Required permissions: <strong>Zone &rarr; Zone &rarr; Read</strong>, <strong>Zone &rarr; Cache Purge &rarr; Purge</strong>."
+msgstr "<a href=\"https://dash.cloudflare.com/profile/api-tokens\" target=\"_blank\">Omejen API žeton</a>.<br />Ustvarite ga pod Moj profil &rarr; API žetoni &rarr; Ustvari žeton.<br />Zahtevana dovoljenja: <strong>Cona &rarr; Cona &rarr; Branje</strong>, <strong>Cona &rarr; Čiščenje predpomnilnika &rarr; Čiščenje</strong>."
+
+#: views/SiteSettingsView.php:47
+msgid "Clear Cache"
+msgstr "Počisti predpomnilnik"
+
+#: views/SiteSettingsView.php:52
+msgid "After Scheduled Sale?"
+msgstr "Po načrtovani razprodaji?"
+
+#: views/SiteSettingsView.php:53
+msgid "Set scheduled sales on product edit pages by clicking 'Schedule' next to the 'Sale price' field."
+msgstr "Nastavite načrtovane razprodaje na straneh za urejanje izdelkov s klikom na 'Načrtuj' poleg polja 'Cena razprodaje'."
+
+#: views/SiteSettingsView.php:58
+msgid "When Product Goes Out of Stock?"
+msgstr "Ko zmanjka izdelka?"
+
+#: views/SiteSettingsView.php:59
+msgid "Triggered when a product sells out or when the stock status is toggled to 'Out of Stock' by an admin."
+msgstr "Sproži se, ko se izdelek razproda ali ko skrbnik stanje zaloge nastavi na 'Ni na zalogi'."
+
+#: views/SiteSettingsView.php:64
+msgid "When Store Notice is Updated?"
+msgstr "Ko je obvestilo trgovine posodobljeno?"
+
+#: views/SiteSettingsView.php:65
+#, php-format
+msgid "Found in <a href=\"%s\" target=\"_blank\">Customize &rarr; WooCommerce &rarr; Store Notice</a>."
+msgstr "Najdete v <a href=\"%s\" target=\"_blank\">Prilagodi &rarr; WooCommerce &rarr; Obvestilo trgovine</a>."
+
+#: views/SiteSettingsView.php:70
+msgid "Enable Logging?"
+msgstr "Omogoči beleženje?"
+
+#: views/SiteSettingsView.php:185
+msgid "Settings"
+msgstr "Nastavitve"
+
+#: views/SiteSettingsView.php:186
+#: views/SiteSettingsView.php:309
+msgid "Log"
+msgstr "Dnevnik"
+
+#: views/SiteSettingsView.php:212
+#, php-format
+msgid "Connected via %sCloudflare plugin%s."
+msgstr "Povezano prek %sCloudflare vtičnika%s."
+
+#: views/SiteSettingsView.php:243
+#, php-format
+msgid "Connected via %s"
+msgstr "Povezano prek %s"
+
+#: views/SiteSettingsView.php:270
+msgid "Please set your Cloudflare credentials below or install and configure the <a href=\"http://wordpress.org/plugins/cloudflare/\" target=\"_blank\">official Cloudflare plugin</a> to continue."
+msgstr "Prosimo, vnesite svoje Cloudflare poverilnice spodaj ali namestite in konfigurirajte <a href=\"http://wordpress.org/plugins/cloudflare/\" target=\"_blank\">uraden Cloudflare vtičnik</a>, da nadaljujete."
+
+#: views/SiteSettingsView.php:305
+msgid "Save Changes"
+msgstr "Shrani spremembe"
+
+#: views/SiteSettingsView.php:313
+msgid "Logging is currently disabled. To start logging, enable checkbox on settings tab."
+msgstr "Beleženje je trenutno onemogočeno. Za začetek beleženja omogočite potrditveno polje v zavihku nastavitve."
+
+#: views/SiteSettingsView.php:320
+msgid "Clear Log"
+msgstr "Počisti dnevnik"
+
+#: wooflare.php:46
+msgid "Wooflare requires <a href=\"http://wordpress.org/plugins/woocommerce\" target=\"_blank\">WooCommerce</a> to be installed and activated."
+msgstr "Wooflare zahteva, da je <a href=\"http://wordpress.org/plugins/woocommerce\" target=\"_blank\">WooCommerce</a> nameščen in aktiviran."
+
+#: wooflare.php:50
+msgid "Wooflare requires a <a href=\"http://wordpress.org/plugins/woocommerce\" target=\"_blank\">WooCommerce</a> version of at least 3.3.0 to function correctly. Please update."
+msgstr "Wooflare zahteva <a href=\"http://wordpress.org/plugins/woocommerce\" target=\"_blank\">WooCommerce</a> različico vsaj 3.3.0 za pravilno delovanje. Prosimo, posodobite."
