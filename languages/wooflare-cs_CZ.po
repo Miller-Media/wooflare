@@ -1,0 +1,133 @@
+# Czech translation for Wooflare
+# Copyright (C) 2026 Miller Media
+# This file is distributed under the same license as the plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Wooflare\n"
+"Report-Msgid-Bugs-To: https://github.com/Miller-Media/wooflare/issues\n"
+"POT-Creation-Date: 2026-02-15 13:00+0000\n"
+"PO-Revision-Date: 2026-02-15 13:00+0000\n"
+"Last-Translator: Crash Override (AI)\n"
+"Language-Team: Czech\n"
+"Language: cs_CZ\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+msgid "A <a href=\"https://dash.cloudflare.com/profile/api-tokens\" target=\"_blank\">scoped API token</a>.<br />Create one under My Profile &rarr; API Tokens &rarr; Create Token.<br />Required permissions: <strong>Zone &rarr; Zone &rarr; Read</strong>, <strong>Zone &rarr; Cache Purge &rarr; Purge</strong>."
+msgstr "<a href=\"https://dash.cloudflare.com/profile/api-tokens\" target=\"_blank\">Omezený API token</a>.<br />Vytvořte jej v Můj profil &rarr; API tokeny &rarr; Vytvořit token.<br />Požadovaná oprávnění: <strong>Zóna &rarr; Zóna &rarr; Čtení</strong>, <strong>Zóna &rarr; Vymazání cache &rarr; Vymazat</strong>."
+
+msgid "After Scheduled Sale?"
+msgstr "Po plánované slevě?"
+
+msgid "API Token"
+msgstr "API token"
+
+msgid "API Token (Recommended)"
+msgstr "API token (doporučeno)"
+
+msgid "Are you sure you want to disconnect? Your Cloudflare credentials will be removed."
+msgstr "Opravdu se chcete odpojit? Vaše přihlašovací údaje Cloudflare budou odstraněny."
+
+msgid "Authentication Method"
+msgstr "Metoda ověření"
+
+msgid "Cancel"
+msgstr "Zrušit"
+
+msgid "Change Credentials"
+msgstr "Změnit přihlašovací údaje"
+
+msgid "Clear Cache"
+msgstr "Vymazat cache"
+
+msgid "Clearing log..."
+msgstr "Mazání protokolu..."
+
+msgid "Cloudflare Credentials"
+msgstr "Přihlašovací údaje Cloudflare"
+
+msgid "Connected via %s"
+msgstr "Připojeno přes %s"
+
+msgid "Connected via %sCloudflare plugin%s."
+msgstr "Připojeno přes %splugin Cloudflare%s."
+
+msgid "Disconnect"
+msgstr "Odpojit"
+
+msgid "Email Address"
+msgstr "E-mailová adresa"
+
+msgid "Enable Logging?"
+msgstr "Povolit protokolování?"
+
+msgid "Clear Log"
+msgstr "Vymazat protokol"
+
+msgid "Found in <a href=\"%s\" target=\"_blank\">Customize &rarr; WooCommerce &rarr; Store Notice</a>."
+msgstr "Najdete v <a href=\"%s\" target=\"_blank\">Přizpůsobit &rarr; WooCommerce &rarr; Oznámení obchodu</a>."
+
+msgid "Global API Key"
+msgstr "Globální API klíč"
+
+msgid "Global API Key (Legacy)"
+msgstr "Globální API klíč (zastaralý)"
+
+msgid "Hey! You've been using %1$s for a while now. If you're enjoying it, would you mind %2$sleaving a 5-star review%3$s? It helps us keep improving! 🙏"
+msgstr "Ahoj! Používáte %1$s už nějakou dobu. Pokud jste spokojeni, nevadilo by vám %2$snapisat 5hvězdičkovou recenzi%3$s? Pomáhá nám to se neustále zlepšovat! 🙏"
+
+msgid "Leave a Review"
+msgstr "Napsat recenzi"
+
+msgid "Loading log..."
+msgstr "Načítání protokolu..."
+
+msgid "Log"
+msgstr "Protokol"
+
+msgid "Log cleared."
+msgstr "Protokol vymazán."
+
+msgid "Logging is currently disabled. To start logging, enable checkbox on settings tab."
+msgstr "Protokolování je aktuálně vypnuté. Pro zapnutí zaškrtněte políčko na kartě nastavení."
+
+msgid "Maybe Later"
+msgstr "Možná později"
+
+msgid "Please set your Cloudflare credentials below or install and configure the <a href=\"http://wordpress.org/plugins/cloudflare/\" target=\"_blank\">official Cloudflare plugin</a> to continue."
+msgstr "Nastavte prosím své přihlašovací údaje Cloudflare níže nebo nainstalujte a nakonfigurujte <a href=\"http://wordpress.org/plugins/cloudflare/\" target=\"_blank\">oficiální plugin Cloudflare</a> pro pokračování."
+
+msgid "Save Changes"
+msgstr "Uložit změny"
+
+msgid "Set scheduled sales on product edit pages by clicking 'Schedule' under the sale price."
+msgstr "Nastavte plánované slevy na stránkách úprav produktů kliknutím na 'Naplánovat' pod slevovou cenou."
+
+msgid "Settings"
+msgstr "Nastavení"
+
+msgid "There was an error."
+msgstr "Došlo k chybě."
+
+msgid "Triggered when a product sells out or when the stock status is toggled to 'Out of stock'."
+msgstr "Spuštěno, když se produkt vyprodá nebo když je stav skladu přepnut na 'Vyprodáno'."
+
+msgid "When Product Goes Out of Stock?"
+msgstr "Když je produkt vyprodán?"
+
+msgid "When Store Notice is Updated?"
+msgstr "Když je oznámení obchodu aktualizováno?"
+
+msgid "Wooflare requires a <a href=\"http://wordpress.org/plugins/woocommerce\" target=\"_blank\">WooCommerce</a> version of at least 3.3.0 to function correctly. Please update."
+msgstr "Wooflare vyžaduje <a href=\"http://wordpress.org/plugins/woocommerce\" target=\"_blank\">WooCommerce</a> verze alespoň 3.3.0 pro správnou funkci. Aktualizujte prosím."
+
+msgid "Wooflare requires <a href=\"http://wordpress.org/plugins/woocommerce\" target=\"_blank\">WooCommerce</a> to be installed and activated."
+msgstr "Wooflare vyžaduje nainstalovaný a aktivovaný <a href=\"http://wordpress.org/plugins/woocommerce\" target=\"_blank\">WooCommerce</a>."
+
+msgid "Your <a href=\"https://dash.cloudflare.com/profile/api-tokens\" target=\"_blank\">Global API Key</a>.<br />Found under My Profile &rarr; API Tokens &rarr; Global API Key &rarr; View."
+msgstr "Váš <a href=\"https://dash.cloudflare.com/profile/api-tokens\" target=\"_blank\">Globální API klíč</a>.<br />Najdete jej v Můj profil &rarr; API tokeny &rarr; Globální API klíč &rarr; Zobrazit."
+
+msgid "Your Cloudflare account email address."
+msgstr "E-mailová adresa vašeho účtu Cloudflare."
