@@ -1,0 +1,189 @@
+# Copyright (C) 2026 Miller Media
+# This file is distributed under the same license as the Wooflare plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Wooflare 1.0.5\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wooflare\n"
+"Last-Translator: Crash Override (AI)\n"
+"Language-Team: Thai\n"
+"Language: th\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-02-09T19:13:18+00:00\n"
+"PO-Revision-Date: 2026-02-14 18:54+0000\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Domain: wooflare\n"
+
+#. Plugin Name of the plugin
+#: wooflare.php
+msgid "Wooflare"
+msgstr "Wooflare"
+
+#. Description of the plugin
+#: wooflare.php
+msgid "WooCommerce integration with Cloudflare."
+msgstr "การบูรณาการ WooCommerce กับ Cloudflare"
+
+#. Author of the plugin
+#: wooflare.php
+msgid "Miller Media"
+msgstr "Miller Media"
+
+#. Author URI of the plugin
+#: wooflare.php
+msgid "www.millermedia.io"
+msgstr "www.millermedia.io"
+
+#: classes/Plugin.php:129
+msgid "There was an error."
+msgstr "เกิดข้อผิดพลาด"
+
+#: classes/Plugin.php:130
+msgid "Clearing log..."
+msgstr "กำลังล้างบันทึก..."
+
+#: classes/Plugin.php:131
+msgid "Log cleared."
+msgstr "ล้างบันทึกแล้ว"
+
+#: classes/Plugin.php:132
+msgid "Loading log..."
+msgstr "กำลังโหลดบันทึก..."
+
+#: classes/Plugin.php:133
+#: views/SiteSettingsView.php:248
+msgid "Change Credentials"
+msgstr "เปลี่ยนข้อมูลรับรอง"
+
+#: classes/Plugin.php:134
+msgid "Cancel"
+msgstr "ยกเลิก"
+
+#: classes/Plugin.php:135
+#: views/SiteSettingsView.php:250
+msgid "Disconnect"
+msgstr "ยกเลิกการเชื่อมต่อ"
+
+#: classes/Plugin.php:136
+msgid "Are you sure you want to disconnect? Your Cloudflare credentials will be removed."
+msgstr "คุณแน่ใจหรือไม่ว่าต้องการยกเลิกการเชื่อมต่อ? ข้อมูลรับรอง Cloudflare ของคุณจะถูกลบ"
+
+#: views/SiteSettingsView.php:8
+#: views/SiteSettingsView.php:194
+msgid "Cloudflare Credentials"
+msgstr "ข้อมูลรับรอง Cloudflare"
+
+#: views/SiteSettingsView.php:13
+msgid "Authentication Method"
+msgstr "วิธีการยืนยันตัวตน"
+
+#: views/SiteSettingsView.php:16
+msgid "API Token (Recommended)"
+msgstr "โทเค็น API (แนะนำ)"
+
+#: views/SiteSettingsView.php:17
+#: views/SiteSettingsView.php:233
+msgid "Global API Key (Legacy)"
+msgstr "คีย์ API ทั่วไป (เดิม)"
+
+#: views/SiteSettingsView.php:24
+msgid "Email Address"
+msgstr "ที่อยู่อีเมล"
+
+#: views/SiteSettingsView.php:25
+msgid "Your Cloudflare account email address."
+msgstr "ที่อยู่อีเมลบัญชี Cloudflare ของคุณ"
+
+#: views/SiteSettingsView.php:32
+msgid "Global API Key"
+msgstr "คีย์ API ทั่วไป"
+
+#: views/SiteSettingsView.php:33
+msgid "Your <a href=\"https://dash.cloudflare.com/profile/api-tokens\" target=\"_blank\">Global API Key</a>.<br />Found under My Profile &rarr; API Tokens &rarr; Global API Key &rarr; View."
+msgstr "<a href=\"https://dash.cloudflare.com/profile/api-tokens\" target=\"_blank\">คีย์ API ทั่วไป</a> ของคุณ<br />พบได้ภายใต้ โปรไฟล์ของฉัน &rarr; โทเค็น API &rarr; คีย์ API ทั่วไป &rarr; ดู"
+
+#: views/SiteSettingsView.php:40
+#: views/SiteSettingsView.php:227
+msgid "API Token"
+msgstr "โทเค็น API"
+
+#: views/SiteSettingsView.php:41
+msgid "A <a href=\"https://dash.cloudflare.com/profile/api-tokens\" target=\"_blank\">scoped API token</a>.<br />Create one under My Profile &rarr; API Tokens &rarr; Create Token.<br />Required permissions: <strong>Zone &rarr; Zone &rarr; Read</strong>, <strong>Zone &rarr; Cache Purge &rarr; Purge</strong>."
+msgstr "<a href=\"https://dash.cloudflare.com/profile/api-tokens\" target=\"_blank\">โทเค็น API ที่กำหนดขอบเขต</a><br />สร้างหนึ่งรายการภายใต้ โปรไฟล์ของฉัน &rarr; โทเค็น API &rarr; สร้างโทเค็น<br />สิทธิ์ที่จำเป็น: <strong>โซน &rarr; โซน &rarr; อ่าน</strong>, <strong>โซน &rarr; ล้างแคช &rarr; ล้าง</strong>"
+
+#: views/SiteSettingsView.php:47
+msgid "Clear Cache"
+msgstr "ล้างแคช"
+
+#: views/SiteSettingsView.php:52
+msgid "After Scheduled Sale?"
+msgstr "หลังจากการลดราคาตามกำหนดการ?"
+
+#: views/SiteSettingsView.php:53
+msgid "Set scheduled sales on product edit pages by clicking 'Schedule' next to the 'Sale price' field."
+msgstr "ตั้งค่าการลดราคาตามกำหนดการในหน้าแก้ไขสินค้าโดยคลิก 'กำหนดเวลา' ถัดจากช่อง 'ราคาลดพิเศษ'"
+
+#: views/SiteSettingsView.php:58
+msgid "When Product Goes Out of Stock?"
+msgstr "เมื่อสินค้าหมดสต็อก?"
+
+#: views/SiteSettingsView.php:59
+msgid "Triggered when a product sells out or when the stock status is toggled to 'Out of Stock' by an admin."
+msgstr "ทริกเกอร์เมื่อสินค้าขายหมดหรือเมื่อผู้ดูแลระบบเปลี่ยนสถานะสต็อกเป็น 'หมดสต็อก'"
+
+#: views/SiteSettingsView.php:64
+msgid "When Store Notice is Updated?"
+msgstr "เมื่อประกาศร้านค้าได้รับการอัปเดต?"
+
+#: views/SiteSettingsView.php:65
+#, php-format
+msgid "Found in <a href=\"%s\" target=\"_blank\">Customize &rarr; WooCommerce &rarr; Store Notice</a>."
+msgstr "พบได้ใน <a href=\"%s\" target=\"_blank\">ปรับแต่ง &rarr; WooCommerce &rarr; ประกาศร้านค้า</a>"
+
+#: views/SiteSettingsView.php:70
+msgid "Enable Logging?"
+msgstr "เปิดใช้งานการบันทึกหรือไม่?"
+
+#: views/SiteSettingsView.php:185
+msgid "Settings"
+msgstr "การตั้งค่า"
+
+#: views/SiteSettingsView.php:186
+#: views/SiteSettingsView.php:309
+msgid "Log"
+msgstr "บันทึก"
+
+#: views/SiteSettingsView.php:212
+#, php-format
+msgid "Connected via %sCloudflare plugin%s."
+msgstr "เชื่อมต่อผ่าน %sปลั๊กอิน Cloudflare%s"
+
+#: views/SiteSettingsView.php:243
+#, php-format
+msgid "Connected via %s"
+msgstr "เชื่อมต่อผ่าน %s"
+
+#: views/SiteSettingsView.php:270
+msgid "Please set your Cloudflare credentials below or install and configure the <a href=\"http://wordpress.org/plugins/cloudflare/\" target=\"_blank\">official Cloudflare plugin</a> to continue."
+msgstr "โปรดตั้งค่าข้อมูลรับรอง Cloudflare ด้านล่างหรือติดตั้งและกำหนดค่า<a href=\"http://wordpress.org/plugins/cloudflare/\" target=\"_blank\">ปลั๊กอิน Cloudflare อย่างเป็นทางการ</a> เพื่อดำเนินการต่อ"
+
+#: views/SiteSettingsView.php:305
+msgid "Save Changes"
+msgstr "บันทึกการเปลี่ยนแปลง"
+
+#: views/SiteSettingsView.php:313
+msgid "Logging is currently disabled. To start logging, enable checkbox on settings tab."
+msgstr "การบันทึกถูกปิดใช้งานในขณะนี้ หากต้องการเริ่มการบันทึก ให้เปิดใช้งานช่องทำเครื่องหมายในแท็บการตั้งค่า"
+
+#: views/SiteSettingsView.php:320
+msgid "Clear Log"
+msgstr "ล้างบันทึก"
+
+#: wooflare.php:46
+msgid "Wooflare requires <a href=\"http://wordpress.org/plugins/woocommerce\" target=\"_blank\">WooCommerce</a> to be installed and activated."
+msgstr "Wooflare ต้องการให้ติดตั้งและเปิดใช้งาน <a href=\"http://wordpress.org/plugins/woocommerce\" target=\"_blank\">WooCommerce</a>"
+
+#: wooflare.php:50
+msgid "Wooflare requires a <a href=\"http://wordpress.org/plugins/woocommerce\" target=\"_blank\">WooCommerce</a> version of at least 3.3.0 to function correctly. Please update."
+msgstr "Wooflare ต้องการ <a href=\"http://wordpress.org/plugins/woocommerce\" target=\"_blank\">WooCommerce</a> เวอร์ชัน 3.3.0 ขึ้นไปเพื่อทำงานได้อย่างถูกต้อง โปรดอัปเดต"
