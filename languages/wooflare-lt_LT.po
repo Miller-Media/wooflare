@@ -1,0 +1,190 @@
+# Copyright (C) 2026 Miller Media
+# This file is distributed under the same license as the Wooflare plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Wooflare 1.0.5\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wooflare\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Lithuanian <lt@li.org>\n"
+"Language: lt_LT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-02-09T19:13:18+00:00\n"
+"PO-Revision-Date: 2026-02-15 12:00+0000\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: wooflare\n"
+
+#. Plugin Name of the plugin
+#: wooflare.php
+msgid "Wooflare"
+msgstr "Wooflare"
+
+#. Description of the plugin
+#: wooflare.php
+msgid "WooCommerce integration with Cloudflare."
+msgstr "WooCommerce integracija su Cloudflare."
+
+#. Author of the plugin
+#: wooflare.php
+msgid "Miller Media"
+msgstr "Miller Media"
+
+#. Author URI of the plugin
+#: wooflare.php
+msgid "www.millermedia.io"
+msgstr "www.millermedia.io"
+
+#: classes/Plugin.php:129
+msgid "There was an error."
+msgstr "Įvyko klaida."
+
+#: classes/Plugin.php:130
+msgid "Clearing log..."
+msgstr "Išvaloma žurnalas..."
+
+#: classes/Plugin.php:131
+msgid "Log cleared."
+msgstr "Žurnalas išvalytas."
+
+#: classes/Plugin.php:132
+msgid "Loading log..."
+msgstr "Įkeliamas žurnalas..."
+
+#: classes/Plugin.php:133
+#: views/SiteSettingsView.php:248
+msgid "Change Credentials"
+msgstr "Pakeisti prisijungimo duomenis"
+
+#: classes/Plugin.php:134
+msgid "Cancel"
+msgstr "Atšaukti"
+
+#: classes/Plugin.php:135
+#: views/SiteSettingsView.php:250
+msgid "Disconnect"
+msgstr "Atsijungti"
+
+#: classes/Plugin.php:136
+msgid "Are you sure you want to disconnect? Your Cloudflare credentials will be removed."
+msgstr "Ar tikrai norite atsijungti? Jūsų Cloudflare prisijungimo duomenys bus pašalinti."
+
+#: views/SiteSettingsView.php:8
+#: views/SiteSettingsView.php:194
+msgid "Cloudflare Credentials"
+msgstr "Cloudflare prisijungimo duomenys"
+
+#: views/SiteSettingsView.php:13
+msgid "Authentication Method"
+msgstr "Autentifikavimo metodas"
+
+#: views/SiteSettingsView.php:16
+msgid "API Token (Recommended)"
+msgstr "API raktas (rekomenduojama)"
+
+#: views/SiteSettingsView.php:17
+#: views/SiteSettingsView.php:233
+msgid "Global API Key (Legacy)"
+msgstr "Visuotinis API raktas (pasenęs)"
+
+#: views/SiteSettingsView.php:24
+msgid "Email Address"
+msgstr "El. pašto adresas"
+
+#: views/SiteSettingsView.php:25
+msgid "Your Cloudflare account email address."
+msgstr "Jūsų Cloudflare paskyros el. pašto adresas."
+
+#: views/SiteSettingsView.php:32
+msgid "Global API Key"
+msgstr "Visuotinis API raktas"
+
+#: views/SiteSettingsView.php:33
+msgid "Your <a href=\"https://dash.cloudflare.com/profile/api-tokens\" target=\"_blank\">Global API Key</a>.<br />Found under My Profile &rarr; API Tokens &rarr; Global API Key &rarr; View."
+msgstr "Jūsų <a href=\"https://dash.cloudflare.com/profile/api-tokens\" target=\"_blank\">visuotinis API raktas</a>.<br />Rasite skiltyje Mano profilis &rarr; API raktai &rarr; Visuotinis API raktas &rarr; Peržiūrėti."
+
+#: views/SiteSettingsView.php:40
+#: views/SiteSettingsView.php:227
+msgid "API Token"
+msgstr "API raktas"
+
+#: views/SiteSettingsView.php:41
+msgid "A <a href=\"https://dash.cloudflare.com/profile/api-tokens\" target=\"_blank\">scoped API token</a>.<br />Create one under My Profile &rarr; API Tokens &rarr; Create Token.<br />Required permissions: <strong>Zone &rarr; Zone &rarr; Read</strong>, <strong>Zone &rarr; Cache Purge &rarr; Purge</strong>."
+msgstr "<a href=\"https://dash.cloudflare.com/profile/api-tokens\" target=\"_blank\">Apribotas API raktas</a>.<br />Sukurkite skiltyje Mano profilis &rarr; API raktai &rarr; Sukurti raktą.<br />Reikalingi leidimai: <strong>Zona &rarr; Zona &rarr; Skaityti</strong>, <strong>Zona &rarr; Talpyklos išvalymas &rarr; Išvalyti</strong>."
+
+#: views/SiteSettingsView.php:47
+msgid "Clear Cache"
+msgstr "Išvalyti talpyklą"
+
+#: views/SiteSettingsView.php:52
+msgid "After Scheduled Sale?"
+msgstr "Po suplanuotos išpardavimo?"
+
+#: views/SiteSettingsView.php:53
+msgid "Set scheduled sales on product edit pages by clicking 'Schedule' next to the 'Sale price' field."
+msgstr "Nustatykite suplanuotą išpardavimą produktų redagavimo puslapiuose paspausdami 'Suplanuoti' šalia lauko 'Išpardavimo kaina'."
+
+#: views/SiteSettingsView.php:58
+msgid "When Product Goes Out of Stock?"
+msgstr "Kai produktas išparduodamas?"
+
+#: views/SiteSettingsView.php:59
+msgid "Triggered when a product sells out or when the stock status is toggled to 'Out of Stock' by an admin."
+msgstr "Suaktyvinama, kai produktas išparduodamas arba kai administratorius pakeičia atsargų būseną į 'Išparduota'."
+
+#: views/SiteSettingsView.php:64
+msgid "When Store Notice is Updated?"
+msgstr "Kai parduotuvės pranešimas atnaujinamas?"
+
+#: views/SiteSettingsView.php:65
+#, php-format
+msgid "Found in <a href=\"%s\" target=\"_blank\">Customize &rarr; WooCommerce &rarr; Store Notice</a>."
+msgstr "Rasite <a href=\"%s\" target=\"_blank\">Pritaikyti &rarr; WooCommerce &rarr; Parduotuvės pranešimas</a>."
+
+#: views/SiteSettingsView.php:70
+msgid "Enable Logging?"
+msgstr "Įjungti žurnalą?"
+
+#: views/SiteSettingsView.php:185
+msgid "Settings"
+msgstr "Nustatymai"
+
+#: views/SiteSettingsView.php:186
+#: views/SiteSettingsView.php:309
+msgid "Log"
+msgstr "Žurnalas"
+
+#: views/SiteSettingsView.php:212
+#, php-format
+msgid "Connected via %sCloudflare plugin%s."
+msgstr "Prijungta per %sCloudflare įskiepį%s."
+
+#: views/SiteSettingsView.php:243
+#, php-format
+msgid "Connected via %s"
+msgstr "Prijungta per %s"
+
+#: views/SiteSettingsView.php:270
+msgid "Please set your Cloudflare credentials below or install and configure the <a href=\"http://wordpress.org/plugins/cloudflare/\" target=\"_blank\">official Cloudflare plugin</a> to continue."
+msgstr "Prašome įvesti savo Cloudflare prisijungimo duomenis žemiau arba įdiekite ir sukonfigūruokite <a href=\"http://wordpress.org/plugins/cloudflare/\" target=\"_blank\">oficialų Cloudflare įskiepį</a>, kad tęstumėte."
+
+#: views/SiteSettingsView.php:305
+msgid "Save Changes"
+msgstr "Išsaugoti pakeitimus"
+
+#: views/SiteSettingsView.php:313
+msgid "Logging is currently disabled. To start logging, enable checkbox on settings tab."
+msgstr "Žurnalas šiuo metu išjungtas. Norėdami įjungti žurnalą, pažymėkite nustatymų skiltyje."
+
+#: views/SiteSettingsView.php:320
+msgid "Clear Log"
+msgstr "Išvalyti žurnalą"
+
+#: wooflare.php:46
+msgid "Wooflare requires <a href=\"http://wordpress.org/plugins/woocommerce\" target=\"_blank\">WooCommerce</a> to be installed and activated."
+msgstr "Wooflare reikalauja, kad būtų įdiegtas ir aktyvuotas <a href=\"http://wordpress.org/plugins/woocommerce\" target=\"_blank\">WooCommerce</a>."
+
+#: wooflare.php:50
+msgid "Wooflare requires a <a href=\"http://wordpress.org/plugins/woocommerce\" target=\"_blank\">WooCommerce</a> version of at least 3.3.0 to function correctly. Please update."
+msgstr "Wooflare reikalauja <a href=\"http://wordpress.org/plugins/woocommerce\" target=\"_blank\">WooCommerce</a> versijos bent 3.3.0, kad tinkamai veiktų. Prašome atnaujinti."
