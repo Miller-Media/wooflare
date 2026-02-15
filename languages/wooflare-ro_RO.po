@@ -1,0 +1,133 @@
+# Romanian translation for Wooflare
+# Copyright (C) 2026 Miller Media
+# This file is distributed under the same license as the plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Wooflare\n"
+"Report-Msgid-Bugs-To: https://github.com/Miller-Media/wooflare/issues\n"
+"POT-Creation-Date: 2026-02-15 15:00+0000\n"
+"PO-Revision-Date: 2026-02-15 15:00+0000\n"
+"Last-Translator: Crash Override (AI)\n"
+"Language-Team: Romanian\n"
+"Language: ro_RO\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100>0 && n%100<20)) ? 1 : 2);\n"
+
+msgid "A <a href=\"https://dash.cloudflare.com/profile/api-tokens\" target=\"_blank\">scoped API token</a>.<br />Create one under My Profile &rarr; API Tokens &rarr; Create Token.<br />Required permissions: <strong>Zone &rarr; Zone &rarr; Read</strong>, <strong>Zone &rarr; Cache Purge &rarr; Purge</strong>."
+msgstr "Un <a href=\"https://dash.cloudflare.com/profile/api-tokens\" target=\"_blank\">token API cu domeniu limitat</a>.<br />Creați unul din Profilul meu &rarr; Token-uri API &rarr; Creați token.<br />Permisiuni necesare: <strong>Zonă &rarr; Zonă &rarr; Citire</strong>, <strong>Zonă &rarr; Ștergere cache &rarr; Ștergere</strong>."
+
+msgid "API Token"
+msgstr "Token API"
+
+msgid "API Token (Recommended)"
+msgstr "Token API (Recomandat)"
+
+msgid "After Scheduled Sale?"
+msgstr "După vânzarea programată?"
+
+msgid "Are you sure you want to disconnect? Your Cloudflare credentials will be removed."
+msgstr "Sigur doriți să vă deconectați? Acreditările dvs. Cloudflare vor fi eliminate."
+
+msgid "Authentication Method"
+msgstr "Metodă de autentificare"
+
+msgid "Cancel"
+msgstr "Anulare"
+
+msgid "Change Credentials"
+msgstr "Schimbă acreditările"
+
+msgid "Clear Cache"
+msgstr "Șterge cache-ul"
+
+msgid "Clear Log"
+msgstr "Șterge jurnalul"
+
+msgid "Clearing log..."
+msgstr "Se șterge jurnalul..."
+
+msgid "Cloudflare Credentials"
+msgstr "Acreditări Cloudflare"
+
+msgid "Connected via %s"
+msgstr "Conectat prin %s"
+
+msgid "Connected via %sCloudflare plugin%s."
+msgstr "Conectat prin %splugin-ul Cloudflare%s."
+
+msgid "Disconnect"
+msgstr "Deconectare"
+
+msgid "Email Address"
+msgstr "Adresă de e-mail"
+
+msgid "Enable Logging?"
+msgstr "Activați jurnalizarea?"
+
+msgid "Found in <a href=\"%s\" target=\"_blank\">Customize &rarr; WooCommerce &rarr; Store Notice</a>."
+msgstr "Se găsește în <a href=\"%s\" target=\"_blank\">Personalizare &rarr; WooCommerce &rarr; Notificare magazin</a>."
+
+msgid "Global API Key"
+msgstr "Cheie API globală"
+
+msgid "Global API Key (Legacy)"
+msgstr "Cheie API globală (Moștenită)"
+
+msgid "Hey! You've been using %1$s for a while now. If you're enjoying it, would you mind %2$sleaving a 5-star review%3$s? It helps us keep improving! 🙏"
+msgstr "Salut! Folosiți %1$s de ceva timp. Dacă vă place, ați putea %2$slăsa o recenzie de 5 stele%3$s? Ne ajută să continuăm să ne îmbunătățim! 🙏"
+
+msgid "Leave a Review"
+msgstr "Lăsați o recenzie"
+
+msgid "Loading log..."
+msgstr "Se încarcă jurnalul..."
+
+msgid "Log"
+msgstr "Jurnal"
+
+msgid "Log cleared."
+msgstr "Jurnal șters."
+
+msgid "Logging is currently disabled. To start logging, enable checkbox on settings tab."
+msgstr "Jurnalizarea este dezactivată în prezent. Pentru a începe jurnalizarea, activați caseta de selectare din fila de setări."
+
+msgid "Maybe Later"
+msgstr "Poate mai târziu"
+
+msgid "Please set your Cloudflare credentials below or install and configure the <a href=\"http://wordpress.org/plugins/cloudflare/\" target=\"_blank\">official Cloudflare plugin</a> to continue."
+msgstr "Vă rugăm să setați acreditările dvs. Cloudflare mai jos sau să instalați și să configurați <a href=\"http://wordpress.org/plugins/cloudflare/\" target=\"_blank\">plugin-ul oficial Cloudflare</a> pentru a continua."
+
+msgid "Save Changes"
+msgstr "Salvează modificările"
+
+msgid "Set scheduled sales on product edit pages by clicking 'Schedule' next to the 'Sale price' field."
+msgstr "Setați vânzările programate pe paginile de editare a produselor făcând clic pe 'Programare' lângă câmpul 'Preț de vânzare'."
+
+msgid "Settings"
+msgstr "Setări"
+
+msgid "There was an error."
+msgstr "A apărut o eroare."
+
+msgid "Triggered when a product sells out or when the stock status is toggled to 'Out of Stock' by an admin."
+msgstr "Declanșat când un produs se epuizează sau când starea stocului este comutată la 'Fără stoc' de un administrator."
+
+msgid "When Product Goes Out of Stock?"
+msgstr "Când produsul rămâne fără stoc?"
+
+msgid "When Store Notice is Updated?"
+msgstr "Când notificarea magazinului este actualizată?"
+
+msgid "Wooflare requires <a href=\"http://wordpress.org/plugins/woocommerce\" target=\"_blank\">WooCommerce</a> to be installed and activated."
+msgstr "Wooflare necesită ca <a href=\"http://wordpress.org/plugins/woocommerce\" target=\"_blank\">WooCommerce</a> să fie instalat și activat."
+
+msgid "Wooflare requires a <a href=\"http://wordpress.org/plugins/woocommerce\" target=\"_blank\">WooCommerce</a> version of at least 3.3.0 to function correctly. Please update."
+msgstr "Wooflare necesită o versiune <a href=\"http://wordpress.org/plugins/woocommerce\" target=\"_blank\">WooCommerce</a> de cel puțin 3.3.0 pentru a funcționa corect. Vă rugăm să actualizați."
+
+msgid "Your <a href=\"https://dash.cloudflare.com/profile/api-tokens\" target=\"_blank\">Global API Key</a>.<br />Found under My Profile &rarr; API Tokens &rarr; Global API Key &rarr; View."
+msgstr "<a href=\"https://dash.cloudflare.com/profile/api-tokens\" target=\"_blank\">Cheia dvs. API globală</a>.<br />Se găsește la Profilul meu &rarr; Token-uri API &rarr; Cheie API globală &rarr; Vizualizare."
+
+msgid "Your Cloudflare account email address."
+msgstr "Adresa de e-mail a contului dvs. Cloudflare."
