@@ -1,0 +1,191 @@
+# Welsh translation for Wooflare.
+# Copyright (C) 2026 Miller Media
+# This file is distributed under the same license as the Wooflare plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Wooflare 1.0.5\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wooflare\n"
+"Last-Translator: Crash Override (AI)\n"
+"Language-Team: Welsh\n"
+"Language: cy\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-02-16T11:22:00+00:00\n"
+"PO-Revision-Date: 2026-02-16 11:22+0000\n"
+"Plural-Forms: nplurals=4; plural=(n==1) ? 0 : (n==2) ? 1 : (n != 8 && n != 11) ? 2 : 3;\n"
+"X-Generator: OpenClaw AI\n"
+"X-Domain: wooflare\n"
+
+#. Plugin Name of the plugin
+#: wooflare.php
+msgid "Wooflare"
+msgstr "Wooflare"
+
+#. Description of the plugin
+#: wooflare.php
+msgid "WooCommerce integration with Cloudflare."
+msgstr "Integreiddiad WooCommerce gyda Cloudflare."
+
+#. Author of the plugin
+#: wooflare.php
+msgid "Miller Media"
+msgstr "Miller Media"
+
+#. Author URI of the plugin
+#: wooflare.php
+msgid "www.millermedia.io"
+msgstr "www.millermedia.io"
+
+#: classes/Plugin.php:129
+msgid "There was an error."
+msgstr "Roedd gwall."
+
+#: classes/Plugin.php:130
+msgid "Clearing log..."
+msgstr "Yn clirio'r cofnod..."
+
+#: classes/Plugin.php:131
+msgid "Log cleared."
+msgstr "Cofnod wedi'i glirio."
+
+#: classes/Plugin.php:132
+msgid "Loading log..."
+msgstr "Yn llwytho'r cofnod..."
+
+#: classes/Plugin.php:133
+#: views/SiteSettingsView.php:248
+msgid "Change Credentials"
+msgstr "Newid Manylion Dilysu"
+
+#: classes/Plugin.php:134
+msgid "Cancel"
+msgstr "Canslo"
+
+#: classes/Plugin.php:135
+#: views/SiteSettingsView.php:250
+msgid "Disconnect"
+msgstr "Datgysylltu"
+
+#: classes/Plugin.php:136
+msgid "Are you sure you want to disconnect? Your Cloudflare credentials will be removed."
+msgstr "Ydych chi'n siŵr eich bod am ddatgysylltu? Bydd eich manylion dilysu Cloudflare yn cael eu dileu."
+
+#: views/SiteSettingsView.php:8
+#: views/SiteSettingsView.php:194
+msgid "Cloudflare Credentials"
+msgstr "Manylion Dilysu Cloudflare"
+
+#: views/SiteSettingsView.php:13
+msgid "Authentication Method"
+msgstr "Dull Dilysu"
+
+#: views/SiteSettingsView.php:16
+msgid "API Token (Recommended)"
+msgstr "Tocyn API (Argymhellir)"
+
+#: views/SiteSettingsView.php:17
+#: views/SiteSettingsView.php:233
+msgid "Global API Key (Legacy)"
+msgstr "Allwedd API Byd-eang (Hen)"
+
+#: views/SiteSettingsView.php:24
+msgid "Email Address"
+msgstr "Cyfeiriad E-bost"
+
+#: views/SiteSettingsView.php:25
+msgid "Your Cloudflare account email address."
+msgstr "Cyfeiriad e-bost eich cyfrif Cloudflare."
+
+#: views/SiteSettingsView.php:32
+msgid "Global API Key"
+msgstr "Allwedd API Byd-eang"
+
+#: views/SiteSettingsView.php:33
+msgid "Your <a href=\"https://dash.cloudflare.com/profile/api-tokens\" target=\"_blank\">Global API Key</a>.<br />Found under My Profile &rarr; API Tokens &rarr; Global API Key &rarr; View."
+msgstr "Eich <a href=\"https://dash.cloudflare.com/profile/api-tokens\" target=\"_blank\">Allwedd API Byd-eang</a>.<br />I'w ganfod o dan Fy Mhroffil &rarr; Tocynnau API &rarr; Allwedd API Byd-eang &rarr; Gweld."
+
+#: views/SiteSettingsView.php:40
+#: views/SiteSettingsView.php:227
+msgid "API Token"
+msgstr "Tocyn API"
+
+#: views/SiteSettingsView.php:41
+msgid "A <a href=\"https://dash.cloudflare.com/profile/api-tokens\" target=\"_blank\">scoped API token</a>.<br />Create one under My Profile &rarr; API Tokens &rarr; Create Token.<br />Required permissions: <strong>Zone &rarr; Zone &rarr; Read</strong>, <strong>Zone &rarr; Cache Purge &rarr; Purge</strong>."
+msgstr "<a href=\"https://dash.cloudflare.com/profile/api-tokens\" target=\"_blank\">Tocyn API cwmpasog</a>.<br />Crëwch un o dan Fy Mhroffil &rarr; Tocynnau API &rarr; Creu Tocyn.<br />Caniatâd angenrheidiol: <strong>Zone &rarr; Zone &rarr; Read</strong>, <strong>Zone &rarr; Cache Purge &rarr; Purge</strong>."
+
+#: views/SiteSettingsView.php:47
+msgid "Clear Cache"
+msgstr "Clirio'r Storfa"
+
+#: views/SiteSettingsView.php:52
+msgid "After Scheduled Sale?"
+msgstr "Ar ôl Sêl wedi'i Hamserlennu?"
+
+#: views/SiteSettingsView.php:53
+msgid "Set scheduled sales on product edit pages by clicking 'Schedule' next to the 'Sale price' field."
+msgstr "Gosodwch werthiannau wedi'u hamserlennu ar dudalennau golygu cynnyrch trwy glicio 'Amserlenni' wrth ymyl y maes 'Pris sêl'."
+
+#: views/SiteSettingsView.php:58
+msgid "When Product Goes Out of Stock?"
+msgstr "Pan fydd Cynnyrch yn Mynd Allan o Stoc?"
+
+#: views/SiteSettingsView.php:59
+msgid "Triggered when a product sells out or when the stock status is toggled to 'Out of Stock' by an admin."
+msgstr "Yn cael ei sbarduno pan fydd cynnyrch yn gwerthu allan neu pan fydd gweinyddwr yn newid statws y stoc i 'Allan o Stoc'."
+
+#: views/SiteSettingsView.php:64
+msgid "When Store Notice is Updated?"
+msgstr "Pan fydd Hysbysiad y Siop yn cael ei Ddiweddaru?"
+
+#: views/SiteSettingsView.php:65
+#, php-format
+msgid "Found in <a href=\"%s\" target=\"_blank\">Customize &rarr; WooCommerce &rarr; Store Notice</a>."
+msgstr "I'w ganfod yn <a href=\"%s\" target=\"_blank\">Addasu &rarr; WooCommerce &rarr; Hysbysiad y Siop</a>."
+
+#: views/SiteSettingsView.php:70
+msgid "Enable Logging?"
+msgstr "Galluogi Cofnodi?"
+
+#: views/SiteSettingsView.php:185
+msgid "Settings"
+msgstr "Gosodiadau"
+
+#: views/SiteSettingsView.php:186
+#: views/SiteSettingsView.php:309
+msgid "Log"
+msgstr "Cofnod"
+
+#: views/SiteSettingsView.php:212
+#, php-format
+msgid "Connected via %sCloudflare plugin%s."
+msgstr "Wedi cysylltu trwy %sategyn Cloudflare%s."
+
+#: views/SiteSettingsView.php:243
+#, php-format
+msgid "Connected via %s"
+msgstr "Wedi cysylltu trwy %s"
+
+#: views/SiteSettingsView.php:270
+msgid "Please set your Cloudflare credentials below or install and configure the <a href=\"http://wordpress.org/plugins/cloudflare/\" target=\"_blank\">official Cloudflare plugin</a> to continue."
+msgstr "Gosodwch eich manylion dilysu Cloudflare isod neu gosodwch a ffurfweddwch yr <a href=\"http://wordpress.org/plugins/cloudflare/\" target=\"_blank\">ategyn Cloudflare swyddogol</a> i barhau."
+
+#: views/SiteSettingsView.php:305
+msgid "Save Changes"
+msgstr "Cadw Newidiadau"
+
+#: views/SiteSettingsView.php:313
+msgid "Logging is currently disabled. To start logging, enable checkbox on settings tab."
+msgstr "Mae cofnodi wedi'i analluogi ar hyn o bryd. I ddechrau cofnodi, galluogwch y blwch ticio ar y tab gosodiadau."
+
+#: views/SiteSettingsView.php:320
+msgid "Clear Log"
+msgstr "Clirio'r Cofnod"
+
+#: wooflare.php:46
+msgid "Wooflare requires <a href=\"http://wordpress.org/plugins/woocommerce\" target=\"_blank\">WooCommerce</a> to be installed and activated."
+msgstr "Mae Wooflare angen i <a href=\"http://wordpress.org/plugins/woocommerce\" target=\"_blank\">WooCommerce</a> gael ei osod a'i actifadu."
+
+#: wooflare.php:50
+msgid "Wooflare requires a <a href=\"http://wordpress.org/plugins/woocommerce\" target=\"_blank\">WooCommerce</a> version of at least 3.3.0 to function correctly. Please update."
+msgstr "Mae Wooflare angen fersiwn <a href=\"http://wordpress.org/plugins/woocommerce\" target=\"_blank\">WooCommerce</a> o leiaf 3.3.0 i weithio'n gywir. Diweddarwch os gwelwch yn dda."
