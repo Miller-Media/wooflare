@@ -1,0 +1,191 @@
+# Urdu translation for Wooflare
+# Copyright (C) 2026 Miller Media
+# This file is distributed under the same license as the Wooflare plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Wooflare 1.0.5\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wooflare\n"
+"Last-Translator: Crash Override (AI)\n"
+"Language-Team: Urdu\n"
+"Language: ur\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-02-16T11:23:00+00:00\n"
+"PO-Revision-Date: 2026-02-16 11:23+0000\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: OpenClaw AI\n"
+"X-Domain: wooflare\n"
+
+#. Plugin Name of the plugin
+#: wooflare.php
+msgid "Wooflare"
+msgstr "Wooflare"
+
+#. Description of the plugin
+#: wooflare.php
+msgid "WooCommerce integration with Cloudflare."
+msgstr "Cloudflare کے ساتھ WooCommerce انضمام۔"
+
+#. Author of the plugin
+#: wooflare.php
+msgid "Miller Media"
+msgstr "Miller Media"
+
+#. Author URI of the plugin
+#: wooflare.php
+msgid "www.millermedia.io"
+msgstr "www.millermedia.io"
+
+#: classes/Plugin.php:129
+msgid "There was an error."
+msgstr "ایک خرابی ہوئی۔"
+
+#: classes/Plugin.php:130
+msgid "Clearing log..."
+msgstr "لاگ صاف کیا جا رہا ہے..."
+
+#: classes/Plugin.php:131
+msgid "Log cleared."
+msgstr "لاگ صاف ہو گیا۔"
+
+#: classes/Plugin.php:132
+msgid "Loading log..."
+msgstr "لاگ لوڈ ہو رہا ہے..."
+
+#: classes/Plugin.php:133
+#: views/SiteSettingsView.php:248
+msgid "Change Credentials"
+msgstr "اسناد تبدیل کریں"
+
+#: classes/Plugin.php:134
+msgid "Cancel"
+msgstr "منسوخ"
+
+#: classes/Plugin.php:135
+#: views/SiteSettingsView.php:250
+msgid "Disconnect"
+msgstr "منقطع کریں"
+
+#: classes/Plugin.php:136
+msgid "Are you sure you want to disconnect? Your Cloudflare credentials will be removed."
+msgstr "کیا آپ واقعی منقطع کرنا چاہتے ہیں؟ آپ کی Cloudflare اسناد ہٹا دی جائیں گی۔"
+
+#: views/SiteSettingsView.php:8
+#: views/SiteSettingsView.php:194
+msgid "Cloudflare Credentials"
+msgstr "Cloudflare اسناد"
+
+#: views/SiteSettingsView.php:13
+msgid "Authentication Method"
+msgstr "تصدیق کا طریقہ"
+
+#: views/SiteSettingsView.php:16
+msgid "API Token (Recommended)"
+msgstr "API ٹوکن (تجویز کردہ)"
+
+#: views/SiteSettingsView.php:17
+#: views/SiteSettingsView.php:233
+msgid "Global API Key (Legacy)"
+msgstr "عالمی API کلید (پرانا)"
+
+#: views/SiteSettingsView.php:24
+msgid "Email Address"
+msgstr "ای میل پتہ"
+
+#: views/SiteSettingsView.php:25
+msgid "Your Cloudflare account email address."
+msgstr "آپ کے Cloudflare اکاؤنٹ کا ای میل پتہ۔"
+
+#: views/SiteSettingsView.php:32
+msgid "Global API Key"
+msgstr "عالمی API کلید"
+
+#: views/SiteSettingsView.php:33
+msgid "Your <a href=\"https://dash.cloudflare.com/profile/api-tokens\" target=\"_blank\">Global API Key</a>.<br />Found under My Profile &rarr; API Tokens &rarr; Global API Key &rarr; View."
+msgstr "آپ کی <a href=\"https://dash.cloudflare.com/profile/api-tokens\" target=\"_blank\">عالمی API کلید</a>۔<br />میری پروفائل &rarr; API ٹوکنز &rarr; عالمی API کلید &rarr; دیکھیں میں موجود ہے۔"
+
+#: views/SiteSettingsView.php:40
+#: views/SiteSettingsView.php:227
+msgid "API Token"
+msgstr "API ٹوکن"
+
+#: views/SiteSettingsView.php:41
+msgid "A <a href=\"https://dash.cloudflare.com/profile/api-tokens\" target=\"_blank\">scoped API token</a>.<br />Create one under My Profile &rarr; API Tokens &rarr; Create Token.<br />Required permissions: <strong>Zone &rarr; Zone &rarr; Read</strong>, <strong>Zone &rarr; Cache Purge &rarr; Purge</strong>."
+msgstr "ایک <a href=\"https://dash.cloudflare.com/profile/api-tokens\" target=\"_blank\">محدود API ٹوکن</a>۔<br />میری پروفائل &rarr; API ٹوکنز &rarr; ٹوکن بنائیں میں بنائیں۔<br />مطلوبہ اجازتیں: <strong>Zone &rarr; Zone &rarr; Read</strong>، <strong>Zone &rarr; Cache Purge &rarr; Purge</strong>۔"
+
+#: views/SiteSettingsView.php:47
+msgid "Clear Cache"
+msgstr "کیش صاف کریں"
+
+#: views/SiteSettingsView.php:52
+msgid "After Scheduled Sale?"
+msgstr "شیڈول سیل کے بعد؟"
+
+#: views/SiteSettingsView.php:53
+msgid "Set scheduled sales on product edit pages by clicking 'Schedule' next to the 'Sale price' field."
+msgstr "پروڈکٹ ایڈیٹ صفحات پر 'سیل قیمت' فیلڈ کے ساتھ 'شیڈول' پر کلک کر کے شیڈول سیلز سیٹ کریں۔"
+
+#: views/SiteSettingsView.php:58
+msgid "When Product Goes Out of Stock?"
+msgstr "جب پروڈکٹ سٹاک سے باہر ہو جائے؟"
+
+#: views/SiteSettingsView.php:59
+msgid "Triggered when a product sells out or when the stock status is toggled to 'Out of Stock' by an admin."
+msgstr "جب پروڈکٹ فروخت ہو جائے یا جب ایڈمن سٹاک کی حالت 'سٹاک سے باہر' میں تبدیل کرے تو فعال ہوتا ہے۔"
+
+#: views/SiteSettingsView.php:64
+msgid "When Store Notice is Updated?"
+msgstr "جب اسٹور نوٹس اپ ڈیٹ ہو؟"
+
+#: views/SiteSettingsView.php:65
+#, php-format
+msgid "Found in <a href=\"%s\" target=\"_blank\">Customize &rarr; WooCommerce &rarr; Store Notice</a>."
+msgstr "<a href=\"%s\" target=\"_blank\">حسب ضرورت بنائیں &rarr; WooCommerce &rarr; اسٹور نوٹس</a> میں موجود ہے۔"
+
+#: views/SiteSettingsView.php:70
+msgid "Enable Logging?"
+msgstr "لاگنگ فعال کریں؟"
+
+#: views/SiteSettingsView.php:185
+msgid "Settings"
+msgstr "ترتیبات"
+
+#: views/SiteSettingsView.php:186
+#: views/SiteSettingsView.php:309
+msgid "Log"
+msgstr "لاگ"
+
+#: views/SiteSettingsView.php:212
+#, php-format
+msgid "Connected via %sCloudflare plugin%s."
+msgstr "%sCloudflare پلگ ان%s کے ذریعے منسلک۔"
+
+#: views/SiteSettingsView.php:243
+#, php-format
+msgid "Connected via %s"
+msgstr "%s کے ذریعے منسلک"
+
+#: views/SiteSettingsView.php:270
+msgid "Please set your Cloudflare credentials below or install and configure the <a href=\"http://wordpress.org/plugins/cloudflare/\" target=\"_blank\">official Cloudflare plugin</a> to continue."
+msgstr "براہ کرم نیچے اپنی Cloudflare اسناد سیٹ کریں یا جاری رکھنے کے لیے <a href=\"http://wordpress.org/plugins/cloudflare/\" target=\"_blank\">سرکاری Cloudflare پلگ ان</a> انسٹال اور ترتیب دیں۔"
+
+#: views/SiteSettingsView.php:305
+msgid "Save Changes"
+msgstr "تبدیلیاں محفوظ کریں"
+
+#: views/SiteSettingsView.php:313
+msgid "Logging is currently disabled. To start logging, enable checkbox on settings tab."
+msgstr "لاگنگ فی الحال غیر فعال ہے۔ لاگنگ شروع کرنے کے لیے، ترتیبات ٹیب پر چیک باکس فعال کریں۔"
+
+#: views/SiteSettingsView.php:320
+msgid "Clear Log"
+msgstr "لاگ صاف کریں"
+
+#: wooflare.php:46
+msgid "Wooflare requires <a href=\"http://wordpress.org/plugins/woocommerce\" target=\"_blank\">WooCommerce</a> to be installed and activated."
+msgstr "Wooflare کو <a href=\"http://wordpress.org/plugins/woocommerce\" target=\"_blank\">WooCommerce</a> انسٹال اور فعال ہونا ضروری ہے۔"
+
+#: wooflare.php:50
+msgid "Wooflare requires a <a href=\"http://wordpress.org/plugins/woocommerce\" target=\"_blank\">WooCommerce</a> version of at least 3.3.0 to function correctly. Please update."
+msgstr "Wooflare کو صحیح طور پر کام کرنے کے لیے <a href=\"http://wordpress.org/plugins/woocommerce\" target=\"_blank\">WooCommerce</a> کا کم از کم ورژن 3.3.0 ضروری ہے۔ براہ کرم اپ ڈیٹ کریں۔"
