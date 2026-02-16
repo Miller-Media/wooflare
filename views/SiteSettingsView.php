@@ -69,6 +69,12 @@ $settings = array(
                 'type' => 'checkbox',
                 'title' => __('Enable Logging?', 'wooflare'),
                 'description' => ''
+            ),
+            array(
+                'name' => 'delete_data_on_uninstall',
+                'type' => 'checkbox',
+                'title' => __('Remove all plugin data when deleted', 'wooflare'),
+                'description' => __('Check this box if you want all plugin settings and data to be removed when the plugin is deleted.', 'wooflare')
             )
         )
     ),

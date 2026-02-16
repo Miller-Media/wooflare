@@ -196,6 +196,7 @@ class WOOCF_SiteSettings
             $settings['when_product_out_of_stock'] = isset($_POST['when_product_out_of_stock']) ? sanitize_text_field($_POST['when_product_out_of_stock']) : '';
             $settings['when_store_notice_updated'] = isset($_POST['when_store_notice_updated']) ? sanitize_text_field($_POST['when_store_notice_updated']) : '';
             $settings['enable_logging'] = isset($_POST['enable_logging']) ? sanitize_text_field($_POST['enable_logging']) : '';
+            $settings['delete_data_on_uninstall'] = isset($_POST['delete_data_on_uninstall']) ? sanitize_text_field($_POST['delete_data_on_uninstall']) : '';
 
 			if( update_option('woocf_settings', $settings) )
 				return true;
