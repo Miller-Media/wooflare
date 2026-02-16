@@ -4,7 +4,7 @@ Tags: cloudflare, woocommerce, cache, speed, product
 Requires PHP: 8.1
 Requires at least: 3.0
 Tested up to: 6.9.1
-Stable tag: 1.1.1
+Stable tag: 1.2.0
 License: GPLv2
 
 WooFlare provides automated Cloudflare cache control for WooCommerce stores.
@@ -108,6 +108,15 @@ The plugin is available in 30 languages with more being added regularly. We are 
 If you find that a part of this plugin isn't working, please don't simply click the Wordpress "It's broken" button. Let us know what's broken in [its support forum](https://wordpress.org/support/plugin/wooflare/) so we can make it better.
 
 == Changelog ==
+
+= 1.2.0 =
+* Added translations for 50 languages
+* Added POT translation template file
+* Added opt-in data cleanup on plugin deletion
+* Added Settings link on Plugins page
+* Updated FAQ section
+* Updated readme with complete language list
+
 
 = 1.1.1 =
 * Added translations for Russian, Polish, Dutch, Turkish, and Swedish
