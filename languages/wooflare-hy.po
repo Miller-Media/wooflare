@@ -1,0 +1,192 @@
+# Translation of Wooflare into Armenian.
+# Copyright (C) 2026 Miller Media
+# This file is distributed under the same license as the Wooflare plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Wooflare 1.0.5\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wooflare\n"
+"Last-Translator: Crash Override (AI)\n"
+"Language-Team: Armenian\n"
+"Language: hy\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-02-16T11:28:05+00:00\n"
+"PO-Revision-Date: 2026-02-16 11:28+0000\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: OpenClaw AI\n"
+"X-Domain: wooflare\n"
+
+
+#. Plugin Name of the plugin
+#: wooflare.php
+msgid "Wooflare"
+msgstr "Wooflare"
+
+#. Description of the plugin
+#: wooflare.php
+msgid "WooCommerce integration with Cloudflare."
+msgstr "تكامل WooCommerce مع Cloudflare."
+
+#. Author of the plugin
+#: wooflare.php
+msgid "Miller Media"
+msgstr "Miller Media"
+
+#. Author URI of the plugin
+#: wooflare.php
+msgid "www.millermedia.io"
+msgstr "www.millermedia.io"
+
+#: classes/Plugin.php:129
+msgid "There was an error."
+msgstr "Սխալ է տեղի ընկել."
+
+#: classes/Plugin.php:130
+msgid "Clearing log..."
+msgstr "Մատյանի մաքրման..."
+
+#: classes/Plugin.php:131
+msgid "Log cleared."
+msgstr "Մատյանը մաքրվեց."
+
+#: classes/Plugin.php:132
+msgid "Loading log..."
+msgstr "Մատյանի բեռնման..."
+
+#: classes/Plugin.php:133
+#: views/SiteSettingsView.php:248
+msgid "Change Credentials"
+msgstr "Փոխել հավատարականները"
+
+#: classes/Plugin.php:134
+msgid "Cancel"
+msgstr "Չեղարկել"
+
+#: classes/Plugin.php:135
+#: views/SiteSettingsView.php:250
+msgid "Disconnect"
+msgstr "Անջատել"
+
+#: classes/Plugin.php:136
+msgid "Are you sure you want to disconnect? Your Cloudflare credentials will be removed."
+msgstr "Վստահ՞ եք ուզում եք անջատել՞ Ձեր Cloudflare հավատարականները կհեռացվեն."
+
+#: views/SiteSettingsView.php:8
+#: views/SiteSettingsView.php:194
+msgid "Cloudflare Credentials"
+msgstr "Cloudflare հավատարականներ"
+
+#: views/SiteSettingsView.php:13
+msgid "Authentication Method"
+msgstr "Նույնականացման մեթոդ"
+
+#: views/SiteSettingsView.php:16
+msgid "API Token (Recommended)"
+msgstr "API նշան (Հանրախվում է)"
+
+#: views/SiteSettingsView.php:17
+#: views/SiteSettingsView.php:233
+msgid "Global API Key (Legacy)"
+msgstr "Գլոբալ API բանալի (Հին)"
+
+#: views/SiteSettingsView.php:24
+msgid "Email Address"
+msgstr "Էլեկտրոնային հասցե"
+
+#: views/SiteSettingsView.php:25
+msgid "Your Cloudflare account email address."
+msgstr "Ձեր Cloudflare հաշվի էլեկտրոնային հասցեն."
+
+#: views/SiteSettingsView.php:32
+msgid "Global API Key"
+msgstr "Գլոբալ API բանալի"
+
+#: views/SiteSettingsView.php:33
+msgid "Your <a href=\"https://dash.cloudflare.com/profile/api-tokens\" target=\"_blank\">Global API Key</a>.<br />Found under My Profile &rarr; API Tokens &rarr; Global API Key &rarr; View."
+msgstr "<a href=\"https://dash.cloudflare.com/profile/api-tokens\" target=\"_blank\">مفتاح API العام</a> الخاص بك.<br />يوجد في ملفي الشخصي &rarr; رموز API &rarr; مفتاح API العام &rarr; عرض."
+
+#: views/SiteSettingsView.php:40
+#: views/SiteSettingsView.php:227
+msgid "API Token"
+msgstr "API նշան"
+
+#: views/SiteSettingsView.php:41
+msgid "A <a href=\"https://dash.cloudflare.com/profile/api-tokens\" target=\"_blank\">scoped API token</a>.<br />Create one under My Profile &rarr; API Tokens &rarr; Create Token.<br />Required permissions: <strong>Zone &rarr; Zone &rarr; Read</strong>, <strong>Zone &rarr; Cache Purge &rarr; Purge</strong>."
+msgstr "<a href=\"https://dash.cloudflare.com/profile/api-tokens\" target=\"_blank\">رمز API محدد النطاق</a>.<br />أنشئ واحداً في ملفي الشخصي &rarr; رموز API &rarr; إنشاء رمز.<br />الأذونات المطلوبة: <strong>Zone &rarr; Zone &rarr; Read</strong>، <strong>Zone &rarr; Cache Purge &rarr; Purge</strong>."
+
+#: views/SiteSettingsView.php:47
+msgid "Clear Cache"
+msgstr "مسح ذاكرة التخزين المؤقت"
+
+#: views/SiteSettingsView.php:52
+msgid "After Scheduled Sale?"
+msgstr "بعد عملية بيع مجدولة؟"
+
+#: views/SiteSettingsView.php:53
+msgid "Set scheduled sales on product edit pages by clicking 'Schedule' next to the 'Sale price' field."
+msgstr "قم بتعيين مبيعات مجدولة في صفحات تحرير المنتج بالنقر على 'جدولة' بجوار حقل 'سعر الخصم'."
+
+#: views/SiteSettingsView.php:58
+msgid "When Product Goes Out of Stock?"
+msgstr "عندما ينفد المنتج من المخزون؟"
+
+#: views/SiteSettingsView.php:59
+msgid "Triggered when a product sells out or when the stock status is toggled to 'Out of Stock' by an admin."
+msgstr "يتم تفعيله عندما ينفد منتج أو عندما يغير المسؤول حالة المخزون إلى 'نفد المخزون'."
+
+#: views/SiteSettingsView.php:64
+msgid "When Store Notice is Updated?"
+msgstr "عند تحديث إشعار المتجر؟"
+
+#: views/SiteSettingsView.php:65
+#, php-format
+msgid "Found in <a href=\"%s\" target=\"_blank\">Customize &rarr; WooCommerce &rarr; Store Notice</a>."
+msgstr "يوجد في <a href=\"%s\" target=\"_blank\">تخصيص &rarr; WooCommerce &rarr; إشعار المتجر</a>."
+
+#: views/SiteSettingsView.php:70
+msgid "Enable Logging?"
+msgstr "Միացնե՞լ մատյանագրումը՞"
+
+#: views/SiteSettingsView.php:185
+msgid "Settings"
+msgstr "Կարգավորումներ"
+
+#: views/SiteSettingsView.php:186
+#: views/SiteSettingsView.php:309
+msgid "Log"
+msgstr "Մատյան"
+
+#: views/SiteSettingsView.php:212
+#, php-format
+msgid "Connected via %sCloudflare plugin%s."
+msgstr "Կապակցված է %sCloudflare հավելմանով%s."
+
+#: views/SiteSettingsView.php:243
+#, php-format
+msgid "Connected via %s"
+msgstr "Կապակցված է %s-ի միջոցով"
+
+#: views/SiteSettingsView.php:270
+msgid "Please set your Cloudflare credentials below or install and configure the <a href=\"http://wordpress.org/plugins/cloudflare/\" target=\"_blank\">official Cloudflare plugin</a> to continue."
+msgstr "يرجى تعيين بيانات اعتماد Cloudflare الخاصة بك أدناه أو تثبيت وتكوين <a href=\"http://wordpress.org/plugins/cloudflare/\" target=\"_blank\">إضافة Cloudflare الرسمية</a> للمتابعة."
+
+#: views/SiteSettingsView.php:305
+msgid "Save Changes"
+msgstr "Պահել փոփոխությունները"
+
+#: views/SiteSettingsView.php:313
+msgid "Logging is currently disabled. To start logging, enable checkbox on settings tab."
+msgstr "Մատյանագրումը ներկայումս անջատված է. Սկսելու համար նշեց վանդակը կարգավորումների ներդիրում."
+
+#: views/SiteSettingsView.php:320
+msgid "Clear Log"
+msgstr "Մաքրել մատյանը"
+
+#: wooflare.php:46
+msgid "Wooflare requires <a href=\"http://wordpress.org/plugins/woocommerce\" target=\"_blank\">WooCommerce</a> to be installed and activated."
+msgstr "يتطلب Wooflare تثبيت وتفعيل <a href=\"http://wordpress.org/plugins/woocommerce\" target=\"_blank\">WooCommerce</a>."
+
+#: wooflare.php:50
+msgid "Wooflare requires a <a href=\"http://wordpress.org/plugins/woocommerce\" target=\"_blank\">WooCommerce</a> version of at least 3.3.0 to function correctly. Please update."
+msgstr "يتطلب Wooflare إصدار <a href=\"http://wordpress.org/plugins/woocommerce\" target=\"_blank\">WooCommerce</a> بحد أدنى 3.3.0 ليعمل بشكل صحيح. يرجى التحديث."
