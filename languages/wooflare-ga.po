@@ -1,0 +1,191 @@
+# Irish translation for Wooflare.
+# Copyright (C) 2026 Miller Media
+# This file is distributed under the same license as the Wooflare plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Wooflare 1.0.5\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wooflare\n"
+"Last-Translator: Crash Override (AI)\n"
+"Language-Team: Irish\n"
+"Language: ga\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-02-16T11:22:00+00:00\n"
+"PO-Revision-Date: 2026-02-16 11:22+0000\n"
+"Plural-Forms: nplurals=5; plural=(n==1 ? 0 : n==2 ? 1 : n<7 ? 2 : n<11 ? 3 : 4);\n"
+"X-Generator: OpenClaw AI\n"
+"X-Domain: wooflare\n"
+
+#. Plugin Name of the plugin
+#: wooflare.php
+msgid "Wooflare"
+msgstr "Wooflare"
+
+#. Description of the plugin
+#: wooflare.php
+msgid "WooCommerce integration with Cloudflare."
+msgstr "Comhtháthú WooCommerce le Cloudflare."
+
+#. Author of the plugin
+#: wooflare.php
+msgid "Miller Media"
+msgstr "Miller Media"
+
+#. Author URI of the plugin
+#: wooflare.php
+msgid "www.millermedia.io"
+msgstr "www.millermedia.io"
+
+#: classes/Plugin.php:129
+msgid "There was an error."
+msgstr "Tharla earráid."
+
+#: classes/Plugin.php:130
+msgid "Clearing log..."
+msgstr "Logaí á ghlanadh..."
+
+#: classes/Plugin.php:131
+msgid "Log cleared."
+msgstr "Glanadh an logáil."
+
+#: classes/Plugin.php:132
+msgid "Loading log..."
+msgstr "Logáil á lódáil..."
+
+#: classes/Plugin.php:133
+#: views/SiteSettingsView.php:248
+msgid "Change Credentials"
+msgstr "Athraigh Dintiúir"
+
+#: classes/Plugin.php:134
+msgid "Cancel"
+msgstr "Cealaigh"
+
+#: classes/Plugin.php:135
+#: views/SiteSettingsView.php:250
+msgid "Disconnect"
+msgstr "Dínasc"
+
+#: classes/Plugin.php:136
+msgid "Are you sure you want to disconnect? Your Cloudflare credentials will be removed."
+msgstr "An bhfuil tú cinnte gur mhaith leat dínascadh? Bainfear do dhintiúir Cloudflare."
+
+#: views/SiteSettingsView.php:8
+#: views/SiteSettingsView.php:194
+msgid "Cloudflare Credentials"
+msgstr "Dintiúir Cloudflare"
+
+#: views/SiteSettingsView.php:13
+msgid "Authentication Method"
+msgstr "Modh Fíordheimhnithe"
+
+#: views/SiteSettingsView.php:16
+msgid "API Token (Recommended)"
+msgstr "Comhartha API (Molta)"
+
+#: views/SiteSettingsView.php:17
+#: views/SiteSettingsView.php:233
+msgid "Global API Key (Legacy)"
+msgstr "Eochair API Dhomhanda (Oidhreacht)"
+
+#: views/SiteSettingsView.php:24
+msgid "Email Address"
+msgstr "Seoladh Ríomhphoist"
+
+#: views/SiteSettingsView.php:25
+msgid "Your Cloudflare account email address."
+msgstr "Seoladh ríomhphoist do chuntais Cloudflare."
+
+#: views/SiteSettingsView.php:32
+msgid "Global API Key"
+msgstr "Eochair API Dhomhanda"
+
+#: views/SiteSettingsView.php:33
+msgid "Your <a href=\"https://dash.cloudflare.com/profile/api-tokens\" target=\"_blank\">Global API Key</a>.<br />Found under My Profile &rarr; API Tokens &rarr; Global API Key &rarr; View."
+msgstr "D'<a href=\"https://dash.cloudflare.com/profile/api-tokens\" target=\"_blank\">Eochair API Dhomhanda</a>.<br />Le fáil faoi Mo Phróifíl &rarr; Comharthaí API &rarr; Eochair API Dhomhanda &rarr; Féach."
+
+#: views/SiteSettingsView.php:40
+#: views/SiteSettingsView.php:227
+msgid "API Token"
+msgstr "Comhartha API"
+
+#: views/SiteSettingsView.php:41
+msgid "A <a href=\"https://dash.cloudflare.com/profile/api-tokens\" target=\"_blank\">scoped API token</a>.<br />Create one under My Profile &rarr; API Tokens &rarr; Create Token.<br />Required permissions: <strong>Zone &rarr; Zone &rarr; Read</strong>, <strong>Zone &rarr; Cache Purge &rarr; Purge</strong>."
+msgstr "<a href=\"https://dash.cloudflare.com/profile/api-tokens\" target=\"_blank\">Comhartha API scóipthe</a>.<br />Cruthaigh ceann faoi Mo Phróifíl &rarr; Comharthaí API &rarr; Cruthaigh Comhartha.<br />Ceadanna riachtanacha: <strong>Zone &rarr; Zone &rarr; Read</strong>, <strong>Zone &rarr; Cache Purge &rarr; Purge</strong>."
+
+#: views/SiteSettingsView.php:47
+msgid "Clear Cache"
+msgstr "Glan Taisce"
+
+#: views/SiteSettingsView.php:52
+msgid "After Scheduled Sale?"
+msgstr "Tar Éis Díolacháin Sceidealta?"
+
+#: views/SiteSettingsView.php:53
+msgid "Set scheduled sales on product edit pages by clicking 'Schedule' next to the 'Sale price' field."
+msgstr "Socraigh díolacháin sceidealta ar leathanaigh eagarthóireachta táirgí trí chliceáil ar 'Sceideal' in aice leis an réimse 'Praghas díolacháin'."
+
+#: views/SiteSettingsView.php:58
+msgid "When Product Goes Out of Stock?"
+msgstr "Nuair a Théann Táirge As Stoc?"
+
+#: views/SiteSettingsView.php:59
+msgid "Triggered when a product sells out or when the stock status is toggled to 'Out of Stock' by an admin."
+msgstr "Truiceartha nuair a dhíoltar táirge amach nó nuair a athraíonn riarthóir stádas an stoic go 'As Stoc'."
+
+#: views/SiteSettingsView.php:64
+msgid "When Store Notice is Updated?"
+msgstr "Nuair a Nuashonraítear Fógra Siopa?"
+
+#: views/SiteSettingsView.php:65
+#, php-format
+msgid "Found in <a href=\"%s\" target=\"_blank\">Customize &rarr; WooCommerce &rarr; Store Notice</a>."
+msgstr "Le fáil i <a href=\"%s\" target=\"_blank\">Saincheap &rarr; WooCommerce &rarr; Fógra Siopa</a>."
+
+#: views/SiteSettingsView.php:70
+msgid "Enable Logging?"
+msgstr "Cumasaigh Logáil?"
+
+#: views/SiteSettingsView.php:185
+msgid "Settings"
+msgstr "Socruithe"
+
+#: views/SiteSettingsView.php:186
+#: views/SiteSettingsView.php:309
+msgid "Log"
+msgstr "Logáil"
+
+#: views/SiteSettingsView.php:212
+#, php-format
+msgid "Connected via %sCloudflare plugin%s."
+msgstr "Nasctha trí %sbreiseán Cloudflare%s."
+
+#: views/SiteSettingsView.php:243
+#, php-format
+msgid "Connected via %s"
+msgstr "Nasctha trí %s"
+
+#: views/SiteSettingsView.php:270
+msgid "Please set your Cloudflare credentials below or install and configure the <a href=\"http://wordpress.org/plugins/cloudflare/\" target=\"_blank\">official Cloudflare plugin</a> to continue."
+msgstr "Socraigh do dhintiúir Cloudflare thíos le do thoil nó suiteáil agus cumraigh an <a href=\"http://wordpress.org/plugins/cloudflare/\" target=\"_blank\">breiseán oifigiúil Cloudflare</a> chun leanúint ar aghaidh."
+
+#: views/SiteSettingsView.php:305
+msgid "Save Changes"
+msgstr "Sábháil Athruithe"
+
+#: views/SiteSettingsView.php:313
+msgid "Logging is currently disabled. To start logging, enable checkbox on settings tab."
+msgstr "Tá logáil díchumasaithe faoi láthair. Chun logáil a thosú, cumasaigh an ticbhosca ar an gcluaisín socruithe."
+
+#: views/SiteSettingsView.php:320
+msgid "Clear Log"
+msgstr "Glan Logáil"
+
+#: wooflare.php:46
+msgid "Wooflare requires <a href=\"http://wordpress.org/plugins/woocommerce\" target=\"_blank\">WooCommerce</a> to be installed and activated."
+msgstr "Éilíonn Wooflare go mbeadh <a href=\"http://wordpress.org/plugins/woocommerce\" target=\"_blank\">WooCommerce</a> suiteáilte agus gníomhachtaithe."
+
+#: wooflare.php:50
+msgid "Wooflare requires a <a href=\"http://wordpress.org/plugins/woocommerce\" target=\"_blank\">WooCommerce</a> version of at least 3.3.0 to function correctly. Please update."
+msgstr "Éilíonn Wooflare leagan <a href=\"http://wordpress.org/plugins/woocommerce\" target=\"_blank\">WooCommerce</a> 3.3.0 ar a laghad chun feidhmiú i gceart. Nuashonraigh le do thoil."
