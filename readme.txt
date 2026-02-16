@@ -61,6 +61,28 @@ This plugin is available in the following languages:
 1. Activate the plugin through the _Plugins_ menu in WordPress
 1. Configure plugin through admin menu _WooFlare_
 
+== Frequently Asked Questions ==
+
+= How do I connect WooFlare to my Cloudflare account? =
+
+Go to WooFlare in your WordPress admin menu. You can authenticate using either a scoped API Token (recommended) or your Global API Key (legacy). For API Tokens, create one in your Cloudflare dashboard with the "Zone > Cache Purge > Purge" permission.
+
+= When does WooFlare automatically purge the cache? =
+
+WooFlare can purge Cloudflare cache when products go out of stock, when sales start or end, and when product data is updated. You can configure which events trigger a cache purge in the plugin settings.
+
+= Does WooFlare require WooCommerce? =
+
+Yes. WooFlare is designed specifically for WooCommerce stores and requires WooCommerce to be installed and active.
+
+= What PHP and WordPress versions are supported? =
+
+The plugin requires PHP 8.1 or higher and has been tested up to WordPress 6.9.1.
+
+= What languages are supported? =
+
+The plugin is available in 30 languages with more being added regularly. We are working toward supporting 50 languages total!
+
 == Request ==
 
 If you find that a part of this plugin isn't working, please don't simply click the Wordpress "It's broken" button. Let us know what's broken in [its support forum](https://wordpress.org/support/plugin/wooflare/) so we can make it better.
