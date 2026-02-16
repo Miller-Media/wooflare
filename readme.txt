@@ -112,6 +112,7 @@ If you find that a part of this plugin isn't working, please don't simply click 
 = 1.2.0 =
 * Added translations for 50 languages
 * Added POT translation template file
+* Added opt-in data cleanup on plugin deletion
 * Added Settings link on Plugins page
 * Updated FAQ section
 * Updated readme with complete language list
