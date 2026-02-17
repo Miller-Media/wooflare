@@ -1,19 +1,25 @@
 <?php
 /**
  * Plugin Name: Wooflare
- * Plugin URI:
+ * Plugin URI: https://wordpress.org/plugins/wooflare/
  * Description: WooCommerce integration with Cloudflare.
  * Author: Miller Media
- * Author URI: www.millermedia.io
+ * Author URI: https://www.millermedia.io
  * Depends:
  * Text Domain: wooflare
- * Version:           1.2.0
+ * Version: 1.2.1
  * Requires PHP: 8.1
  * Tested up to: 6.9.1
+ * License: GPL-2.0-or-later
+ * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  *
  * WC requires at least: 3.3.0
  * WC tested up to: 9.6
  */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 /**
  * Detect if WooCommerce version is at least 3.3.0 (required for a couple of hooks).
@@ -56,14 +62,17 @@ function woocf_version_check()
 
     ?>
     <div class="notice notice-warning is-dismissible">
-        <p><?php echo $notice_message; ?></p>
+        <p><?php echo wp_kses_post( $notice_message ); ?></p>
     </div>
     <?php
 }
 add_action('admin_notices', 'woocf_version_check');
 
-define( 'WOOCF_PLUGIN_VERSION', '1.2.0' );
-define('WOOCF_MAIN_CLOUDFLARE_PLUGIN_DIR', plugins_url('cloudflare'));
+define( 'WOOCF_PLUGIN_VERSION', '1.2.1' );
+define( 'WOOCF_PLUGIN_FILE', __FILE__ );
+define( 'WOOCF_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
+define( 'WOOCF_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
+define( 'WOOCF_MAIN_CLOUDFLARE_PLUGIN_DIR', plugins_url( 'cloudflare/', WOOCF_PLUGIN_FILE ) );
 
 add_action('plugins_loaded', function() {
     load_plugin_textdomain('wooflare', false, dirname(plugin_basename(__FILE__)) . '/languages');
