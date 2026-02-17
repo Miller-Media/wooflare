@@ -1,4 +1,7 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 $siteSettings = new WOOCF_SiteSettings();
 $woocf_settings = $siteSettings->settings;
 $credentials = $siteSettings->areCredentialsSet();
@@ -94,7 +97,7 @@ function woocf_render_field($data, $woocf_settings) {
                 if (isset($data['description']) && $data['description']) {
                     ?>
                     <span
-                        class="cf-card__footer_message"><?php echo $data['description']; ?></span>
+                        class="cf-card__footer_message"><?php echo wp_kses_post( $data['description'] ); ?></span>
                     <?php
                 }
                 ?>
@@ -115,7 +118,7 @@ function woocf_render_field($data, $woocf_settings) {
                 if (isset($data['description']) && $data['description']) {
                     ?>
                     <span
-                        class="cf-card__footer_message"><?php echo $data['description']; ?></span>
+                        class="cf-card__footer_message"><?php echo wp_kses_post( $data['description'] ); ?></span>
                     <?php
                 }
                 ?>
@@ -135,7 +138,7 @@ function woocf_render_field($data, $woocf_settings) {
                 if (isset($data['description']) && $data['description']) {
                     ?>
                     <span
-                        class="cf-card__footer_message"><?php echo $data['description']; ?></span>
+                        class="cf-card__footer_message"><?php echo wp_kses_post( $data['description'] ); ?></span>
                     <?php
                 }
                 ?>
@@ -171,7 +174,7 @@ function woocf_render_field($data, $woocf_settings) {
                 if (isset($data['description']) && $data['description']) {
                     ?>
                     <span
-                        class="cf-card__footer_message"><?php echo $data['description']; ?></span>
+                        class="cf-card__footer_message"><?php echo wp_kses_post( $data['description'] ); ?></span>
                     <?php
                 }
                 ?>
@@ -215,7 +218,8 @@ function woocf_render_field($data, $woocf_settings) {
                                             <span class="dashicons dashicons-yes-alt woocf-status-icon"></span>
                                             <span class="woocf-status-text">
                                                 <?php printf(
-                                                    __('Connected via %sCloudflare plugin%s.', 'wooflare'),
+
+                                                    wp_kses_post( __('Connected via %sCloudflare plugin%s.', 'wooflare') ),
                                                     '<a href="' . esc_url($cloudflare_admin_url) . '">',
                                                     '</a>'
                                                 ); ?>
@@ -246,10 +250,11 @@ function woocf_render_field($data, $woocf_settings) {
                                             <span class="dashicons dashicons-yes-alt woocf-status-icon"></span>
                                             <span class="woocf-status-text">
                                                 <?php printf(
-                                                    __('Connected via %s', 'wooflare'),
+
+                                                    wp_kses_post( __('Connected via %s', 'wooflare') ),
                                                     '<strong>' . esc_html($auth_label) . '</strong>'
                                                 ); ?>
-                                                &mdash; <?php echo $masked_display; ?>
+                                                &mdash; <?php echo esc_html( $masked_display ); ?>
                                             </span>
                                             <a href="#" class="woocf-toggle-credentials"><?php esc_html_e('Change Credentials', 'wooflare'); ?></a>
                                             <span class="woocf-status-separator">|</span>
@@ -273,7 +278,7 @@ function woocf_render_field($data, $woocf_settings) {
                                 <tr>
                                     <td colspan="2">
                                         <div class="woocf-connect-prompt">
-                                            <?php echo __('Please set your Cloudflare credentials below or install and configure the <a href="http://wordpress.org/plugins/cloudflare/" target="_blank">official Cloudflare plugin</a> to continue.', 'wooflare'); ?>
+                                            <?php echo wp_kses_post( __('Please set your Cloudflare credentials below or install and configure the <a href="https://wordpress.org/plugins/cloudflare/" target="_blank">official Cloudflare plugin</a> to continue.', 'wooflare') ); ?>
                                         </div>
                                         <table><tbody>
                                             <?php

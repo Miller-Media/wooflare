@@ -162,11 +162,11 @@ class WOOCF_SiteSettings
 		if ( isset($_POST['submit']) ) {
 
 			// Bail if nonce not set.
-			if ( !isset( $_POST['woocf_settings_nonce'] ) )
+			if ( ! isset( $_POST['woocf_settings_nonce'] ) )
 				return false;
 
 			// Verify nonce.
-			if ( !wp_verify_nonce($_POST['woocf_settings_nonce'], 'woocf_settings_nonce') )
+			if ( ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['woocf_settings_nonce'] ) ), 'woocf_settings_nonce' ) )
 				return false;
 
 			return $this->updateSettings();
