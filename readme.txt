@@ -3,8 +3,8 @@ Contributors: MillerMediaNow, mikemm01
 Tags: cloudflare, woocommerce, cache, speed, product
 Requires PHP: 8.1
 Requires at least: 3.0
-Tested up to: 6.9.1
-Stable tag: 1.2.1
+Tested up to: 6.9
+Stable tag: 1.2.2
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -109,6 +109,12 @@ The plugin is available in 30 languages with more being added regularly. We are 
 If you find that a part of this plugin isn't working, please don't simply click the Wordpress "It's broken" button. Let us know what's broken in [its support forum](https://wordpress.org/support/plugin/wooflare/) so we can make it better.
 
 == Changelog ==
+
+= 1.2.2 =
+* Fixed unordered printf placeholders (%s -> %1$s, %2$s) in SiteSettingsView.php
+* Added translators comments for printf calls with placeholders
+* Fixed masked_display output to use wp_kses_post instead of esc_html
+* Updated "Tested up to" to 6.9
 
 = 1.2.1 =
 * Added GPL license declaration to plugin header

@@ -217,12 +217,14 @@ function woocf_render_field($data, $woocf_settings) {
                                         <div class="woocf-connection-status woocf-connection-status--cf-plugin">
                                             <span class="dashicons dashicons-yes-alt woocf-status-icon"></span>
                                             <span class="woocf-status-text">
-                                                <?php printf(
-
-                                                    wp_kses_post( __('Connected via %sCloudflare plugin%s.', 'wooflare') ),
+                                                <?php
+                                                echo wp_kses_post( sprintf(
+                                                    /* translators: 1: opening link tag, 2: closing link tag */
+                                                    __('Connected via %1$sCloudflare plugin%2$s.', 'wooflare'),
                                                     '<a href="' . esc_url($cloudflare_admin_url) . '">',
                                                     '</a>'
-                                                ); ?>
+                                                ) );
+                                                ?>
                                             </span>
                                         </div>
                                     </td>
@@ -249,12 +251,14 @@ function woocf_render_field($data, $woocf_settings) {
                                         <div class="woocf-connection-status woocf-connection-status--connected">
                                             <span class="dashicons dashicons-yes-alt woocf-status-icon"></span>
                                             <span class="woocf-status-text">
-                                                <?php printf(
-
-                                                    wp_kses_post( __('Connected via %s', 'wooflare') ),
+                                                <?php
+                                                echo wp_kses_post( sprintf(
+                                                    /* translators: %1$s: authentication method name (e.g. "API Token") */
+                                                    __('Connected via %1$s', 'wooflare'),
                                                     '<strong>' . esc_html($auth_label) . '</strong>'
-                                                ); ?>
-                                                &mdash; <?php echo esc_html( $masked_display ); ?>
+                                                ) );
+                                                ?>
+                                                &mdash; <?php echo wp_kses_post( $masked_display ); ?>
                                             </span>
                                             <a href="#" class="woocf-toggle-credentials"><?php esc_html_e('Change Credentials', 'wooflare'); ?></a>
                                             <span class="woocf-status-separator">|</span>
