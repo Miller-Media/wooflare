@@ -7,9 +7,9 @@
  * Author URI: https://mattmiller.ai
  * Depends:
  * Text Domain: wooflare
- * Version: 1.2.1
+ * Version: 1.2.2
  * Requires PHP: 8.1
- * Tested up to: 6.9.1
+ * Tested up to: 6.9
  * License: GPL-2.0-or-later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  *
@@ -68,7 +68,7 @@ function woocf_version_check()
 }
 add_action('admin_notices', 'woocf_version_check');
 
-define( 'WOOCF_PLUGIN_VERSION', '1.2.1' );
+define( 'WOOCF_PLUGIN_VERSION', '1.2.2' );
 define( 'WOOCF_PLUGIN_FILE', __FILE__ );
 define( 'WOOCF_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'WOOCF_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
