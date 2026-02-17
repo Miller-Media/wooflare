@@ -4,7 +4,7 @@
  * Plugin URI: https://wordpress.org/plugins/wooflare/
  * Description: WooCommerce integration with Cloudflare.
  * Author: Miller Media
- * Author URI: https://www.millermedia.io
+ * Author URI: https://mattmiller.ai
  * Depends:
  * Text Domain: wooflare
  * Version: 1.2.1
@@ -97,4 +97,4 @@ add_filter('plugin_action_links_' . plugin_basename(__FILE__), function($links) 
 });
 
 $WOOCF_Main = new WOOCF_Main();
-new WOOCF_ReviewNotice( 'Wooflare', 'wooflare', 'woocf_activated_on', 'wooflare', plugin_dir_url( __FILE__ ) . 'assets/icon-128x128.jpg' );
+new WOOCF_ReviewNotice( 'Wooflare', 'wooflare', 'woocf_activated_on', 'wooflare', plugin_dir_url( __FILE__ ) . 'assets/plugin-icon.jpg' );
