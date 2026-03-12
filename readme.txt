@@ -1,6 +1,6 @@
 === WooFlare ===
 Contributors: MillerMediaNow, mikemm01
-Tags: cloudflare, woocommerce, cache, speed, product
+Tags: cloudflare, woocommerce, cache, purge, performance
 Requires PHP: 8.1
 Requires at least: 3.0
 Tested up to: 6.9
