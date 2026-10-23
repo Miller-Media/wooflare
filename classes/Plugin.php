@@ -133,6 +133,7 @@ class WOOCF_Main {
 				'cancel'             => __( 'Cancel', 'wooflare' ),
 				'disconnect'         => __( 'Disconnect', 'wooflare' ),
 				'disconnect_confirm' => __( 'Are you sure you want to disconnect? Your Cloudflare credentials will be removed.', 'wooflare' ),
+				'clearlog_nonce'     => wp_create_nonce( 'woocf_clearlog' ),
 			)
 		);
 
@@ -438,7 +439,16 @@ class WOOCF_Main {
 	 */
 	public function ajaxClearLog() {
 		$response = array();
-		if ( ! isset( $_POST['clear_log'] ) || ! $_POST['clear_log'] ) {
+
+		// Admin-only action; clearly lacked a capability check before this fix.
+		if ( ! current_user_can( 'manage_options' ) ) {
+			$response['error'] = 'An error occurred.';
+			wp_die( json_encode( $response ) );
+		}
+
+		check_ajax_referer( 'woocf_clearlog', 'nonce' );
+
+		if ( ! isset( $_POST['clear_log'] ) || ! sanitize_text_field( wp_unslash( $_POST['clear_log'] ) ) ) {
 			$response['error'] = 'An error occurred.';
 			wp_die( json_encode( $response ) );
 		}

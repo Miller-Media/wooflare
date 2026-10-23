@@ -191,20 +191,20 @@ class WOOCF_SiteSettings {
 		// Load current options if available
 		$settings = $this->settings;
 
-		if ( isset( $_POST['woocf_settings_nonce'] ) ) {
+		if ( isset( $_POST['woocf_settings_nonce'] ) && wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['woocf_settings_nonce'] ) ), 'woocf_settings_nonce' ) ) {
 
 			// Cloudflare Credentials
-			$settings['cf_email']     = isset( $_POST['cf_email'] ) ? sanitize_text_field( $_POST['cf_email'] ) : ( array_key_exists( 'cf_email', $settings ) ? $settings['cf_email'] : '' );
-			$settings['cf_key']       = isset( $_POST['cf_key'] ) ? sanitize_text_field( $_POST['cf_key'] ) : ( array_key_exists( 'cf_key', $settings ) ? $settings['cf_key'] : '' );
-			$settings['cf_auth_type'] = isset( $_POST['cf_auth_type'] ) ? sanitize_text_field( $_POST['cf_auth_type'] ) : ( array_key_exists( 'cf_auth_type', $settings ) ? $settings['cf_auth_type'] : 'global_key' );
-			$settings['cf_token']     = isset( $_POST['cf_token'] ) ? sanitize_text_field( $_POST['cf_token'] ) : ( array_key_exists( 'cf_token', $settings ) ? $settings['cf_token'] : '' );
+			$settings['cf_email']     = isset( $_POST['cf_email'] ) ? sanitize_text_field( wp_unslash( $_POST['cf_email'] ) ) : ( array_key_exists( 'cf_email', $settings ) ? $settings['cf_email'] : '' );
+			$settings['cf_key']       = isset( $_POST['cf_key'] ) ? sanitize_text_field( wp_unslash( $_POST['cf_key'] ) ) : ( array_key_exists( 'cf_key', $settings ) ? $settings['cf_key'] : '' );
+			$settings['cf_auth_type'] = isset( $_POST['cf_auth_type'] ) ? sanitize_text_field( wp_unslash( $_POST['cf_auth_type'] ) ) : ( array_key_exists( 'cf_auth_type', $settings ) ? $settings['cf_auth_type'] : 'global_key' );
+			$settings['cf_token']     = isset( $_POST['cf_token'] ) ? sanitize_text_field( wp_unslash( $_POST['cf_token'] ) ) : ( array_key_exists( 'cf_token', $settings ) ? $settings['cf_token'] : '' );
 
 			// Cache Clearing settings
-			$settings['after_scheduled_sale']      = isset( $_POST['after_scheduled_sale'] ) ? sanitize_text_field( $_POST['after_scheduled_sale'] ) : '';
-			$settings['when_product_out_of_stock'] = isset( $_POST['when_product_out_of_stock'] ) ? sanitize_text_field( $_POST['when_product_out_of_stock'] ) : '';
-			$settings['when_store_notice_updated'] = isset( $_POST['when_store_notice_updated'] ) ? sanitize_text_field( $_POST['when_store_notice_updated'] ) : '';
-			$settings['enable_logging']            = isset( $_POST['enable_logging'] ) ? sanitize_text_field( $_POST['enable_logging'] ) : '';
-			$settings['delete_data_on_uninstall']  = isset( $_POST['delete_data_on_uninstall'] ) ? sanitize_text_field( $_POST['delete_data_on_uninstall'] ) : '';
+			$settings['after_scheduled_sale']      = isset( $_POST['after_scheduled_sale'] ) ? sanitize_text_field( wp_unslash( $_POST['after_scheduled_sale'] ) ) : '';
+			$settings['when_product_out_of_stock'] = isset( $_POST['when_product_out_of_stock'] ) ? sanitize_text_field( wp_unslash( $_POST['when_product_out_of_stock'] ) ) : '';
+			$settings['when_store_notice_updated'] = isset( $_POST['when_store_notice_updated'] ) ? sanitize_text_field( wp_unslash( $_POST['when_store_notice_updated'] ) ) : '';
+			$settings['enable_logging']            = isset( $_POST['enable_logging'] ) ? sanitize_text_field( wp_unslash( $_POST['enable_logging'] ) ) : '';
+			$settings['delete_data_on_uninstall']  = isset( $_POST['delete_data_on_uninstall'] ) ? sanitize_text_field( wp_unslash( $_POST['delete_data_on_uninstall'] ) ) : '';
 
 			if ( update_option( 'woocf_settings', $settings ) ) {
 				return true;
