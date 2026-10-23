@@ -2,7 +2,7 @@
 Contributors: MillerMediaNow, mikemm01
 Tags: cloudflare, woocommerce, cache, purge, performance
 Requires PHP: 8.1
-Requires at least: 3.0
+Requires at least: 6.0
 Tested up to: 7.1
 Stable tag: 1.2.2
 License: GPL-2.0-or-later
