@@ -9,10 +9,9 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * Handles setting up the admin settings menus
  * and screens.
- *
  */
-class WOOCF_SiteSettings
-{
+class WOOCF_SiteSettings {
+
 	public $siteBaseDomain;
 	public $settings;
 
@@ -20,154 +19,163 @@ class WOOCF_SiteSettings
 	 * WOOCF_SiteSettings constructor.
 	 *
 	 * Runs on instantiation.
-	 *
 	 */
-	public function __construct()
-	{
-        $helperFunctions = new WOOCF_Helpers();
-		$this->siteBaseDomain = $helperFunctions->parseBaseDomainFromURL(get_site_url())['domain'];
+	public function __construct() {
+		$helperFunctions      = new WOOCF_Helpers();
+		$this->siteBaseDomain = $helperFunctions->parseBaseDomainFromURL( get_site_url() )['domain'];
 
-		$woocf_settings = get_option('woocf_settings');
-		$this->settings = is_array($woocf_settings) ? $woocf_settings : array();
+		$woocf_settings = get_option( 'woocf_settings' );
+		$this->settings = is_array( $woocf_settings ) ? $woocf_settings : array();
 
-        /**
-         * Overwrite API authentication with credentials from official Cloudflare plugin
-         * if they exist and the plugin is active
-         */
-        if($this->isCloudflarePluginActive()) {
-            $cf_plugin_email = get_option('cloudflare_api_email');
-            $cf_plugin_key = get_option('cloudflare_api_key');
+		/**
+		 * Overwrite API authentication with credentials from official Cloudflare plugin
+		 * if they exist and the plugin is active
+		 */
+		if ( $this->isCloudflarePluginActive() ) {
+			$cf_plugin_email = get_option( 'cloudflare_api_email' );
+			$cf_plugin_key   = get_option( 'cloudflare_api_key' );
 
-            // Only use if both are present
-            if ($cf_plugin_key && $cf_plugin_email) {
-                $this->settings['cf_email'] = $cf_plugin_email;
-                $this->settings['cf_key'] = $cf_plugin_key;
-            }
-        }
-
+			// Only use if both are present
+			if ( $cf_plugin_key && $cf_plugin_email ) {
+				$this->settings['cf_email'] = $cf_plugin_email;
+				$this->settings['cf_key']   = $cf_plugin_key;
+			}
+		}
 	}
 
-    /**
-     * Checks to see if the official Cloudflare plugin is active.
-     *
-     * Method below is used in place of is_plugin_active because this can happen at any
-     * time during site load whereas is_plugin_active only happens after admin_init
-     *
-     * @return bool
-     */
-    public function isCloudflarePluginActive(){
-        $active_plugins_basenames = get_option( 'active_plugins' );
-        foreach ( $active_plugins_basenames as $plugin_basename ) {
-            if ( false !== strpos( $plugin_basename, '/cloudflare.php' ) ) {
-                return true;
-            }
-        }
-
-        return false;
-	}
-
-    /**
-     * Checks to see if the official Cloudflare plugin is active and credentials are set.
-     * @return array|bool
-     */
-    public function areCloudflarePluginCredentialsSet(){
-	    // Only use credentials if Cloudflare plugin is active, even if the values are in the DB
-        if(!$this->isCloudflarePluginActive())
-            return false;
-
-		if(!empty(get_option('cloudflare_api_key', null)) && !empty(get_option('cloudflare_api_email', null)))
-			return array('cf_key'=>get_option('cloudflare_api_key', null),'cf_email'=>get_option('cloudflare_api_email', null));
+	/**
+	 * Checks to see if the official Cloudflare plugin is active.
+	 *
+	 * Method below is used in place of is_plugin_active because this can happen at any
+	 * time during site load whereas is_plugin_active only happens after admin_init
+	 *
+	 * @return bool
+	 */
+	public function isCloudflarePluginActive() {
+		$active_plugins_basenames = get_option( 'active_plugins' );
+		foreach ( $active_plugins_basenames as $plugin_basename ) {
+			if ( false !== strpos( $plugin_basename, '/cloudflare.php' ) ) {
+				return true;
+			}
+		}
 
 		return false;
 	}
 
-    /**
-     * Checks to see if Cloudflare credentials are set either through the official
-     * Cloudflare plugin or through this plugin manually.
-     *
-     * @return array|bool
-     */
-    public function areCredentialsSet(){
-        // First, get API email and key from CloudFlare plugin settings, if available.
-        if($use_cloudflare_plugin_credentials = $this->areCloudflarePluginCredentialsSet()){
-            $cf_key = $use_cloudflare_plugin_credentials['cf_key'];
-            $cf_email = $use_cloudflare_plugin_credentials['cf_email'];
-            $cf_source = 'cf_plugin';
-            return array('cf key' => $cf_key, 'cf_email' => $cf_email, 'source' => $cf_source);
-        }
+	/**
+	 * Checks to see if the official Cloudflare plugin is active and credentials are set.
+	 *
+	 * @return array|bool
+	 */
+	public function areCloudflarePluginCredentialsSet() {
+		// Only use credentials if Cloudflare plugin is active, even if the values are in the DB
+		if ( ! $this->isCloudflarePluginActive() ) {
+			return false;
+		}
 
-        // Check manual credentials based on auth type
-        $auth_type = isset($this->settings['cf_auth_type']) ? $this->settings['cf_auth_type'] : 'global_key';
+		if ( ! empty( get_option( 'cloudflare_api_key', null ) ) && ! empty( get_option( 'cloudflare_api_email', null ) ) ) {
+			return array(
+				'cf_key'   => get_option( 'cloudflare_api_key', null ),
+				'cf_email' => get_option( 'cloudflare_api_email', null ),
+			);
+		}
 
-        if ($auth_type === 'api_token') {
-            if (!empty($this->settings['cf_token'])) {
-                return array('cf_token' => $this->settings['cf_token'], 'source' => 'manual', 'auth_type' => 'api_token');
-            }
-        } else {
-            if (!empty($this->settings['cf_key']) && !empty($this->settings['cf_email'])) {
-                return array('cf key' => $this->settings['cf_key'], 'cf_email' => $this->settings['cf_email'], 'source' => 'manual');
-            }
-        }
+		return false;
+	}
 
-        return false;
-    }
+	/**
+	 * Checks to see if Cloudflare credentials are set either through the official
+	 * Cloudflare plugin or through this plugin manually.
+	 *
+	 * @return array|bool
+	 */
+	public function areCredentialsSet() {
+		// First, get API email and key from CloudFlare plugin settings, if available.
+		if ( $use_cloudflare_plugin_credentials = $this->areCloudflarePluginCredentialsSet() ) {
+			$cf_key    = $use_cloudflare_plugin_credentials['cf_key'];
+			$cf_email  = $use_cloudflare_plugin_credentials['cf_email'];
+			$cf_source = 'cf_plugin';
+			return array(
+				'cf key'   => $cf_key,
+				'cf_email' => $cf_email,
+				'source'   => $cf_source,
+			);
+		}
 
-    public function isLoggingEnabled(){
-        return array_key_exists('enable_logging', $this->settings) && $this->settings['enable_logging']=='on';
-    }
+		// Check manual credentials based on auth type
+		$auth_type = isset( $this->settings['cf_auth_type'] ) ? $this->settings['cf_auth_type'] : 'global_key';
+
+		if ( $auth_type === 'api_token' ) {
+			if ( ! empty( $this->settings['cf_token'] ) ) {
+				return array(
+					'cf_token'  => $this->settings['cf_token'],
+					'source'    => 'manual',
+					'auth_type' => 'api_token',
+				);
+			}
+		} elseif ( ! empty( $this->settings['cf_key'] ) && ! empty( $this->settings['cf_email'] ) ) {
+				return array(
+					'cf key'   => $this->settings['cf_key'],
+					'cf_email' => $this->settings['cf_email'],
+					'source'   => 'manual',
+				);
+		}
+
+		return false;
+	}
+
+	public function isLoggingEnabled() {
+		return array_key_exists( 'enable_logging', $this->settings ) && $this->settings['enable_logging'] == 'on';
+	}
 
 	/**
 	 * Registers the network admin menu page.
-	 *
 	 */
-	public function addSiteMenu()
-	{
+	public function addSiteMenu() {
 		add_menu_page(
 			'Wooflare',
 			'Wooflare',
 			'manage_options',
 			'woocf-menu',
-			array($this, 'addSiteMenuCB'),
-			plugin_dir_url(plugin_dir_path(__FILE__)).'assets/media/cf-facebook-card.png'
+			array( $this, 'addSiteMenuCB' ),
+			plugin_dir_url( plugin_dir_path( __FILE__ ) ) . 'assets/media/cf-facebook-card.png'
 		);
 	}
 
 	/**
 	 * Callback for add_menu_page to display the
 	 * settings page.
-	 *
 	 */
-	public function addSiteMenuCB()
-	{
+	public function addSiteMenuCB() {
 		$this->displaySiteSettingsMenu();
 	}
 
 	/**
 	 * Include the settings menu template.
-	 *
 	 */
-	public function displaySiteSettingsMenu()
-	{
-		include_once(plugin_dir_path(plugin_dir_path(__FILE__)).'views/SiteSettingsView.php');
+	public function displaySiteSettingsMenu() {
+		include_once plugin_dir_path( plugin_dir_path( __FILE__ ) ) . 'views/SiteSettingsView.php';
 	}
 
 	/**
 	 * Verify nonce on form submit, then update settings.
-	 *
 	 */
 	public function verifyNonce() {
-		if ( !isset($_GET['page']) || $_GET['page'] !== 'woocf-menu' )
+		if ( ! isset( $_GET['page'] ) || $_GET['page'] !== 'woocf-menu' ) {
 			return false;
+		}
 
-		if ( isset($_POST['submit']) ) {
+		if ( isset( $_POST['submit'] ) ) {
 
 			// Bail if nonce not set.
-			if ( ! isset( $_POST['woocf_settings_nonce'] ) )
+			if ( ! isset( $_POST['woocf_settings_nonce'] ) ) {
 				return false;
+			}
 
 			// Verify nonce.
-			if ( ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['woocf_settings_nonce'] ) ), 'woocf_settings_nonce' ) )
+			if ( ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['woocf_settings_nonce'] ) ), 'woocf_settings_nonce' ) ) {
 				return false;
+			}
 
 			return $this->updateSettings();
 		}
@@ -181,30 +189,28 @@ class WOOCF_SiteSettings
 	 */
 	public function updateSettings() {
 		// Load current options if available
-	    $settings = $this->settings;
+		$settings = $this->settings;
 
-		if (isset($_POST['woocf_settings_nonce'])) {
+		if ( isset( $_POST['woocf_settings_nonce'] ) ) {
 
-            // Cloudflare Credentials
-            $settings['cf_email'] = isset($_POST['cf_email']) ? sanitize_text_field($_POST['cf_email']) : (array_key_exists('cf_email', $settings) ? $settings['cf_email'] : '');
-            $settings['cf_key'] = isset($_POST['cf_key']) ? sanitize_text_field($_POST['cf_key']) : (array_key_exists('cf_key', $settings) ? $settings['cf_key'] : '');
-            $settings['cf_auth_type'] = isset($_POST['cf_auth_type']) ? sanitize_text_field($_POST['cf_auth_type']) : (array_key_exists('cf_auth_type', $settings) ? $settings['cf_auth_type'] : 'global_key');
-            $settings['cf_token'] = isset($_POST['cf_token']) ? sanitize_text_field($_POST['cf_token']) : (array_key_exists('cf_token', $settings) ? $settings['cf_token'] : '');
+			// Cloudflare Credentials
+			$settings['cf_email']     = isset( $_POST['cf_email'] ) ? sanitize_text_field( $_POST['cf_email'] ) : ( array_key_exists( 'cf_email', $settings ) ? $settings['cf_email'] : '' );
+			$settings['cf_key']       = isset( $_POST['cf_key'] ) ? sanitize_text_field( $_POST['cf_key'] ) : ( array_key_exists( 'cf_key', $settings ) ? $settings['cf_key'] : '' );
+			$settings['cf_auth_type'] = isset( $_POST['cf_auth_type'] ) ? sanitize_text_field( $_POST['cf_auth_type'] ) : ( array_key_exists( 'cf_auth_type', $settings ) ? $settings['cf_auth_type'] : 'global_key' );
+			$settings['cf_token']     = isset( $_POST['cf_token'] ) ? sanitize_text_field( $_POST['cf_token'] ) : ( array_key_exists( 'cf_token', $settings ) ? $settings['cf_token'] : '' );
 
-            // Cache Clearing settings
-            $settings['after_scheduled_sale'] = isset($_POST['after_scheduled_sale']) ? sanitize_text_field($_POST['after_scheduled_sale']) : '';
-            $settings['when_product_out_of_stock'] = isset($_POST['when_product_out_of_stock']) ? sanitize_text_field($_POST['when_product_out_of_stock']) : '';
-            $settings['when_store_notice_updated'] = isset($_POST['when_store_notice_updated']) ? sanitize_text_field($_POST['when_store_notice_updated']) : '';
-            $settings['enable_logging'] = isset($_POST['enable_logging']) ? sanitize_text_field($_POST['enable_logging']) : '';
-            $settings['delete_data_on_uninstall'] = isset($_POST['delete_data_on_uninstall']) ? sanitize_text_field($_POST['delete_data_on_uninstall']) : '';
+			// Cache Clearing settings
+			$settings['after_scheduled_sale']      = isset( $_POST['after_scheduled_sale'] ) ? sanitize_text_field( $_POST['after_scheduled_sale'] ) : '';
+			$settings['when_product_out_of_stock'] = isset( $_POST['when_product_out_of_stock'] ) ? sanitize_text_field( $_POST['when_product_out_of_stock'] ) : '';
+			$settings['when_store_notice_updated'] = isset( $_POST['when_store_notice_updated'] ) ? sanitize_text_field( $_POST['when_store_notice_updated'] ) : '';
+			$settings['enable_logging']            = isset( $_POST['enable_logging'] ) ? sanitize_text_field( $_POST['enable_logging'] ) : '';
+			$settings['delete_data_on_uninstall']  = isset( $_POST['delete_data_on_uninstall'] ) ? sanitize_text_field( $_POST['delete_data_on_uninstall'] ) : '';
 
-			if( update_option('woocf_settings', $settings) )
+			if ( update_option( 'woocf_settings', $settings ) ) {
 				return true;
-
+			}
 		}
 
 		return false;
-
 	}
-
 }

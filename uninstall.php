@@ -10,7 +10,7 @@ if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 }
 
 $woocf_settings = get_option( 'woocf_settings' );
-$delete_data = is_array( $woocf_settings ) && ! empty( $woocf_settings['delete_data_on_uninstall'] );
+$delete_data    = is_array( $woocf_settings ) && ! empty( $woocf_settings['delete_data_on_uninstall'] );
 
 if ( ! $delete_data ) {
 	return;
