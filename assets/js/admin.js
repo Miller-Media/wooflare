@@ -45,7 +45,8 @@ jQuery(document).ready(function(){
 
         var data = {
             action: 'woocf_clearlog',
-            clear_log: true
+            clear_log: true,
+            nonce: woocf_i18n.clearlog_nonce
         };
         jQuery.ajax({
             url: ajaxurl,

@@ -19,14 +19,14 @@ class WOOCF_ReviewNotice {
 	private $icon_dashicon;
 
 	public function __construct( $plugin_name, $plugin_slug, $activation_option, $text_domain, $icon_url = '', $icon_dashicon = '' ) {
-		$this->plugin_name = $plugin_name;
-		$this->plugin_slug = $plugin_slug;
-		$this->activation_option = $activation_option;
+		$this->plugin_name        = $plugin_name;
+		$this->plugin_slug        = $plugin_slug;
+		$this->activation_option  = $activation_option;
 		$this->dismissed_meta_key = $plugin_slug . '_review_dismissed';
-		$this->review_url = 'https://wordpress.org/support/plugin/' . $plugin_slug . '/reviews/#new-post';
-		$this->text_domain = $text_domain;
-		$this->icon_url = $icon_url;
-		$this->icon_dashicon = $icon_dashicon;
+		$this->review_url         = 'https://wordpress.org/support/plugin/' . $plugin_slug . '/reviews/#new-post';
+		$this->text_domain        = $text_domain;
+		$this->icon_url           = $icon_url;
+		$this->icon_dashicon      = $icon_dashicon;
 
 		add_action( 'admin_notices', array( $this, 'show_review_notice' ) );
 		add_action( 'admin_init', array( $this, 'handle_dismiss' ) );
@@ -79,7 +79,7 @@ class WOOCF_ReviewNotice {
 				<a href="<?php echo esc_url( $this->review_url ); ?>" class="button button-primary" target="_blank">
 					<?php esc_html_e( 'Leave a Review', 'wooflare' ); ?>
 				</a>
-				<a href="<?php echo esc_url( add_query_arg( $this->plugin_slug . '_dismiss_review', 'true' ) ); ?>" class="button button-secondary">
+				<a href="<?php echo esc_url( wp_nonce_url( add_query_arg( $this->plugin_slug . '_dismiss_review', 'true' ), $this->plugin_slug . '_dismiss_review' ) ); ?>" class="button button-secondary">
 					<?php esc_html_e( 'Maybe Later', 'wooflare' ); ?>
 				</a>
 			</p>
@@ -100,8 +100,12 @@ class WOOCF_ReviewNotice {
 	public function handle_dismiss() {
 		// Handle URL parameter dismiss
 		if ( isset( $_GET[ $this->plugin_slug . '_dismiss_review' ] ) ) {
+			if ( ! isset( $_GET['_wpnonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_GET['_wpnonce'] ) ), $this->plugin_slug . '_dismiss_review' ) ) {
+				return;
+			}
+
 			update_user_meta( get_current_user_id(), $this->dismissed_meta_key, true );
-			wp_safe_redirect( remove_query_arg( $this->plugin_slug . '_dismiss_review' ) );
+			wp_safe_redirect( remove_query_arg( array( $this->plugin_slug . '_dismiss_review', '_wpnonce' ) ) );
 			exit;
 		}
 
