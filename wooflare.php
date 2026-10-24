@@ -7,7 +7,7 @@
  * Author URI: https://mattmiller.ai
  * Depends:
  * Text Domain: wooflare
- * Version: 1.2.2
+ * Version: 1.2.3
  * Requires PHP: 8.1
  * Requires at least: 6.0
  * Tested up to: 7.1
@@ -68,7 +68,7 @@ function woocf_version_check() {
 }
 add_action( 'admin_notices', 'woocf_version_check' );
 
-define( 'WOOCF_PLUGIN_VERSION', '1.2.2' );
+define( 'WOOCF_PLUGIN_VERSION', '1.2.3' );
 define( 'WOOCF_PLUGIN_FILE', __FILE__ );
 define( 'WOOCF_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'WOOCF_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
