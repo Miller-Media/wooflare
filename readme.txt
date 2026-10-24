@@ -4,7 +4,7 @@ Tags: cloudflare, woocommerce, cache, purge, performance
 Requires PHP: 8.1
 Requires at least: 6.0
 Tested up to: 7.1
-Stable tag: 1.2.2
+Stable tag: 1.2.3
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -109,6 +109,15 @@ The plugin is available in 30 languages with more being added regularly. We are 
 If you find that a part of this plugin isn't working, please don't simply click the Wordpress "It's broken" button. Let us know what's broken in [its support forum](https://wordpress.org/support/plugin/wooflare/) so we can make it better.
 
 == Changelog ==
+
+= 1.2.3 =
+* Security: the Clear Log AJAX action now checks for the manage_options capability and a nonce
+* Security: the "Maybe Later" link that dismisses the review notice now carries a nonce
+* Hardened request handling: request input is unslashed and sanitized, and settings page output is escaped
+* Use wp_parse_url() instead of parse_url()
+* Added translators comments for translatable strings with placeholders
+* Requires at least WordPress 6.0
+* Tested up to WordPress 7.1 and WooCommerce 11.2
 
 = 1.2.2 =
 * Fixed unordered printf placeholders (%s -> %1$s, %2$s) in SiteSettingsView.php
