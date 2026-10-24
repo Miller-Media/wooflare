@@ -86,7 +86,7 @@ This plugin is available in the following languages:
 
 = How do I connect WooFlare to my Cloudflare account? =
 
-Go to WooFlare in your WordPress admin menu. You can authenticate using either a scoped API Token (recommended) or your Global API Key (legacy). For API Tokens, create one in your Cloudflare dashboard with the "Zone > Cache Purge > Purge" permission.
+Go to WooFlare in your WordPress admin menu. You can authenticate using either a scoped API Token (recommended) or your Global API Key (legacy). For API Tokens, create one in your Cloudflare dashboard with the "Zone > Cache Purge > Purge" permission. You can create API Tokens and find your Global API Key at https://dash.cloudflare.com/profile/api-tokens.
 
 = When does WooFlare automatically purge the cache? =
 

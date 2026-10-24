@@ -33,8 +33,7 @@ $settings = array(
 				'name'        => 'cf_key',
 				'type'        => 'text',
 				'title'       => __( 'Global API Key', 'wooflare' ),
-				// phpcs:ignore PluginCheck.CodeAnalysis.Offloading.OffloadedContent -- Link to the Cloudflare dashboard, not an offloaded asset.
-				'description' => __( 'Your <a href="https://dash.cloudflare.com/profile/api-tokens" target="_blank">Global API Key</a>.<br />Found under My Profile &rarr; API Tokens &rarr; Global API Key &rarr; View.', 'wooflare' ),
+				'description' => __( 'Your Global API Key. Found under My Profile &rarr; API Tokens &rarr; Global API Key &rarr; View in your Cloudflare dashboard. See the plugin readme (FAQ) for details.', 'wooflare' ),
 				'value'       => ( $credentials && array_key_exists( 'cf_key', $credentials ) ) ? $credentials['cf_key'] : '',
 				'auth_group'  => 'global_key',
 			),
@@ -42,8 +41,7 @@ $settings = array(
 				'name'        => 'cf_token',
 				'type'        => 'text',
 				'title'       => __( 'API Token', 'wooflare' ),
-				// phpcs:ignore PluginCheck.CodeAnalysis.Offloading.OffloadedContent -- Link to the Cloudflare dashboard, not an offloaded asset.
-				'description' => __( 'A <a href="https://dash.cloudflare.com/profile/api-tokens" target="_blank">scoped API token</a>.<br />Create one under My Profile &rarr; API Tokens &rarr; Create Token.<br />Required permissions: <strong>Zone &rarr; Zone &rarr; Read</strong>, <strong>Zone &rarr; Cache Purge &rarr; Purge</strong>.', 'wooflare' ),
+				'description' => __( 'A scoped API token. Create one under My Profile &rarr; API Tokens &rarr; Create Token in your Cloudflare dashboard. See the plugin readme (FAQ) for details.<br />Required permissions: <strong>Zone &rarr; Zone &rarr; Read</strong>, <strong>Zone &rarr; Cache Purge &rarr; Purge</strong>.', 'wooflare' ),
 				'value'       => isset( $woocf_settings['cf_token'] ) ? $woocf_settings['cf_token'] : '',
 				'auth_group'  => 'api_token',
 			),
