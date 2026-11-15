@@ -10,12 +10,11 @@
  * Version: 1.2.3
  * Requires PHP: 8.1
  * Requires at least: 6.0
- * Tested up to: 7.1
  * License: GPL-2.0-or-later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  *
  * WC requires at least: 3.3.0
- * WC tested up to: 11.2
+ * WC tested up to: 11.3
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
