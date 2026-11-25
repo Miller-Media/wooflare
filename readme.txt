@@ -4,7 +4,7 @@ Tags: cloudflare, woocommerce, cache, purge, performance
 Requires PHP: 8.1
 Requires at least: 6.0
 Tested up to: 7.2
-Stable tag: 1.2.3
+Stable tag: 1.2.4
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -109,6 +109,11 @@ The plugin is available in 30 languages with more being added regularly. We are 
 If you find that a part of this plugin isn't working, please don't simply click the Wordpress "It's broken" button. Let us know what's broken in [its support forum](https://wordpress.org/support/plugin/wooflare/) so we can make it better.
 
 == Changelog ==
+
+= 1.2.4 =
+* Tested with WordPress 7.2; removed outdated Tested up to header.
+* Settings field descriptions now point to the plugin readme FAQ instead of Cloudflare dashboard links.
+* Updated WC tested up to 11.3.
 
 = 1.2.3 =
 * Security: the Clear Log AJAX action now checks for the manage_options capability and a nonce
